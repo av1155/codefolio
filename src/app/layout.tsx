@@ -12,8 +12,6 @@ const inter = Inter({
     variable: "--font-inter",
 });
 
-import { SpeedInsights } from "@vercel/speed-insights/next";
-
 // const geistSans = localFont({
 //     src: "./fonts/GeistVF.woff",
 //     variable: "--font-geist-sans",
@@ -40,7 +38,6 @@ export default function RootLayout({
             <body className="font-sans antialiased">
                 <Header />
                 {children}
-                <SpeedInsights />
                 <Footer />
             </body>
         </html>

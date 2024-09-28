@@ -20,7 +20,7 @@ const config: Config = {
                 sans: ["var(--font-inter)", "sans-serif"],
             },
             animation: {
-                marquee: "marquee 60s linear infinite",
+                marquee: "marquee 40s linear infinite",
             },
             keyframes: {
                 marquee: {
