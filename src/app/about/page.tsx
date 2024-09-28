@@ -1,3 +1,5 @@
+import { AcademicCapIcon, CodeBracketIcon, LightBulbIcon } from "@heroicons/react/24/outline";
+
 export default function AboutPage() {
     return (
         <div className="relative bg-white py-24 sm:py-32">
@@ -17,24 +19,80 @@ export default function AboutPage() {
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="text-center">
                     <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-                        About Me
+                        Hi, I&apos;m Andrea Venti Fuentes
                     </h1>
                     <p className="mt-6 text-lg leading-8 text-gray-600">
-                        I&apos;m Andrea A. Venti Fuentes, a Computer Science student at the
-                        University of Miami with a minor in Mathematics. Originally from Spain, I
-                        have received numerous academic honors such as the Dean&apos;s List and
-                        Provost Honor Roll, and I placed 2nd in the UHack Hackathon.
+                        A passionate <span className="font-bold">Software Engineer</span> with a
+                        keen interest in crafting efficient and elegant solutions to complex
+                        problems. I’m currently pursuing my{" "}
+                        <span className="font-bold">B.S. in Computer Science</span>
+                        with a minor in Mathematics at the{" "}
+                        <span className="font-bold">University of Miami</span>, and I love turning
+                        ideas into reality through code.
                     </p>
+                </div>
+
+                <div className="mt-16 grid grid-cols-1 gap-10 md:grid-cols-3">
+                    {/* Academic Excellence */}
+                    <div className="flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg shadow-md">
+                        <AcademicCapIcon className="h-12 w-12 text-indigo-600" />
+                        <h3 className="mt-4 text-xl font-semibold text-gray-900">
+                            Academic Excellence
+                        </h3>
+                        <p className="mt-4 text-base leading-7 text-gray-600">
+                            Proud recipient of numerous honors like the{" "}
+                            <span className="font-bold">Dean’s List</span> and{" "}
+                            <span className="font-bold">Provost Honor Roll</span>. My hard work also
+                            led me to secure <span className="font-bold">2nd place</span> in the
+                            prestigious <span className="font-bold">UHack Hackathon</span>.
+                        </p>
+                    </div>
+
+                    {/* Tech Stack */}
+                    <div className="flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg shadow-md">
+                        <CodeBracketIcon className="h-12 w-12 text-indigo-600" />
+                        <h3 className="mt-4 text-xl font-semibold text-gray-900">Tech Stack</h3>
+                        <p className="mt-4 text-base leading-7 text-gray-600">
+                            Skilled in{" "}
+                            <span className="font-bold">Python, Java, C/C++, JavaScript</span>, and
+                            more. Experienced with tools like{" "}
+                            <span className="font-bold">Docker</span>,{" "}
+                            <span className="font-bold">Git</span>, and frameworks like{" "}
+                            <span className="font-bold">Flask</span> and{" "}
+                            <span className="font-bold">TensorFlow</span>. My versatile skills
+                            enable me to work across the full stack, creating efficient software
+                            solutions.
+                        </p>
+                    </div>
+
+                    {/* My Philosophy */}
+                    <div className="flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg shadow-md">
+                        <LightBulbIcon className="h-12 w-12 text-indigo-600" />
+                        <h3 className="mt-4 text-xl font-semibold text-gray-900">My Philosophy</h3>
+                        <p className="mt-4 text-base leading-7 text-gray-600">
+                            I believe in constant learning and innovation. Whether I’m building web
+                            apps, delving into AI projects, or optimizing code, I aim to create
+                            software that is <span className="font-bold">reliable</span>,{" "}
+                            <span className="font-bold">scalable</span>, and{" "}
+                            <span className="font-bold">user-friendly</span>.
+                        </p>
+                    </div>
+                </div>
+
+                <div className="mt-16 text-center">
+                    <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                        Let&apos;s Collaborate!
+                    </h2>
                     <p className="mt-4 text-lg leading-8 text-gray-600">
-                        I specialize in languages like Python, Java, C/C++, and JavaScript, with
-                        experience in tools like Docker, Git, and frameworks like Flask and
-                        TensorFlow. I’m equally comfortable on both front-end and back-end
-                        technologies, and I’m excited about building robust software solutions.
+                        I&apos;m always excited to connect with like-minded individuals and explore
+                        new opportunities. Let&apos;s bring your ideas to life!
                     </p>
-                    <p className="mt-4 text-lg leading-8 text-gray-600">
-                        I’m always open to collaboration and looking forward to working on exciting
-                        new projects. Let’s connect and explore how we can innovate together.
-                    </p>
+                    <a
+                        href="/contact"
+                        className="mt-6 inline-block rounded-md bg-indigo-600 px-6 py-3 text-sm font-semibold text-white hover:bg-indigo-500"
+                    >
+                        Get in Touch
+                    </a>
                 </div>
             </div>
         </div>

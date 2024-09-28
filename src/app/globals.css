@@ -2,9 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+/* :root { */
+/*     --background: bg-white; */
+/*     --foreground: text-gray-900; */
+/* } */
+
 :root {
-    --background: bg-white;
-    --foreground: text-gray-900;
+    --color-primary: #4f46e5; /* Indigo */
+    --color-secondary: #6366f1; /* Indigo lighter */
+    --color-accent: #ec4899; /* Pink accent */
+    --color-dark: #111827; /* Dark background */
+    --color-light: #f9fafb; /* Light background */
 }
 
 /* @media (prefers-color-scheme: dark) { */
@@ -17,7 +25,7 @@
 body {
     color: var(--foreground);
     background: var(--background);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--font-geist-sans), sans-serif;
 }
 
 @layer utilities {

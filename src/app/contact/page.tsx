@@ -1,4 +1,12 @@
+"use client";
+
+import React from "react";
+import { useForm, ValidationError } from "@formspree/react";
+import { EnvelopeIcon } from "@heroicons/react/24/outline";
+
 export default function ContactPage() {
+    const [state, handleSubmit] = useForm("xpwavdjb");
+
     return (
         <div className="relative bg-white py-24 sm:py-32">
             <div
@@ -25,50 +33,69 @@ export default function ContactPage() {
                 </div>
 
                 <div className="mt-12 mx-auto max-w-xl">
-                    <form method="POST" data-netlify="true" className="grid gap-y-6">
-                        <input
-                            type="hidden"
-                            name="_subject"
-                            value="Contact request from personal website"
-                        />
-
-                        <div>
-                            <label htmlFor="email-field" className="sr-only">
-                                Email address
-                            </label>
+                    {state.succeeded ? (
+                        <p className="text-center text-green-500">
+                            Thanks for your message! I will get back to you soon.
+                        </p>
+                    ) : (
+                        <form onSubmit={handleSubmit} className="grid gap-y-6">
                             <input
-                                type="email"
-                                name="_replyto"
-                                id="email-field"
-                                placeholder="Your email"
-                                required
-                                className="block w-full rounded-md border border-gray-300 px-4 py-3 text-gray-900 shadow-sm placeholder-gray-500 focus:border-indigo-500 focus:ring-indigo-500"
+                                type="hidden"
+                                name="_subject"
+                                value="Contact request from personal website"
                             />
-                        </div>
 
-                        <div>
-                            <label htmlFor="message-field" className="sr-only">
-                                Message
-                            </label>
-                            <textarea
-                                name="message"
-                                id="message-field"
-                                rows={8}
-                                required
-                                placeholder="Your message"
-                                className="block w-full rounded-md border border-gray-300 px-4 py-3 text-gray-900 shadow-sm placeholder-gray-500 focus:border-indigo-500 focus:ring-indigo-500"
-                            ></textarea>
-                        </div>
+                            <div className="relative">
+                                <EnvelopeIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                                <label htmlFor="email-field" className="sr-only">
+                                    Email address
+                                </label>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    id="email-field"
+                                    placeholder="Your email"
+                                    required
+                                    className="block w-full pl-10 rounded-md border border-gray-300 px-4 py-3 text-gray-900 shadow-sm placeholder-gray-500 focus:border-indigo-500 focus:ring-indigo-500"
+                                />
+                                <ValidationError
+                                    prefix="Email"
+                                    field="email"
+                                    errors={state.errors}
+                                    className="text-red-500 text-sm mt-1"
+                                />
+                            </div>
 
-                        <div>
-                            <button
-                                type="submit"
-                                className="inline-flex w-full items-center justify-center rounded-md bg-indigo-600 px-4 py-3 font-semibold text-white shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                            >
-                                Send Message
-                            </button>
-                        </div>
-                    </form>
+                            <div>
+                                <label htmlFor="message-field" className="sr-only">
+                                    Message
+                                </label>
+                                <textarea
+                                    name="message"
+                                    id="message-field"
+                                    rows={8}
+                                    required
+                                    placeholder="Your message"
+                                    className="block w-full rounded-md border border-gray-300 px-4 py-3 text-gray-900 shadow-sm placeholder-gray-500 focus:border-indigo-500 focus:ring-indigo-500"
+                                ></textarea>
+                                <ValidationError
+                                    prefix="Message"
+                                    field="message"
+                                    errors={state.errors}
+                                    className="text-red-500 text-sm mt-1"
+                                />
+                            </div>
+
+                            <div>
+                                <button
+                                    type="submit"
+                                    className="inline-flex w-full items-center justify-center rounded-md bg-indigo-600 px-4 py-3 font-semibold text-white shadow-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition duration-300"
+                                >
+                                    Send Message
+                                </button>
+                            </div>
+                        </form>
+                    )}
                 </div>
             </div>
         </div>

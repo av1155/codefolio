@@ -1,7 +1,16 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Navbar from "./navbar";
+import Header from "./header";
+import Footer from "./footer";
+
+// File: src/app/layout.tsx
+import { Inter } from "next/font/google";
+
+const inter = Inter({
+    subsets: ["latin"],
+    variable: "--font-inter",
+});
 
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -27,11 +36,12 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
-            <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-                <Navbar />
+        <html lang="en" className={inter.variable}>
+            <body className="font-sans antialiased">
+                <Header />
                 {children}
                 <SpeedInsights />
+                <Footer />
             </body>
         </html>
     );
