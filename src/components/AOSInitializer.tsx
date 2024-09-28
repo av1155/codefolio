@@ -1,15 +1,17 @@
 "use client";
 
 import { useEffect } from "react";
-import AOS, { AosOptions } from "aos";
+import AOS from "aos";
 import "aos/dist/aos.css";
 
 export default function AOSInitializer() {
     useEffect(() => {
-        const options: AosOptions = {
-            duration: 800,
-        };
-        AOS.init(options);
+        AOS.init({
+            duration: 600,
+            // easing: "ease-in-out",
+            // once: false, // Animation only happens once
+            // mirror: false, // Animation does not repeat on scroll up
+        });
     }, []);
 
     return null;

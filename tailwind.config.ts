@@ -1,5 +1,7 @@
-// tailwind.config.ts
 import type { Config } from "tailwindcss";
+
+import forms from "@tailwindcss/forms";
+import typography from "@tailwindcss/typography";
 
 const config: Config = {
     content: [
@@ -7,6 +9,9 @@ const config: Config = {
         "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
         "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     ],
+
+    safelist: ["transform", "animate-marquee", "animate-gradient-move"],
+
     theme: {
         extend: {
             colors: {
@@ -17,19 +22,29 @@ const config: Config = {
                 light: "var(--color-light)",
             },
             fontFamily: {
-                sans: ["var(--font-inter)", "sans-serif"],
+                sans: ["Inter", "sans-serif"],
             },
             animation: {
                 marquee: "marquee 40s linear infinite",
+                "gradient-move": "gradientMove 8s ease infinite",
             },
             keyframes: {
                 marquee: {
                     "0%": { transform: "translateX(-50%)" },
                     "100%": { transform: "translateX(100%)" },
                 },
+                gradientMove: {
+                    "0%": { backgroundPosition: "0% 50%" },
+                    "50%": { backgroundPosition: "100% 50%" },
+                    "100%": { backgroundPosition: "0% 50%" },
+                },
+            },
+            backgroundSize: {
+                "size-200": "200% 200%",
             },
         },
     },
-    plugins: [],
+    plugins: [forms, typography],
 };
+
 export default config;

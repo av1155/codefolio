@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
-import { Dialog } from "@headlessui/react";
+import { useState, Fragment } from "react";
+import { Dialog, Transition } from "@headlessui/react";
+import AOSInitializer from "@/components/AOSInitializer";
 
 interface Project {
     title: string;
@@ -338,197 +339,244 @@ export default function ProjectsPage() {
     });
 
     return (
-        <section id="projects" className="bg-white py-24 sm:py-32">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                {/* Header */}
-                <div className="text-center">
-                    <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-                        Projects
-                    </h2>
-                    <p className="mt-6 text-lg leading-8 text-gray-600">
-                        A collection of some of my favorite and most challenging projects.
-                    </p>
-                </div>
-
-                {/* Category Buttons */}
-                <div className="mt-10 flex justify-center space-x-4">
-                    <button
-                        className={`px-4 py-2 rounded-md text-sm font-medium ${
-                            activeCategory === "All"
-                                ? "bg-indigo-600 text-white"
-                                : "bg-gray-200 text-gray-800"
-                        }`}
-                        onClick={() => setActiveCategory("All")}
-                    >
-                        All
-                    </button>
-                    <button
-                        className={`px-4 py-2 rounded-md text-sm font-medium ${
-                            activeCategory === "Main"
-                                ? "bg-indigo-600 text-white"
-                                : "bg-gray-200 text-gray-800"
-                        }`}
-                        onClick={() => setActiveCategory("Main")}
-                    >
-                        Main Projects
-                    </button>
-                    <button
-                        className={`px-4 py-2 rounded-md text-sm font-medium ${
-                            activeCategory === "Other"
-                                ? "bg-indigo-600 text-white"
-                                : "bg-gray-200 text-gray-800"
-                        }`}
-                        onClick={() => setActiveCategory("Other")}
-                    >
-                        Other Projects
-                    </button>
-                </div>
-
-                {/* Projects Grid */}
-                <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12">
-                    {filteredProjects.map((project) => (
+        <>
+            <AOSInitializer />
+            <section
+                id="projects"
+                className="relative overflow-hidden bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-size-200 animate-gradient-move py-24 sm:py-32"
+            >
+                {/* Background Decorative Shape */}
+                <div className="absolute inset-0">
+                    <div className="absolute inset-x-0 top-0 transform-gpu overflow-hidden blur-3xl opacity-50">
                         <div
-                            key={project.title}
-                            className="group relative bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 p-2 cursor-pointer"
-                            onClick={() => setSelectedProject(project)}
-                        >
-                            <div className="relative w-full h-48 rounded-lg overflow-hidden group-hover:opacity-75">
-                                <Image
-                                    src={project.image}
-                                    alt={project.title}
-                                    fill
-                                    style={{ objectFit: "cover" }}
-                                    className="rounded-lg"
-                                />
-                            </div>
-                            <h3 className="mt-6 text-lg font-bold text-gray-900">
-                                {project.title}
-                            </h3>
-                            <p className="mt-2 text-sm text-gray-600">{project.description}</p>
-                            <div className="mt-4 flex space-x-3">
-                                {project.liveUrl && (
-                                    <Link
-                                        href={project.liveUrl}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        <span className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-500">
-                                            See Live
-                                        </span>
-                                    </Link>
-                                )}
-                                {project.sourceUrl && (
-                                    <Link
-                                        href={project.sourceUrl}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        <span className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-gray-600 hover:bg-gray-500">
-                                            Source Code
-                                        </span>
-                                    </Link>
-                                )}
-                            </div>
-                        </div>
-                    ))}
+                            style={{
+                                clipPath:
+                                    "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
+                            }}
+                            className="relative left-1/2 w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-pink-300 to-indigo-300 opacity-30 sm:w-[72.1875rem]"
+                        />
+                    </div>
                 </div>
 
-                {/* Modal for Detailed View */}
-                {selectedProject && (
-                    <Dialog
-                        open={!!selectedProject}
-                        onClose={() => setSelectedProject(null)}
-                        className="relative z-50"
-                    >
-                        {/* The backdrop */}
-                        <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
+                <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
+                    {/* Header */}
+                    <div className="text-center text-white" data-aos="fade-down">
+                        <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">Projects</h2>
+                        <p className="mt-6 text-lg leading-8">
+                            A collection of some of my favorite and most challenging projects.
+                        </p>
+                    </div>
 
-                        {/* Full-screen scrollable container */}
-                        <div className="fixed inset-0 overflow-y-auto">
-                            {/* Container to center the panel */}
-                            <div className="flex min-h-full items-center justify-center p-4">
-                                {/* The actual dialog panel */}
-                                <Dialog.Panel className="mx-auto max-w-2xl w-full rounded-lg bg-white p-6 max-h-screen overflow-y-auto shadow-xl">
-                                    <button
-                                        onClick={() => setSelectedProject(null)}
-                                        className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
-                                    >
-                                        {/* Close Icon */}
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            className="h-6 w-6"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                            stroke="currentColor"
-                                        >
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth={2}
-                                                d="M6 18L18 6M6 6l12 12"
-                                            />
-                                        </svg>
-                                    </button>
-                                    <Dialog.Title className="text-2xl font-bold text-gray-900">
-                                        {selectedProject.title}
-                                    </Dialog.Title>
-                                    <div className="mt-4">
+                    {/* Category Buttons */}
+                    <div className="mt-10 flex justify-center space-x-4">
+                        {["All", "Main", "Other"].map((category) => (
+                            <button
+                                key={category}
+                                className={`px-4 py-2 rounded-md text-sm font-medium ${
+                                    activeCategory === category
+                                        ? "bg-white bg-opacity-80 text-indigo-700"
+                                        : "bg-white bg-opacity-20 text-white"
+                                } hover:bg-opacity-100 transform hover:scale-105 transition duration-200`}
+                                onClick={() =>
+                                    setActiveCategory(category as "All" | "Main" | "Other")
+                                }
+                                data-aos="fade-up"
+                            >
+                                {category === "All" ? "All" : `${category} Projects`}
+                            </button>
+                        ))}
+                    </div>
+
+                    {/* Projects Grid */}
+                    <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12">
+                        {filteredProjects.map((project) => (
+                            <div
+                                key={project.title}
+                                className="group relative bg-white bg-opacity-20 border border-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transform hover:scale-105 transition duration-200 p-4 h-full flex flex-col hover:bg-white hover:bg-opacity-30 cursor-pointer"
+                                data-aos="zoom-in"
+                                onClick={() => setSelectedProject(project)}
+                            >
+                                {/* Content Wrapper */}
+                                <div className="flex-grow">
+                                    {/* Image */}
+                                    <div className="relative w-full h-48 rounded-lg overflow-hidden group-hover:opacity-90 transition duration-200">
                                         <Image
-                                            src={selectedProject.image}
-                                            alt={selectedProject.title}
-                                            width={800}
-                                            height={600}
+                                            src={project.image}
+                                            alt={project.title}
+                                            fill
+                                            sizes="(max-width: 640px) 100vw,
+                             (max-width: 1024px) 50vw,
+                             33vw"
+                                            style={{ objectFit: "cover" }}
                                             className="rounded-lg"
+                                            draggable={false}
+                                            loading="lazy"
                                         />
                                     </div>
-                                    <p className="mt-4 text-gray-700">
-                                        {selectedProject.detailedDescription}
-                                    </p>
-                                    <div className="mt-4">
-                                        <h4 className="text-lg font-semibold text-gray-800">
-                                            Technologies Used:
-                                        </h4>
-                                        <ul className="mt-2 flex flex-wrap gap-2">
-                                            {selectedProject.technologies.map((tech) => (
-                                                <li
-                                                    key={tech}
-                                                    className="px-3 py-1 bg-gray-200 rounded-full text-sm text-gray-700"
-                                                >
-                                                    {tech}
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                    <div className="mt-6 flex space-x-3">
-                                        {selectedProject.liveUrl && (
-                                            <Link
-                                                href={selectedProject.liveUrl}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                            >
-                                                <span className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-500">
-                                                    See Live
-                                                </span>
-                                            </Link>
-                                        )}
-                                        {selectedProject.sourceUrl && (
-                                            <Link
-                                                href={selectedProject.sourceUrl}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                            >
-                                                <span className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-gray-600 hover:bg-gray-500">
-                                                    Source Code
-                                                </span>
-                                            </Link>
-                                        )}
-                                    </div>
-                                </Dialog.Panel>
+                                    {/* Title */}
+                                    <h3 className="mt-6 text-lg font-bold text-white">
+                                        {project.title}
+                                    </h3>
+                                    {/* Description */}
+                                    <p className="mt-2 text-sm text-white">{project.description}</p>
+                                </div>
+                                {/* Buttons */}
+                                <div
+                                    className="mt-auto flex space-x-3 pt-4"
+                                    onClick={(e) => e.stopPropagation()}
+                                >
+                                    {project.liveUrl && (
+                                        <Link
+                                            href={project.liveUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-indigo-700 bg-white bg-opacity-80 hover:bg-opacity-100 transform hover:scale-105 transition duration-200"
+                                        >
+                                            See Live
+                                        </Link>
+                                    )}
+                                    {project.sourceUrl && (
+                                        <Link
+                                            href={project.sourceUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-indigo-700 bg-white bg-opacity-80 hover:bg-opacity-100 transform hover:scale-105 transition duration-200"
+                                        >
+                                            Source Code
+                                        </Link>
+                                    )}
+                                </div>
                             </div>
-                        </div>
-                    </Dialog>
-                )}
-            </div>
-        </section>
+                        ))}
+                    </div>
+
+                    {/* Modal for Detailed View */}
+                    {selectedProject && (
+                        <Transition appear show={!!selectedProject} as={Fragment}>
+                            <Dialog
+                                as="div"
+                                className="relative z-50"
+                                onClose={() => setSelectedProject(null)}
+                            >
+                                {/* Background Overlay */}
+                                <Transition.Child
+                                    as={Fragment}
+                                    enter="ease-out duration-300"
+                                    enterFrom="opacity-0"
+                                    enterTo="opacity-100"
+                                    leave="ease-in duration-200"
+                                    leaveFrom="opacity-100"
+                                    leaveTo="opacity-0"
+                                >
+                                    <div className="fixed inset-0 bg-black bg-opacity-50 transition-opacity" />
+                                </Transition.Child>
+
+                                {/* Modal Content */}
+                                <div className="fixed inset-0 z-10 overflow-y-auto">
+                                    <div className="flex min-h-full items-center justify-center p-4 text-center">
+                                        <Transition.Child
+                                            as={Fragment}
+                                            enter="ease-out duration-300 transform"
+                                            enterFrom="opacity-0 scale-95"
+                                            enterTo="opacity-100 scale-100"
+                                            leave="ease-in duration-200 transform"
+                                            leaveFrom="opacity-100 scale-100"
+                                            leaveTo="opacity-0 scale-95"
+                                        >
+                                            <Dialog.Panel className="relative bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-2xl sm:w-full">
+                                                {/* Close Button */}
+                                                <button
+                                                    onClick={() => setSelectedProject(null)}
+                                                    className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 rounded-full p-1 hover:bg-gray-100"
+                                                    aria-label="Close modal"
+                                                >
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        className="h-6 w-6"
+                                                        fill="none"
+                                                        viewBox="0 0 24 24"
+                                                        stroke="currentColor"
+                                                    >
+                                                        <path
+                                                            strokeLinecap="round"
+                                                            strokeLinejoin="round"
+                                                            strokeWidth={2}
+                                                            d="M6 18L18 6M6 6l12 12"
+                                                        />
+                                                    </svg>
+                                                </button>
+                                                {/* Modal Content */}
+                                                <div className="bg-white px-6 pt-6 pb-4">
+                                                    <Dialog.Title className="text-2xl font-bold text-gray-900">
+                                                        {selectedProject.title}
+                                                    </Dialog.Title>
+                                                    {/* Image */}
+                                                    <div className="mt-4">
+                                                        <Image
+                                                            src={selectedProject.image}
+                                                            alt={selectedProject.title}
+                                                            width={800}
+                                                            height={600}
+                                                            className="rounded-lg"
+                                                            draggable={false}
+                                                            loading="lazy"
+                                                        />
+                                                    </div>
+                                                    {/* Description */}
+                                                    <p className="mt-4 text-gray-700">
+                                                        {selectedProject.detailedDescription}
+                                                    </p>
+                                                    {/* Technologies */}
+                                                    <div className="mt-4">
+                                                        <h4 className="text-lg font-semibold text-gray-800">
+                                                            Technologies Used:
+                                                        </h4>
+                                                        <ul className="mt-2 flex flex-wrap gap-2">
+                                                            {selectedProject.technologies.map(
+                                                                (tech) => (
+                                                                    <li
+                                                                        key={tech}
+                                                                        className="px-3 py-1 bg-gray-200 rounded-full text-sm text-gray-700"
+                                                                    >
+                                                                        {tech}
+                                                                    </li>
+                                                                ),
+                                                            )}
+                                                        </ul>
+                                                    </div>
+                                                    {/* Buttons */}
+                                                    <div className="mt-6 flex space-x-3">
+                                                        {selectedProject.liveUrl && (
+                                                            <Link
+                                                                href={selectedProject.liveUrl}
+                                                                target="_blank"
+                                                                rel="noopener noreferrer"
+                                                                className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-500 transition duration-200"
+                                                            >
+                                                                See Live
+                                                            </Link>
+                                                        )}
+                                                        {selectedProject.sourceUrl && (
+                                                            <Link
+                                                                href={selectedProject.sourceUrl}
+                                                                target="_blank"
+                                                                rel="noopener noreferrer"
+                                                                className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-gray-600 hover:bg-gray-500 transition duration-200"
+                                                            >
+                                                                Source Code
+                                                            </Link>
+                                                        )}
+                                                    </div>
+                                                </div>
+                                            </Dialog.Panel>
+                                        </Transition.Child>
+                                    </div>
+                                </div>
+                            </Dialog>
+                        </Transition>
+                    )}
+                </div>
+            </section>
+        </>
     );
 }

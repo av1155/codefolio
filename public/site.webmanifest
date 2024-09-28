@@ -1,0 +1,21 @@
+{
+    "name": "Andrea Venti - Software Engineer Portfolio",
+    "short_name": "Andrea Venti",
+    "description": "Discover Andrea Venti's journey as a software engineering innovator with academic achievements and cutting-edge projects.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#9150D0",
+    "icons": [
+        {
+            "src": "/favicon.jpg",
+            "sizes": "1024x1024",
+            "type": "image/jpeg"
+        },
+        {
+            "src": "/favicon.ico",
+            "sizes": "64x64",
+            "type": "image/x-icon"
+        }
+    ]
+}

@@ -2,30 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root { */
-/*     --background: bg-white; */
-/*     --foreground: text-gray-900; */
-/* } */
-
 :root {
     --color-primary: #4f46e5; /* Indigo */
-    --color-secondary: #6366f1; /* Indigo lighter */
+    --color-secondary: #6366f1; /* Lighter Indigo */
     --color-accent: #ec4899; /* Pink accent */
     --color-dark: #111827; /* Dark background */
     --color-light: #f9fafb; /* Light background */
+    --background: var(--color-light);
+    --foreground: var(--color-dark);
 }
 
-/* @media (prefers-color-scheme: dark) { */
-/*     :root { */
-/*         --background: #0a0a0a; */
-/*         --foreground: #ededed; */
-/*     } */
-/* } */
-
 body {
-    color: var(--foreground);
+    font-family: "Inter", sans-serif;
     background: var(--background);
-    font-family: var(--font-geist-sans), sans-serif;
+    color: var(--foreground);
 }
 
 @layer utilities {
