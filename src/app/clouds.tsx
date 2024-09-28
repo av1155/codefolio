@@ -73,8 +73,8 @@ export default function Clouds() {
                                         height={tech.height}
                                         className="h-16 w-auto object-contain"
                                         draggable={false}
-                                        loading={index < technologies.length ? "eager" : "lazy"}
-                                        priority={index < technologies.length}
+                                        loading="eager"
+                                        priority={true}
                                     />
                                 </div>
                             ))}
