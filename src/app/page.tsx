@@ -24,7 +24,8 @@ export default function Home() {
                     </div>
                 </div>
 
-                <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 py-32 sm:py-48 lg:py-56 text-center text-white">
+                {/* Add extra padding at the top for mobile */}
+                <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 pt-24 pb-16 sm:py-32 lg:py-48 text-center text-white">
                     <h1 className="text-5xl font-extrabold tracking-tight sm:text-7xl text-white drop-shadow-lg">
                         Andrea A. Venti Fuentes
                     </h1>
