@@ -3,7 +3,6 @@ import Link from "next/link";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
 
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Analytics } from "@vercel/analytics/react";
 
 export default function Home() {
     return (
@@ -49,7 +48,6 @@ export default function Home() {
             <div className="relative z-10">
                 <Clouds />
                 <SpeedInsights />
-                <Analytics />
             </div>
         </div>
     );

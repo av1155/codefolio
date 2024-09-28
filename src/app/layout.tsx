@@ -7,6 +7,8 @@ import Footer from "./footer";
 // File: src/app/layout.tsx
 import { Inter } from "next/font/google";
 
+import { Analytics } from "@vercel/analytics/react";
+
 const inter = Inter({
     subsets: ["latin"],
     variable: "--font-inter",
@@ -38,6 +40,7 @@ export default function RootLayout({
             <body className="font-sans antialiased">
                 <Header />
                 {children}
+                <Analytics />
                 <Footer />
             </body>
         </html>
