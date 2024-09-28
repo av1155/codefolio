@@ -46,16 +46,6 @@ export default function Clouds() {
             <div className="relative overflow-hidden">
                 {/* Main Content */}
                 <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 py-16 sm:py-24">
-                    <h2
-                        className="text-4xl font-bold tracking-tight text-center text-white sm:text-5xl"
-                        data-aos="fade-down"
-                    >
-                        Technologies I Use
-                    </h2>
-                    <p className="mt-6 text-lg leading-8 text-center text-white" data-aos="fade-up">
-                        A showcase of the technologies and tools that I frequently work with.
-                    </p>
-
                     {/* Scrolling Logos */}
                     <div className="mt-16 relative w-full overflow-hidden">
                         <div
