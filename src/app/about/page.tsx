@@ -20,10 +20,10 @@ export default function AboutPage() {
                         About Me
                     </h1>
                     <p className="mt-6 text-lg leading-8 text-gray-600">
-                        I'm Andrea A. Venti Fuentes, a Computer Science student at the University of
-                        Miami with a minor in Mathematics. Originally from Spain, I have received
-                        numerous academic honors such as the Dean's List and Provost Honor Roll, and
-                        I placed 2nd in the UHack Hackathon.
+                        I&apos;m Andrea A. Venti Fuentes, a Computer Science student at the
+                        University of Miami with a minor in Mathematics. Originally from Spain, I
+                        have received numerous academic honors such as the Dean&apos;s List and
+                        Provost Honor Roll, and I placed 2nd in the UHack Hackathon.
                     </p>
                     <p className="mt-4 text-lg leading-8 text-gray-600">
                         I specialize in languages like Python, Java, C/C++, and JavaScript, with
