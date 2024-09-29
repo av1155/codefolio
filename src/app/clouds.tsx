@@ -98,11 +98,16 @@ export default function Clouds() {
         <>
             <AOSInitializer />
             <div className="relative overflow-hidden">
-                <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 py-16 lg:py-32 lg:pb-24">
-                    <div className="relative w-full py-12 mt-auto lg:mt-12 md:py-24 lg:py-4">
+                <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 py-14 lg:py-32 lg:pb-24">
+                    <div className="relative w-full py-12 mt-auto lg:mt-12 md:py-20 lg:py-4">
                         <div
-                            className="flex space-x-8 sm:space-x-12 md:space-x-16 lg:space-x-20 animate-marquee"
-                            style={{ transform: "translateX(-50%)" }}
+                            className="
+                                flex 
+                                space-x-6 sm:space-x-8 md:space-x-12 lg:space-x-20 
+                                animate-marquee-sm 
+                                sm:animate-marquee-md 
+                                lg:animate-marquee-lg
+                            "
                             aria-label="Scrolling list of technologies"
                         >
                             {scrollingTechnologies.map((tech, index) => (
@@ -112,7 +117,7 @@ export default function Clouds() {
                                         src={tech.src}
                                         width={tech.width}
                                         height={tech.height}
-                                        className="h-8 sm:h-12 md:h-14 w-auto object-contain"
+                                        className="h-9 sm:h-12 md:h-14 w-auto object-contain"
                                         draggable={false}
                                         loading="eager"
                                         priority={true}

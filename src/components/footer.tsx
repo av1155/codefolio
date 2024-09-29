@@ -2,18 +2,32 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Footer() {
-    const [year, setYear] = useState("");
+    // Initialize the year state with the current year
+    const [year] = useState(new Date().getFullYear().toString());
+
+    // Ref to the footer container
+    const footerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        setYear(new Date().getFullYear().toString());
+        // Initialize AOS
+        AOS.init({
+            offset: 0, // Trigger animation as soon as the element is rendered
+        });
+
+        // Manually trigger AOS to animate the footer
+        if (footerRef.current) {
+            AOS.refresh(); // Refresh AOS to detect new elements
+        }
     }, []);
 
     return (
-        <footer className="bg-gradient-to-r from-indigo-700 via-purple-700 to-pink-700 text-white py-12">
-            <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <footer className="bg-gradient-to-r from-indigo-700 via-purple-700 to-pink-700 bg-size-130 text-white py-12">
+            <div ref={footerRef} className="max-w-7xl mx-auto px-6 lg:px-8" data-aos="zoom-in">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                     {/* About Section */}
                     <div>

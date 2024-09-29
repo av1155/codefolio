@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Root variables for colors */
 :root {
     --color-primary: #4f46e5; /* Indigo */
     --color-secondary: #6366f1; /* Lighter Indigo */
@@ -12,12 +13,14 @@
     --foreground: var(--color-dark);
 }
 
+/* Global body styles */
 body {
     font-family: "Inter", sans-serif;
-    background: var(--background);
+    background-color: var(--background);
     color: var(--foreground);
 }
 
+/* Custom utility classes */
 @layer utilities {
     .text-balance {
         text-wrap: balance;
