@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Website
 
-## Getting Started
+![Vercel Deploy](https://deploy-badge.vercel.app/vercel/codefolio-omega?style=for-the-badge)
 
-First, run the development server:
+This repository contains the source code for my personal portfolio website, hosted at [www.andrea-venti.com](https://www.andrea-venti.com). The site showcases my projects, skills, and experience as a software engineer.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Tech Stack
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+-   **Framework:** Next.js
+-   **Language:** TypeScript
+-   **Styling:** Tailwind CSS
+-   **Animation Library:** AOS (Animate on Scroll)
+-   **Build Tools:** PostCSS, pnpm
+-   **Deployment:** Vercel
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+-   **`/src/app`**: Contains the core pages of the website, including `about`, `projects`, `resume`, and `contact`.
+-   **`/public`**: Holds static assets like images for projects and the website's favicon.
+-   **`/components`**: Reusable components such as the header, footer, and AOS initializer.
+-   **`/styles`**: Global styles applied to the site using Tailwind CSS.
 
-## Learn More
+## Key Features
 
-To learn more about Next.js, take a look at the following resources:
+-   **Responsive Design**: Built with mobile-first principles to ensure the site looks great on any device.
+-   **Animations**: Dynamic animations powered by AOS (Animate on Scroll) for smooth user experience.
+-   **Contact Form**: Integrated with Formspree for seamless message submissions.
+-   **Project Showcases**: Displays key projects with descriptions, technologies used, and links to source code and live demos.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is licensed under a Proprietary License. See the [`LICENSE`](LICENSE) file for more details.

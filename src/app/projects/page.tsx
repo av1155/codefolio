@@ -341,19 +341,19 @@ export default function ProjectsPage() {
     return (
         <>
             <AOSInitializer />
-            <section
+            <div
                 id="projects"
-                className="relative overflow-hidden bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-size-200 animate-gradient-move py-24 sm:py-32"
+                className="relative overflow-hidden bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-size-130 animate-gradient-move py-24 sm:py-32"
             >
                 {/* Background Decorative Shape */}
                 <div className="absolute inset-0">
-                    <div className="absolute inset-x-0 top-0 transform-gpu overflow-hidden blur-3xl opacity-50">
+                    <div className="absolute inset-x-0 top-0 transform-gpu overflow-hidden blur-3xl opacity-70">
                         <div
                             style={{
                                 clipPath:
                                     "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
                             }}
-                            className="relative left-1/2 w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-pink-300 to-indigo-300 opacity-30 sm:w-[72.1875rem]"
+                            className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-pink-500 to-indigo-500 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
                         />
                     </div>
                 </div>
@@ -372,11 +372,11 @@ export default function ProjectsPage() {
                         {["All", "Main", "Other"].map((category) => (
                             <button
                                 key={category}
-                                className={`px-4 py-2 rounded-md text-sm font-medium ${
+                                className={`px-4 py-2 rounded-md text-sm font-medium transition duration-200 transform ${
                                     activeCategory === category
                                         ? "bg-white bg-opacity-80 text-indigo-700"
-                                        : "bg-white bg-opacity-20 text-white"
-                                } hover:bg-opacity-100 transform hover:scale-105 transition duration-200`}
+                                        : "bg-white bg-opacity-20 text-white hover:text-indigo-700"
+                                } hover:bg-opacity-100 hover:scale-105`}
                                 onClick={() =>
                                     setActiveCategory(category as "All" | "Main" | "Other")
                                 }
@@ -388,18 +388,18 @@ export default function ProjectsPage() {
                     </div>
 
                     {/* Projects Grid */}
-                    <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12">
+                    <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12 ">
                         {filteredProjects.map((project) => (
                             <div
                                 key={project.title}
-                                className="group relative bg-white bg-opacity-20 border border-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transform hover:scale-105 transition duration-200 p-4 h-full flex flex-col hover:bg-white hover:bg-opacity-30 cursor-pointer"
+                                className="group relative bg-white bg-opacity-20 border border-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transform hover:scale-105 transition duration-200 p-4 h-full flex flex-col hover:bg-white hover:bg-opacity-30 cursor-pointer "
                                 data-aos="zoom-in"
                                 onClick={() => setSelectedProject(project)}
                             >
                                 {/* Content Wrapper */}
                                 <div className="flex-grow">
                                     {/* Image */}
-                                    <div className="relative w-full h-48 rounded-lg overflow-hidden group-hover:opacity-90 transition duration-200">
+                                    <div className="relative w-full h-48 rounded-lg overflow-hidden group-hover:opacity-90 transition duration-200 ">
                                         <Image
                                             src={project.image}
                                             alt={project.title}
@@ -578,7 +578,7 @@ export default function ProjectsPage() {
                         </Transition>
                     )}
                 </div>
-            </section>
+            </div>
         </>
     );
 }
