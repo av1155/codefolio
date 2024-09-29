@@ -456,6 +456,8 @@ export default function ProjectsPage() {
                             <Dialog
                                 as="div"
                                 className="relative z-50"
+                                aria-labelledby="project-title"
+                                aria-describedby="project-description"
                                 onClose={() => setSelectedProject(null)}
                             >
                                 {/* Background Overlay */}

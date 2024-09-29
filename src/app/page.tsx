@@ -12,7 +12,6 @@ export default function Home() {
             <AOSInitializer />
             <div className="relative overflow-hidden bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600">
                 <div className="absolute inset-0">
-                    {/* Background gradient design */}
                     <div className="absolute inset-x-0 top-0 transform-gpu overflow-hidden blur-3xl opacity-70">
                         <div
                             style={{
@@ -24,23 +23,22 @@ export default function Home() {
                     </div>
                 </div>
 
-                {/* Add extra padding at the top for mobile */}
-                <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 pt-24 pb-16 sm:py-32 lg:py-48 text-center text-white">
+                {/* Adjust top and bottom padding based on screen size */}
+                <div className="relative z-10 mx-auto pt-32 pb-12 sm:pt-40 sm:pb-20 lg:pt-36 lg:pb-20 px-6 text-center text-white">
                     <h1 className="text-5xl font-extrabold tracking-tight sm:text-7xl text-white drop-shadow-lg">
                         Andrea A. Venti Fuentes
                     </h1>
-
                     <p className="mt-6 text-xl sm:text-2xl leading-8 text-gray-200">
                         B.S. in Computer Science & Minor in Mathematics @ University of Miami
                     </p>
-                    <div className="mt-10 flex flex-col items-center sm:flex-row sm:justify-center gap-6">
+
+                    <div className="mt-8 flex flex-col items-center sm:flex-row sm:justify-center gap-6">
                         <Link
                             href="https://github.com/av1155"
                             className="rounded-md bg-white px-5 py-3 text-base font-semibold text-indigo-600 hover:bg-gray-200 transition duration-300 ease-in-out shadow-lg"
                         >
                             Explore GitHub
                         </Link>
-
                         <Link
                             href="/projects"
                             className="inline-flex items-center text-base font-semibold text-white hover:underline hover:text-gray-200 transition duration-300 ease-in-out"
@@ -50,7 +48,8 @@ export default function Home() {
                     </div>
                 </div>
 
-                <div className="relative z-10">
+                {/* Clouds slightly higher up on all screens */}
+                <div className="relative z-10 mt-4 sm:mt-6 lg:mt-8">
                     <Clouds />
                     <SpeedInsights />
                 </div>

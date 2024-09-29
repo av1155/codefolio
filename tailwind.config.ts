@@ -26,12 +26,11 @@ const config: Config = {
             },
             animation: {
                 marquee: "marquee 40s linear infinite",
-                "gradient-move": "gradientMove 8s ease infinite",
             },
             keyframes: {
                 marquee: {
-                    "0%": { transform: "translateX(-50%)" },
-                    "100%": { transform: "translateX(100%)" },
+                    "0%": { transform: "translateX(0%)" },
+                    "100%": { transform: "translateX(-100%)" },
                 },
                 gradientMove: {
                     "0%": { backgroundPosition: "0% 50%" },
