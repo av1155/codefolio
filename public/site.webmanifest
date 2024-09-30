@@ -4,8 +4,6 @@
     "description": "Discover Andrea Venti's journey as a software engineer, highlighting innovative projects and a focus on modern technology solutions.",
     "start_url": "/",
     "display": "standalone",
-    "background_color": "#FFF",
-    "theme_color": "#FFF",
     "icons": [
         {
             "src": "/favicon.jpg",
