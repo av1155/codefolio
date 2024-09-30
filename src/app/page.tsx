@@ -27,7 +27,7 @@ export default function Home() {
                     </div>
                 </div>
 
-                {/* Adjust top and bottom padding based on screen size */}
+                {/* Hero Section */}
                 <div className="relative z-10 mx-auto pt-32 pb-12 sm:pt-40 sm:pb-20 lg:pt-36 lg:pb-20 px-6 text-center text-white">
                     <h1
                         className="text-5xl font-extrabold tracking-tight sm:text-7xl text-white drop-shadow-lg"
@@ -64,7 +64,7 @@ export default function Home() {
                     </div>
                 </div>
 
-                {/* Clouds slightly higher up on all screens */}
+                {/* Clouds Section*/}
                 <div className="relative z-10 mt-0 sm:mt-4 lg:mt-24" data-aos="fade-up">
                     <Clouds />
                     <SpeedInsights />

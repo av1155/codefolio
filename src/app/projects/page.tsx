@@ -54,11 +54,10 @@ export default function ProjectsPage() {
                         {["All", "Main", "Other"].map((category) => (
                             <button
                                 key={category}
-                                className={`px-4 py-2 rounded-md text-sm font-medium transition duration-200 transform ${
-                                    activeCategory === category
+                                className={`px-4 py-2 rounded-md text-sm font-medium transition duration-200 transform ${activeCategory === category
                                         ? "bg-white bg-opacity-80 text-indigo-700"
                                         : "bg-white bg-opacity-20 text-white hover:text-indigo-700"
-                                } hover:bg-opacity-100 hover:scale-105`}
+                                    } hover:bg-opacity-100 hover:scale-105`}
                                 onClick={() =>
                                     setActiveCategory(category as "All" | "Main" | "Other")
                                 }

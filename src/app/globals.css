@@ -26,3 +26,21 @@ body {
         text-wrap: balance;
     }
 }
+
+/* PROJECTS PAGE MODAL ELEMENTS SHIFT FIX ------------------------------ */
+/* Always reserve scrollbar space but hide the scrollbar visually */
+html {
+    overflow-y: scroll;
+}
+
+/* Hide scrollbar for WebKit browsers */
+html::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* Optional: just to avoid any visual scrollbar */
+}
+
+/* Hide scrollbar for Firefox */
+html {
+    scrollbar-width: none; /* Firefox */
+}
+/* -------------------------------------------------------------- */

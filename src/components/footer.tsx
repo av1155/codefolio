@@ -33,34 +33,46 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                     {/* About Section */}
                     <div>
-                        <h4 className="text-xl font-bold mb-4">About Me</h4>
-                        <p className="text-gray-400">
+                        <h4 className="text-xl font-semibold mb-4">About Me</h4>
+                        <p className="text-gray-300 leading-relaxed">
                             Software Engineer & Innovator passionate about building modern,
-                            efficient, and scalable software.
+                            efficient, and scalable software solutions.
                         </p>
                     </div>
 
                     {/* Navigation Section */}
                     <div>
-                        <h4 className="text-xl font-bold mb-4">Quick Links</h4>
-                        <ul className="space-y-2">
+                        <h4 className="text-xl font-semibold mb-4">Quick Links</h4>
+                        <ul className="space-y-3">
                             <li>
-                                <Link href="/about" className="text-gray-400 hover:text-white">
+                                <Link
+                                    href="/about"
+                                    className="text-gray-400 hover:text-white transition-colors duration-200"
+                                >
                                     About Me
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/projects" className="text-gray-400 hover:text-white">
+                                <Link
+                                    href="/projects"
+                                    className="text-gray-400 hover:text-white transition-colors duration-200"
+                                >
                                     Projects
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/contact" className="text-gray-400 hover:text-white">
+                                <Link
+                                    href="/contact"
+                                    className="text-gray-400 hover:text-white transition-colors duration-200"
+                                >
                                     Contact
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/resume" className="text-gray-400 hover:text-white">
+                                <Link
+                                    href="/resume"
+                                    className="text-gray-400 hover:text-white transition-colors duration-200"
+                                >
                                     Resume
                                 </Link>
                             </li>
@@ -69,17 +81,18 @@ export default function Footer() {
 
                     {/* Social Media Section */}
                     <div>
-                        <h4 className="text-xl font-bold mb-4">Connect with Me</h4>
-                        <ul className="flex space-x-4">
+                        <h4 className="text-xl font-semibold mb-4">Connect with Me</h4>
+                        <ul className="flex space-x-6">
                             <li>
                                 <a
                                     href="https://github.com/av1155"
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    aria-label="GitHub"
                                 >
                                     <FontAwesomeIcon
                                         icon={faGithub}
-                                        className="h-6 w-6 text-gray-400 hover:text-white"
+                                        className="h-8 w-8 text-gray-400 hover:text-white transition-colors duration-200"
                                     />
                                 </a>
                             </li>
@@ -88,10 +101,11 @@ export default function Footer() {
                                     href="https://www.linkedin.com/in/andrea-venti/"
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    aria-label="LinkedIn"
                                 >
                                     <FontAwesomeIcon
                                         icon={faLinkedin}
-                                        className="h-6 w-6 text-gray-400 hover:text-white"
+                                        className="h-8 w-8 text-gray-400 hover:text-white transition-colors duration-200"
                                     />
                                 </a>
                             </li>
@@ -99,7 +113,7 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className="mt-8 text-center text-gray-400">
+                <div className="mt-12 text-center border-t border-gray-700 pt-8 text-gray-400">
                     <p>© {year} Andrea A. Venti Fuentes. All rights reserved.</p>
                 </div>
             </div>
