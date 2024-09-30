@@ -1,6 +1,6 @@
 # Portfolio Website
 
-![Vercel Deploy](https://deploy-badge.vercel.app/vercel/codefolio-omega?style=for-the-badge)
+[![Vercel Deploy](https://deploy-badge.vercel.app/vercel/codefolio-omega?style=for-the-badge)](https://www.andrea-venti.com/)
 
 This repository contains the source code for my personal portfolio website, hosted at [www.andrea-venti.com](https://www.andrea-venti.com). The site showcases my projects, skills, and experience as a software engineer.
 
