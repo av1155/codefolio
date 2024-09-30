@@ -89,10 +89,6 @@ export const viewport: Viewport = {
     width: "device-width",
     initialScale: 1,
     maximumScale: 1,
-    themeColor: [
-        { media: "(prefers-color-scheme: light)", color: "#9150D0" },
-        { media: "(prefers-color-scheme: dark)", color: "#9150D0" },
-    ],
 };
 
 export default function RootLayout({
@@ -109,14 +105,14 @@ export default function RootLayout({
                 {/* Additional icons */}
                 <link rel="apple-touch-icon" href="/favicon.jpg" />
             </head>
-            <body className="font-sans antialiased bg-white text-black dark:bg-gray-900 dark:text-white">
+            <body className="font-sans antialiased bg-gradient-to-r from-indigo-700 via-purple-700 to-pink-700 bg-size-130">
                 {/* Accessibility Skip Link */}
                 <a href="#main-content" className="sr-only focus:not-sr-only">
                     Skip to content
                 </a>
                 <Header />
-                <main id="main-content">{children}</main>
                 <Analytics />
+                <main id="main-content">{children}</main>
                 <Footer />
             </body>
         </html>
