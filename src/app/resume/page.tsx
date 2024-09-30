@@ -2,6 +2,7 @@
 
 import React from "react";
 import AOSInitializer from "@/components/AOSInitializer";
+import { ArrowDownTrayIcon, ShareIcon } from "@heroicons/react/24/outline";
 
 export default function ResumePage() {
     return (
@@ -30,21 +31,42 @@ export default function ResumePage() {
                         Resume
                     </h1>
 
-                    <div className="mt-12 flex justify-center" data-aos="zoom-in">
+                    <div className="mt-6 flex justify-center space-x-4" data-aos="zoom-in">
                         <a
                             href="/resume.pdf"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-block rounded-md bg-white bg-opacity-80 px-6 py-3 text-sm font-semibold text-indigo-700 hover:bg-opacity-100 transform hover:scale-105 transition duration-300"
+                            className="rounded-md bg-white bg-opacity-80 px-6 py-3 text-sm font-semibold text-indigo-700 hover:bg-opacity-100 transform hover:scale-105 transition duration-300 flex items-center"
                         >
+                            <ArrowDownTrayIcon className="h-5 w-5 mr-2" />
                             Download
                         </a>
+                        <button
+                            className="rounded-md bg-white bg-opacity-80 px-6 py-3 text-sm font-semibold text-indigo-700 hover:bg-opacity-100 transform hover:scale-105 transition duration-300 flex items-center"
+                            onClick={() => {
+                                if (navigator.share) {
+                                    navigator
+                                        .share({
+                                            title: "Andrea Venti Fuentes - Resume",
+                                            text: "Check out Andrea Venti Fuentes' professional resume. View or download it here.",
+                                            url: window.location.href,
+                                        })
+                                        .then(() => console.log("Shared successfully!"))
+                                        .catch((error) => console.error("Error sharing:", error));
+                                } else {
+                                    alert("Your browser does not support the Share feature.");
+                                }
+                            }}
+                        >
+                            <ShareIcon className="h-5 w-5 mr-2" />
+                            Share
+                        </button>
                     </div>
 
-                    <div className="mt-8" data-aos="fade-up">
+                    <div className="mt-2" data-aos="fade-up">
                         <div className="transform scale-95 sm:scale-90 transition-transform duration-300">
                             <iframe
-                                src="/resume.pdf"
+                                src="/resume.pdf#view=FitH"
                                 className="w-full h-screen rounded-lg border-2 border-white"
                                 title="Resume PDF"
                             ></iframe>

@@ -1,11 +1,13 @@
 "use client";
 
 import { useForm, ValidationError } from "@formspree/react";
-import { EnvelopeIcon } from "@heroicons/react/24/outline";
 import AOSInitializer from "@/components/AOSInitializer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope, faUser, faComment } from "@fortawesome/free-solid-svg-icons";
 
 export default function ContactPage() {
-    const [state, handleSubmit] = useForm("xpwavdjb");
+    const formKey = process.env.NEXT_PUBLIC_FORMSPREE_KEY || "";
+    const [state, handleSubmit] = useForm(formKey);
 
     return (
         <>
@@ -39,9 +41,13 @@ export default function ContactPage() {
                     {/* Contact Form */}
                     <div className="mt-12 mx-auto max-w-xl" data-aos="zoom-in">
                         {state.succeeded ? (
-                            <p className="text-center text-green-500">
-                                Thanks for your message! I will get back to you soon.
-                            </p>
+                            <div className="text-center text-green-600 bg-green-50 p-4 rounded-md">
+                                <h2 className="text-2xl font-semibold">Thank You!</h2>
+                                <p className="mt-2">
+                                    Your message has been successfully sent. I&apos;ll be in touch
+                                    soon.
+                                </p>
+                            </div>
                         ) : (
                             <form onSubmit={handleSubmit} className="grid gap-y-6">
                                 <input
@@ -51,7 +57,10 @@ export default function ContactPage() {
                                 />
 
                                 <div className="relative">
-                                    <EnvelopeIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-white" />
+                                    <FontAwesomeIcon
+                                        icon={faEnvelope}
+                                        className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-white"
+                                    />
                                     <label htmlFor="email-field" className="sr-only">
                                         Email address
                                     </label>
@@ -71,7 +80,29 @@ export default function ContactPage() {
                                     />
                                 </div>
 
-                                <div>
+                                <div className="relative">
+                                    <FontAwesomeIcon
+                                        icon={faUser}
+                                        className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-white"
+                                    />
+                                    <label htmlFor="name-field" className="sr-only">
+                                        Your name
+                                    </label>
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        id="name-field"
+                                        placeholder="Your name"
+                                        required
+                                        className="block w-full pl-10 rounded-md border border-white bg-white bg-opacity-20 px-4 py-3 text-white placeholder-white focus:border-indigo-300 focus:ring-indigo-300"
+                                    />
+                                </div>
+
+                                <div className="relative">
+                                    <FontAwesomeIcon
+                                        icon={faComment}
+                                        className="absolute left-3 top-5 h-5 w-5 text-white"
+                                    />
                                     <label htmlFor="message-field" className="sr-only">
                                         Message
                                     </label>
@@ -81,7 +112,7 @@ export default function ContactPage() {
                                         rows={8}
                                         required
                                         placeholder="Your message"
-                                        className="block w-full rounded-md border border-white bg-white bg-opacity-20 px-4 py-3 text-white placeholder-white focus:border-indigo-300 focus:ring-indigo-300"
+                                        className="block w-full pt-5 pl-10 rounded-md border border-white bg-white bg-opacity-20 px-4 py-3 text-white placeholder-white focus:border-indigo-300 focus:ring-indigo-300"
                                     ></textarea>
                                     <ValidationError
                                         prefix="Message"

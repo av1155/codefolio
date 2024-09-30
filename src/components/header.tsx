@@ -43,9 +43,9 @@ export default function Header() {
         >
             <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
                 {/* Logo Section */}
-                <Link href="/" className="flex items-center">
+                <Link href="/" className="flex items-center hover:scale-105 transition-transform">
                     <span className="sr-only">Andrea A. Venti Fuentes</span>
-                    <div className="relative h-10 w-10">
+                    <div className="relative h-10 w-10 overflow-hidden hover:ring-2 hover:ring-teal-400 transition-all">
                         <Image
                             alt="Portfolio Logo"
                             src="/favicon.jpg"
@@ -55,7 +55,9 @@ export default function Header() {
                             priority
                         />
                     </div>
-                    <span className="ml-3 text-xl font-bold text-gray-900">Andrea Venti</span>
+                    <span className="ml-3 text-xl font-bold transition-colors duration-300 text-gray-900">
+                        Andrea Venti
+                    </span>
                 </Link>
 
                 {/* Mobile Menu Button */}
@@ -130,13 +132,13 @@ export default function Header() {
                                             onClick={() => setMobileMenuOpen(false)}
                                         >
                                             <span className="sr-only">Andrea A. Venti Fuentes</span>
-                                            <div className="relative h-10 w-10">
+                                            <div className="relative h-10 w-10 overflow-hidden">
                                                 <Image
                                                     alt="Portfolio Logo"
                                                     src="/favicon.jpg"
                                                     fill
                                                     sizes="40px"
-                                                    className="rounded-full object-cover"
+                                                    className="object-cover"
                                                     priority
                                                 />
                                             </div>
