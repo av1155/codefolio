@@ -363,7 +363,8 @@ export default function ProjectsPage() {
                     <div className="text-center text-white" data-aos="fade-down">
                         <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">Projects</h2>
                         <p className="mt-6 text-lg leading-8">
-                            A collection of some of my favorite and most challenging projects.
+                            A collection of some of Andrea&apos;s favorite and most challenging
+                            projects.
                         </p>
                     </div>
 

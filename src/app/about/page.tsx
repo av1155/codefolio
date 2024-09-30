@@ -1,5 +1,3 @@
-"use client";
-
 import { AcademicCapIcon, CodeBracketIcon, LightBulbIcon } from "@heroicons/react/24/outline";
 import AOSInitializer from "@/components/AOSInitializer";
 
@@ -30,13 +28,14 @@ export default function AboutPage() {
                         Hi, I&apos;m Andrea Venti
                     </h1>
                     <p className="mt-6 text-lg leading-8" data-aos="fade-up">
-                        A passionate <span className="font-bold">Software Engineer</span> with a
-                        keen interest in crafting efficient and elegant solutions to complex
-                        problems. I’m currently pursuing my{" "}
-                        <span className="font-bold">B.S. in Computer Science</span>
+                        Andrea Venti is a passionate{" "}
+                        <span className="font-bold">Software Engineer</span> who thrives on crafting
+                        efficient and elegant solutions to complex problems. Currently pursuing a{" "}
+                        <span className="font-bold">B.S. in Computer Science </span>
                         with a minor in Mathematics at the{" "}
-                        <span className="font-bold">University of Miami</span>, and I love turning
-                        ideas into reality through code.
+                        <span className="font-bold">University of Miami</span>, Andrea turns ideas
+                        into reality through code, with a deep love for innovation and
+                        problem-solving.
                     </p>
 
                     {/* Cards Section */}
@@ -46,16 +45,15 @@ export default function AboutPage() {
                             className="flex flex-col items-center text-center p-6 bg-white bg-opacity-20 rounded-lg shadow-md"
                             data-aos="zoom-in"
                         >
-                            <AcademicCapIcon className="h-12 w-12 text-white" />
+                            <AcademicCapIcon className="h-12 w-12 text-white transform hover:scale-125 transition duration-300" />
                             <h3 className="mt-4 text-xl font-semibold text-white">
                                 Academic Excellence
                             </h3>
                             <p className="mt-4 text-base leading-7">
-                                Proud recipient of numerous honors like the{" "}
+                                A consistent achiever, Andrea has earned distinctions such as{" "}
                                 <span className="font-bold">Dean’s List</span> and{" "}
-                                <span className="font-bold">Provost Honor Roll</span>. My hard work
-                                also led me to secure <span className="font-bold">2nd place</span>{" "}
-                                in the prestigious{" "}
+                                <span className="font-bold">Provost Honor Roll</span>, and secured{" "}
+                                <span className="font-bold">2nd place</span> in the prestigious{" "}
                                 <span className="font-bold">UHack Hackathon</span>.
                             </p>
                         </div>
@@ -65,34 +63,41 @@ export default function AboutPage() {
                             className="flex flex-col items-center text-center p-6 bg-white bg-opacity-20 rounded-lg shadow-md"
                             data-aos="zoom-in"
                         >
-                            <CodeBracketIcon className="h-12 w-12 text-white" />
+                            <CodeBracketIcon className="h-12 w-12 text-white transform hover:scale-125 transition duration-300" />
                             <h3 className="mt-4 text-xl font-semibold text-white">Tech Stack</h3>
                             <p className="mt-4 text-base leading-7">
-                                Skilled in{" "}
-                                <span className="font-bold">Python, Java, C/C++, JavaScript</span>,
-                                and more. Experienced with tools like{" "}
+                                Proficient in languages like{" "}
+                                <span className="font-bold">Python</span>,{" "}
+                                <span className="font-bold">Java</span>,{" "}
+                                <span className="font-bold">C/C++</span>,{" "}
+                                <span className="font-bold">TypeScript</span>, among others. Andrea
+                                is skilled in tools such as{" "}
                                 <span className="font-bold">Docker</span>,{" "}
-                                <span className="font-bold">Git</span>, and frameworks like{" "}
-                                <span className="font-bold">Flask</span> and{" "}
-                                <span className="font-bold">TensorFlow</span>. My versatile skills
-                                enable me to work across the full stack, creating efficient software
-                                solutions.
+                                <span className="font-bold">Git</span>,{" "}
+                                <span className="font-bold">React</span>,{" "}
+                                <span className="font-bold">Next.js</span>, and{" "}
+                                <span className="font-bold">Flask</span>. With experience in cloud
+                                platforms like <span className="font-bold">Vercel</span> and{" "}
+                                <span className="font-bold">Heroku</span>, Andrea delivers
+                                high-quality, full-stack software solutions.
                             </p>
                         </div>
 
-                        {/* My Philosophy */}
+                        {/* Philosophy */}
                         <div
                             className="flex flex-col items-center text-center p-6 bg-white bg-opacity-20 rounded-lg shadow-md"
                             data-aos="zoom-in"
                         >
-                            <LightBulbIcon className="h-12 w-12 text-white" />
-                            <h3 className="mt-4 text-xl font-semibold text-white">My Philosophy</h3>
+                            <LightBulbIcon className="h-12 w-12 text-white transform hover:scale-125 transition duration-300" />
+                            <h3 className="mt-4 text-xl font-semibold text-white">Philosophy</h3>
                             <p className="mt-4 text-base leading-7">
-                                I believe in constant learning and innovation. Whether I’m building
-                                web apps, delving into AI projects, or optimizing code, I aim to
-                                create software that is <span className="font-bold">reliable</span>,{" "}
+                                Believing in the power of continuous learning and innovation, Andrea
+                                strives to create software that is{" "}
+                                <span className="font-bold">reliable</span>,{" "}
                                 <span className="font-bold">scalable</span>, and{" "}
-                                <span className="font-bold">user-friendly</span>.
+                                <span className="font-bold">user-friendly</span>. Whether building
+                                web applications or exploring AI, each project is approached with a
+                                commitment to quality and efficiency.
                             </p>
                         </div>
                     </div>
@@ -100,11 +105,11 @@ export default function AboutPage() {
                     {/* Call to Action */}
                     <div className="mt-16 text-center" data-aos="fade-up">
                         <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-                            Let&apos;s Collaborate!
+                            Ready to Collaborate!
                         </h2>
                         <p className="mt-4 text-lg leading-8">
-                            I&apos;m always excited to connect with like-minded individuals and
-                            explore new opportunities. Let&apos;s bring your ideas to life!
+                            Always eager to connect with like-minded professionals and explore new
+                            opportunities. Let’s work together to bring innovative ideas to life!
                         </p>
                         <a
                             href="/contact"
