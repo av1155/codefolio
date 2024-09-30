@@ -5,28 +5,16 @@ import AOSInitializer from "@/components/AOSInitializer";
 
 const technologies = [
     {
-        name: "JavaScript/TypeScript",
-        src: "/technologies/typescript.png",
-        width: 644,
-        height: 388,
+        name: "C",
+        src: "/technologies/c.png",
+        width: 404,
+        height: 455,
     },
     {
-        name: "React",
-        src: "/technologies/react.png",
-        width: 2048,
-        height: 1822,
-    },
-    {
-        name: "NextJS",
-        src: "/technologies/nextjs.png",
-        width: 2048,
-        height: 1234,
-    },
-    {
-        name: "Bootstrap",
-        src: "/technologies/bootstrap.png",
+        name: "Java",
+        src: "/technologies/java.png",
         width: 512,
-        height: 408,
+        height: 512,
     },
     {
         name: "Python",
@@ -35,10 +23,52 @@ const technologies = [
         height: 388,
     },
     {
+        name: "Lua",
+        src: "/technologies/lua.png",
+        width: 256,
+        height: 256,
+    },
+    {
+        name: "Bash",
+        src: "/technologies/bash.png",
+        width: 1080,
+        height: 524,
+    },
+    {
+        name: "JavaScript/TypeScript",
+        src: "/technologies/typescript.png",
+        width: 920,
+        height: 920,
+    },
+    {
+        name: "React",
+        src: "/technologies/react.png",
+        width: 1370,
+        height: 552,
+    },
+    {
+        name: "NextJS",
+        src: "/technologies/nextjs.png",
+        width: 2168,
+        height: 1354,
+    },
+    {
         name: "Flask",
         src: "/technologies/flask.png",
-        width: 72,
-        height: 72,
+        width: 512,
+        height: 376,
+    },
+    {
+        name: "Tailwind",
+        src: "/technologies/tailwind.png",
+        width: 592,
+        height: 389,
+    },
+    {
+        name: "Bootstrap",
+        src: "/technologies/bootstrap.png",
+        width: 481,
+        height: 408,
     },
     {
         name: "PostgreSQL",
@@ -53,22 +83,10 @@ const technologies = [
         height: 377,
     },
     {
-        name: "Java",
-        src: "/technologies/java.png",
-        width: 151,
-        height: 151,
-    },
-    {
-        name: "C",
-        src: "/technologies/c.png",
-        width: 96,
-        height: 96,
-    },
-    {
         name: "Git",
         src: "/technologies/git.png",
-        width: 1024,
-        height: 428,
+        width: 809,
+        height: 408,
     },
     {
         name: "Vercel",
@@ -103,7 +121,7 @@ export default function Clouds() {
                         <div
                             className="
                                 flex 
-                                space-x-6 sm:space-x-8 md:space-x-12 lg:space-x-20 
+                                space-x-6 sm:space-x-10 md:space-x-12 lg:space-x-20 
                                 animate-marquee-sm 
                                 sm:animate-marquee-md 
                                 lg:animate-marquee-lg
@@ -117,7 +135,7 @@ export default function Clouds() {
                                         src={tech.src}
                                         width={tech.width}
                                         height={tech.height}
-                                        className="h-9 sm:h-12 md:h-14 w-auto object-contain"
+                                        className="h-10 sm:h-12 md:h-14 w-auto object-contain"
                                         draggable={false}
                                         loading="eager"
                                         priority={true}

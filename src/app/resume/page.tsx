@@ -27,11 +27,8 @@ export default function ResumePage() {
                         className="text-4xl font-bold tracking-tight sm:text-5xl"
                         data-aos="fade-down"
                     >
-                        My Resume
+                        Resume
                     </h1>
-                    <p className="mt-6 text-lg leading-8" data-aos="fade-up">
-                        Feel free to download or view my resume below.
-                    </p>
 
                     <div className="mt-12 flex justify-center" data-aos="zoom-in">
                         <a
@@ -40,11 +37,11 @@ export default function ResumePage() {
                             rel="noopener noreferrer"
                             className="inline-block rounded-md bg-white bg-opacity-80 px-6 py-3 text-sm font-semibold text-indigo-700 hover:bg-opacity-100 transform hover:scale-105 transition duration-300"
                         >
-                            Download Resume
+                            Download
                         </a>
                     </div>
 
-                    <div className="mt-12" data-aos="fade-up">
+                    <div className="mt-8" data-aos="fade-up">
                         <div className="transform scale-95 sm:scale-90 transition-transform duration-300">
                             <iframe
                                 src="/resume.pdf"

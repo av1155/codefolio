@@ -33,7 +33,7 @@ export default function ContactPage() {
                         Contact Me
                     </h1>
                     <p className="mt-6 text-lg leading-8" data-aos="fade-up">
-                        Looking for a skilled programmer to boost your projects? I&apos;m your guy!
+                        Looking for a skilled programmer to boost your projects?
                     </p>
 
                     {/* Contact Form */}
