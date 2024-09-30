@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from "next";
-import "./globals.css";
+import { Analytics } from "@vercel/analytics/react";
+import "@/app/globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-import { Analytics } from "@vercel/analytics/react";
 import { inter } from "@/app/fonts/fonts";
 // import { lusitana } from "@/app/fonts/fonts";
 
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
         url: "https://www.andrea-venti.com",
         title: "Andrea Venti - Software Engineer Portfolio",
         description:
-            "Discover Andrea Venti's journey as a software engineering innovator with academic achievements and cutting-edge projects.",
+            "Discover Andrea Venti's journey as a software engineer, highlighting innovative projects and a focus on modern technology solutions.",
         siteName: "Andrea Venti Portfolio",
         images: [
             {
@@ -69,9 +69,9 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         site: "@Andru_VF",
         creator: "@Andru_VF",
-        title: "Andrea Venti - Software Engineer Portfolio",
+        title: "Andrea Venti - Software Engineer",
         description:
-            "Showcasing Andrea Venti's work in software development, engineering, and innovative projects.",
+            "Discover Andrea Venti's journey as a software engineer, highlighting innovative projects and a focus on modern technology solutions.",
         images: [
             {
                 url: "/favicon.jpg",
