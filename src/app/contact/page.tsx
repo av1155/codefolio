@@ -3,7 +3,7 @@
 import { useForm, ValidationError } from "@formspree/react";
 import AOSInitializer from "@/components/AOSInitializer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope, faUser, faComment } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faUser } from "@fortawesome/free-solid-svg-icons";
 
 export default function ContactPage() {
     const formKey = process.env.NEXT_PUBLIC_FORMSPREE_KEY || "";
@@ -56,6 +56,7 @@ export default function ContactPage() {
                                     value="Contact request from personal website"
                                 />
 
+                                {/* Email */}
                                 <div className="relative">
                                     <FontAwesomeIcon
                                         icon={faEnvelope}
@@ -72,14 +73,17 @@ export default function ContactPage() {
                                         required
                                         className="block w-full pl-10 rounded-md border border-white bg-white bg-opacity-20 px-4 py-3 text-white placeholder-white focus:border-indigo-300 focus:ring-indigo-300"
                                     />
-                                    <ValidationError
-                                        prefix="Email"
-                                        field="email"
-                                        errors={state.errors}
-                                        className="text-red-500 text-sm mt-1"
-                                    />
+                                    <div className="absolute left-0 -bottom-5 w-full">
+                                        <ValidationError
+                                            prefix="Email"
+                                            field="email"
+                                            errors={state.errors}
+                                            className="text-red-500 text-sm mt-1"
+                                        />
+                                    </div>
                                 </div>
 
+                                {/* Name */}
                                 <div className="relative">
                                     <FontAwesomeIcon
                                         icon={faUser}
@@ -98,11 +102,8 @@ export default function ContactPage() {
                                     />
                                 </div>
 
+                                {/* Message */}
                                 <div className="relative">
-                                    <FontAwesomeIcon
-                                        icon={faComment}
-                                        className="absolute left-3 top-5 h-5 w-5 text-white"
-                                    />
                                     <label htmlFor="message-field" className="sr-only">
                                         Message
                                     </label>
@@ -112,7 +113,7 @@ export default function ContactPage() {
                                         rows={8}
                                         required
                                         placeholder="Your message"
-                                        className="block w-full pt-5 pl-10 rounded-md border border-white bg-white bg-opacity-20 px-4 py-3 text-white placeholder-white focus:border-indigo-300 focus:ring-indigo-300"
+                                        className="block w-full rounded-md border border-white bg-white bg-opacity-20 px-4 py-3 text-white placeholder-white focus:border-indigo-300 focus:ring-indigo-300"
                                     ></textarea>
                                     <ValidationError
                                         prefix="Message"
@@ -122,6 +123,7 @@ export default function ContactPage() {
                                     />
                                 </div>
 
+                                {/* Send Button */}
                                 <div>
                                     <button
                                         type="submit"

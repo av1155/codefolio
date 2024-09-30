@@ -1,10 +1,10 @@
+// File: src/components/header.tsx
 "use client";
 
-import { Fragment, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Dialog, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 interface NavItem {
@@ -29,7 +29,14 @@ export default function Header() {
         const handleScroll = () => {
             setScrolled(window.scrollY > 50);
         };
+
+        // Add scroll event listener
         window.addEventListener("scroll", handleScroll);
+
+        // Invoke handleScroll once to set the initial state based on current scroll position
+        handleScroll();
+
+        // Clean up the event listener on unmount
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
@@ -37,9 +44,8 @@ export default function Header() {
 
     return (
         <header
-            className={`fixed w-full top-0 z-50 transition-all duration-300 ${
-                scrolled ? "bg-white shadow-md" : "bg-transparent"
-            }`}
+            className={`fixed w-full top-0 z-50 transition-all duration-300 ${scrolled ? "bg-white shadow-md" : "bg-transparent"
+                }`}
         >
             <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
                 {/* Logo Section */}
@@ -63,24 +69,33 @@ export default function Header() {
                 {/* Mobile Menu Button */}
                 <button
                     type="button"
-                    onClick={() => setMobileMenuOpen(true)}
-                    className="lg:hidden inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-                    aria-label="Open main menu"
+                    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                    className={`lg:hidden inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 transition-transform duration-300 ${mobileMenuOpen ? "rotate-45" : "rotate-0"
+                        }`}
+                    aria-label="Toggle main menu"
                 >
-                    <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+                    <div className="relative w-6 h-6">
+                        <Bars3Icon
+                            className={`absolute top-0 left-0 h-6 w-6 transition-opacity duration-300 ease-in-out ${mobileMenuOpen ? "opacity-0" : "opacity-100"
+                                }`}
+                        />
+                        <XMarkIcon
+                            className={`absolute top-0 left-0 h-6 w-6 transition-opacity duration-300 ease-in-out ${mobileMenuOpen ? "opacity-100" : "opacity-0"
+                                }`}
+                        />
+                    </div>
                 </button>
 
-                {/* Desktop Navigation with Scale-up Hover */}
+                {/* Desktop Navigation */}
                 <div className="hidden lg:flex lg:gap-x-8">
                     {navigation.map(({ name, href }) => (
                         <Link
                             key={name}
                             href={href}
-                            className={`text-lg font-semibold leading-6 transition-transform duration-300 ${
-                                isActive(href)
+                            className={`text-lg font-semibold leading-6 transition-transform duration-300 ${isActive(href)
                                     ? "text-indigo-600"
                                     : "text-gray-900 hover:text-indigo-600"
-                            } transform hover:scale-105`}
+                                } transform hover:scale-105`}
                         >
                             {name}
                         </Link>
@@ -89,96 +104,68 @@ export default function Header() {
             </nav>
 
             {/* Mobile Menu */}
-            <Transition.Root show={mobileMenuOpen} as={Fragment}>
-                <Dialog
-                    as="div"
-                    open={mobileMenuOpen}
-                    onClose={setMobileMenuOpen}
-                    className="lg:hidden"
-                >
-                    {/* Background Overlay */}
-                    <Transition.Child
-                        as={Fragment}
-                        enter="ease-out duration-300"
-                        enterFrom="opacity-0"
-                        enterTo="opacity-100"
-                        leave="ease-in duration-200"
-                        leaveFrom="opacity-100"
-                        leaveTo="opacity-0"
+            <div
+                className={`fixed top-0 right-0 z-50 w-80 h-70 bg-white rounded-sm shadow-lg px-5 pr-6 py-4 transition-transform duration-300 transform ${mobileMenuOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
+                    }`}
+                style={{
+                    transition: "transform 300ms ease-in-out, opacity 300ms ease-in-out",
+                }}
+            >
+                <div className="flex items-center justify-between pl-2">
+                    <Link
+                        href="/"
+                        className="flex items-center"
+                        onClick={() => setMobileMenuOpen(false)}
                     >
-                        <div
-                            className="fixed inset-0 z-40 bg-black bg-opacity-25 backdrop-blur-sm"
-                            aria-hidden="true"
-                        />
-                    </Transition.Child>
-
-                    {/* Mobile Menu Panel */}
-                    <div className="fixed inset-0 z-50 overflow-y-auto">
-                        <div className="flex min-h-full items-start justify-end">
-                            <Transition.Child
-                                as={Fragment}
-                                enter="transform transition ease-in-out duration-300"
-                                enterFrom="translate-x-full"
-                                enterTo="translate-x-0"
-                                leave="transform transition ease-in-out duration-300"
-                                leaveFrom="translate-x-0"
-                                leaveTo="translate-x-full"
-                            >
-                                <Dialog.Panel className="relative w-full max-w-sm bg-white px-6 py-6 shadow-lg sm:ring-1 sm:ring-gray-900/10">
-                                    <div className="flex items-center justify-between">
-                                        <Link
-                                            href="/"
-                                            className="flex items-center"
-                                            onClick={() => setMobileMenuOpen(false)}
-                                        >
-                                            <span className="sr-only">Andrea A. Venti Fuentes</span>
-                                            <div className="relative h-10 w-10 overflow-hidden">
-                                                <Image
-                                                    alt="Portfolio Logo"
-                                                    src="/favicon.jpg"
-                                                    fill
-                                                    sizes="40px"
-                                                    className="object-cover"
-                                                    priority
-                                                />
-                                            </div>
-                                            <span className="ml-3 text-xl font-bold text-gray-900">
-                                                Andrea Venti
-                                            </span>
-                                        </Link>
-                                        <button
-                                            type="button"
-                                            onClick={() => setMobileMenuOpen(false)}
-                                            className="rounded-md p-2.5 text-gray-700"
-                                            aria-label="Close menu"
-                                        >
-                                            <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-                                        </button>
-                                    </div>
-
-                                    {/* Mobile Navigation */}
-                                    <nav className="mt-6 space-y-2">
-                                        {navigation.map(({ name, href }) => (
-                                            <Link
-                                                key={name}
-                                                href={href}
-                                                className={`block rounded-lg px-3 py-2 text-lg font-semibold leading-7 ${
-                                                    isActive(href)
-                                                        ? "text-indigo-600"
-                                                        : "text-gray-900 hover:bg-gray-50"
-                                                }`}
-                                                onClick={() => setMobileMenuOpen(false)}
-                                            >
-                                                {name}
-                                            </Link>
-                                        ))}
-                                    </nav>
-                                </Dialog.Panel>
-                            </Transition.Child>
+                        <span className="sr-only">Andrea A. Venti Fuentes</span>
+                        <div className="relative h-10 w-10 overflow-hidden">
+                            <Image
+                                alt="Portfolio Logo"
+                                src="/favicon.jpg"
+                                fill
+                                sizes="40px"
+                                className="object-cover"
+                                priority
+                            />
                         </div>
-                    </div>
-                </Dialog>
-            </Transition.Root>
+                        <span className="ml-3 text-xl font-bold text-gray-900">Andrea Venti</span>
+                    </Link>
+                    <button
+                        type="button"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="rounded-md p-2.5 text-gray-700"
+                        aria-label="Close menu"
+                    >
+                        <XMarkIcon className="h-6 w-6 transition-opacity duration-300 ease-in-out" />
+                    </button>
+                </div>
+
+                {/* Mobile Navigation */}
+                <nav className="mt-6 space-y-2">
+                    {navigation.map(({ name, href }) => (
+                        <Link
+                            key={name}
+                            href={href}
+                            className={`block rounded-lg px-3 py-2 text-lg font-semibold leading-7 ${isActive(href)
+                                    ? "text-indigo-600"
+                                    : "text-gray-900 hover:bg-gray-50"
+                                }`}
+                            onClick={() => setMobileMenuOpen(false)}
+                        >
+                            {name}
+                        </Link>
+                    ))}
+                </nav>
+            </div>
+
+            {/* Background Blur Overlay */}
+            <div
+                className={`fixed inset-0 z-40 backdrop-blur-sm bg-black/25 transition-opacity duration-300 ${mobileMenuOpen
+                        ? "opacity-100 pointer-events-auto"
+                        : "opacity-0 pointer-events-none"
+                    }`}
+                onClick={() => setMobileMenuOpen(false)}
+            />
         </header>
     );
 }
