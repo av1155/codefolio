@@ -44,3 +44,12 @@ html {
     scrollbar-width: none; /* Firefox */
 }
 /* -------------------------------------------------------------- */
+
+/* Prevent hover effects on touch devices */
+@media (hover: none) and (pointer: coarse) {
+    .hover\:scale-105:hover,
+    .hover\:ring-2:hover {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+}

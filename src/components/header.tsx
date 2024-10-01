@@ -1,4 +1,3 @@
-// File: src/components/header.tsx
 "use client";
 
 import { useState, useEffect } from "react";
@@ -44,12 +43,16 @@ export default function Header() {
 
     return (
         <header
-            className={`fixed w-full top-0 z-50 transition-all duration-300 ${scrolled ? "bg-white shadow-md" : "bg-transparent"
-                }`}
+            className={`fixed w-full top-0 z-50 transition-all duration-300 ${
+                scrolled ? "bg-white shadow-md" : "bg-transparent"
+            }`}
         >
             <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
                 {/* Logo Section */}
-                <Link href="/" className="flex items-center hover:scale-105 transition-transform">
+                <Link
+                    href="/"
+                    className="flex items-center hover:scale-105 transition-transform duration-300"
+                >
                     <span className="sr-only">Andrea A. Venti Fuentes</span>
                     <div className="relative h-10 w-10 overflow-hidden hover:ring-2 hover:ring-teal-400 transition-all">
                         <Image
@@ -70,18 +73,21 @@ export default function Header() {
                 <button
                     type="button"
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                    className={`lg:hidden inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 transition-transform duration-300 ${mobileMenuOpen ? "rotate-45" : "rotate-0"
-                        }`}
+                    className={`lg:hidden inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 transition-transform duration-300 ${
+                        mobileMenuOpen ? "rotate-45" : "rotate-0"
+                    }`}
                     aria-label="Toggle main menu"
                 >
                     <div className="relative w-6 h-6">
                         <Bars3Icon
-                            className={`absolute top-0 left-0 h-6 w-6 transition-opacity duration-300 ease-in-out ${mobileMenuOpen ? "opacity-0" : "opacity-100"
-                                }`}
+                            className={`absolute top-0 left-0 h-6 w-6 transition-opacity duration-300 ease-in-out ${
+                                mobileMenuOpen ? "opacity-0" : "opacity-100"
+                            }`}
                         />
                         <XMarkIcon
-                            className={`absolute top-0 left-0 h-6 w-6 transition-opacity duration-300 ease-in-out ${mobileMenuOpen ? "opacity-100" : "opacity-0"
-                                }`}
+                            className={`absolute top-0 left-0 h-6 w-6 transition-opacity duration-300 ease-in-out ${
+                                mobileMenuOpen ? "opacity-100" : "opacity-0"
+                            }`}
                         />
                     </div>
                 </button>
@@ -92,10 +98,11 @@ export default function Header() {
                         <Link
                             key={name}
                             href={href}
-                            className={`text-lg font-semibold leading-6 transition-transform duration-300 ${isActive(href)
+                            className={`text-lg font-semibold leading-6 transition-transform duration-300 ${
+                                isActive(href)
                                     ? "text-indigo-600"
                                     : "text-gray-900 hover:text-indigo-600"
-                                } transform hover:scale-105`}
+                            } transform hover:scale-105`}
                         >
                             {name}
                         </Link>
@@ -105,8 +112,9 @@ export default function Header() {
 
             {/* Mobile Menu */}
             <div
-                className={`fixed top-0 right-0 z-50 w-80 h-70 bg-white rounded-sm shadow-lg px-5 pr-6 py-4 transition-transform duration-300 transform ${mobileMenuOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
-                    }`}
+                className={`fixed top-0 right-0 z-50 w-80 h-70 bg-white rounded-sm shadow-lg px-5 pr-6 py-4 transition-transform duration-300 transform ${
+                    mobileMenuOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
+                }`}
                 style={{
                     transition: "transform 300ms ease-in-out, opacity 300ms ease-in-out",
                 }}
@@ -146,10 +154,11 @@ export default function Header() {
                         <Link
                             key={name}
                             href={href}
-                            className={`block rounded-lg px-3 py-2 text-lg font-semibold leading-7 ${isActive(href)
+                            className={`block rounded-lg px-3 py-2 text-lg font-semibold leading-7 ${
+                                isActive(href)
                                     ? "text-indigo-600"
                                     : "text-gray-900 hover:bg-gray-50"
-                                }`}
+                            }`}
                             onClick={() => setMobileMenuOpen(false)}
                         >
                             {name}
@@ -160,10 +169,11 @@ export default function Header() {
 
             {/* Background Blur Overlay */}
             <div
-                className={`fixed inset-0 z-40 backdrop-blur-sm bg-black/25 transition-opacity duration-300 ${mobileMenuOpen
+                className={`fixed inset-0 z-40 backdrop-blur-sm bg-black/25 transition-opacity duration-300 ${
+                    mobileMenuOpen
                         ? "opacity-100 pointer-events-auto"
                         : "opacity-0 pointer-events-none"
-                    }`}
+                }`}
                 onClick={() => setMobileMenuOpen(false)}
             />
         </header>
