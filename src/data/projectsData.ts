@@ -98,6 +98,18 @@ export const projects: Project[] = [
         technologies: ["Python", "Sorting Algorithms", "Matplotlib", "Numpy", "Pandas"],
     },
     {
+        title: "Portfolio Website",
+        description:
+            "A personal portfolio website showcasing projects, skills, and experience as a software engineer.",
+        detailedDescription:
+            "This project is a Next.js-based portfolio website designed to display key projects, an about page, a resume, and a contact form. It features a responsive layout, animations powered by AOS (Animate on Scroll), and integrations like Formspree for the contact form. Built with TypeScript and Tailwind CSS, the site highlights Andrea's software engineering expertise, providing a visually engaging and user-friendly platform for potential collaborators or employers. The website is hosted on Vercel and leverages modern build tools like PostCSS and pnpm.",
+        image: "/main_projects/PortfolioWebsite.png",
+        liveUrl: "https://www.andrea-venti.com",
+        sourceUrl: "https://github.com/av1155/codefolio",
+        category: "Main",
+        technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel", "Formspree"],
+    },
+    {
         title: "GPA Calculator Webapp",
         description:
             "Allows users to calculate their GPA easily. Streamlined Elegance in Academic Tracking.",
