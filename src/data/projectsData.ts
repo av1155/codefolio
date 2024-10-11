@@ -87,6 +87,17 @@ export const projects: Project[] = [
         ],
     },
     {
+        title: "Empirical Evaluation of Classic Sorting Algorithms",
+        description:
+            "A comprehensive empirical study of Quick Sort, Merge Sort, and Heap Sort with varying dataset sizes.",
+        detailedDescription:
+            "This project focuses on benchmarking three fundamental sorting algorithms (Quick Sort, Merge Sort, and Heap Sort) by comparing their number of comparisons across various dataset sizes. The performance is visualized through detailed comparison tables and plots, showing how the algorithms scale with increasing input sizes (from 10,000 to 800,000 elements). The project includes generating datasets, running the algorithms, and analyzing the empirical data against theoretical time complexities. The study helps in understanding the real-world performance of these algorithms.",
+        image: "/main_projects/SortingAlgorithmEvaluation.png",
+        sourceUrl: "https://github.com/av1155/sorting-algorithm-performance-analysis",
+        category: "Main",
+        technologies: ["Python", "Sorting Algorithms", "Matplotlib", "Numpy", "Pandas"],
+    },
+    {
         title: "GPA Calculator Webapp",
         description:
             "Allows users to calculate their GPA easily. Streamlined Elegance in Academic Tracking.",
