@@ -89,13 +89,20 @@ export const projects: Project[] = [
     {
         title: "Empirical Evaluation of Classic Sorting Algorithms",
         description:
-            "A comprehensive empirical study of Quick Sort, Merge Sort, and Heap Sort with varying dataset sizes.",
+            "An in-depth empirical study of Quick Sort, Merge Sort, and Heap Sort with varying dataset sizes and memory profiling.",
         detailedDescription:
-            "This project focuses on benchmarking three fundamental sorting algorithms (Quick Sort, Merge Sort, and Heap Sort) by comparing their number of comparisons across various dataset sizes. The performance is visualized through detailed comparison tables and plots, showing how the algorithms scale with increasing input sizes (from 10,000 to 800,000 elements). The project includes generating datasets, running the algorithms, and analyzing the empirical data against theoretical time complexities. The study helps in understanding the real-world performance of these algorithms.",
+            "This project benchmarks three fundamental sorting algorithms (Quick Sort, Merge Sort, and Heap Sort) by evaluating their performance across different dataset sizes (from 10,000 to 800,000 elements). The analysis includes the number of comparisons, execution time in seconds, and memory consumption, with all results visualized through comprehensive comparison tables and graphs. The study also explores algorithm performance on non-decreasing and non-increasing input orders, comparing empirical data with theoretical time complexities to gain insights into real-world efficiency. Memory profiling was added to assess memory usage during execution, further enriching the analysis.",
         image: "/main_projects/SortingAlgorithmEvaluation.png",
         sourceUrl: "https://github.com/av1155/sorting-algorithm-performance-analysis",
         category: "Main",
-        technologies: ["Python", "Sorting Algorithms", "Matplotlib", "Numpy", "Pandas"],
+        technologies: [
+            "Python",
+            "Sorting Algorithms",
+            "Matplotlib",
+            "Numpy",
+            "Pandas",
+            "Tracemalloc",
+        ],
     },
     {
         title: "Portfolio Website",
