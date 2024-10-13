@@ -1,6 +1,6 @@
 "use client";
 
-import { Fragment, useState, useEffect } from "react";
+import { Suspense, Fragment, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
@@ -10,6 +10,9 @@ import { faExternalLinkAlt, faCode } from "@fortawesome/free-solid-svg-icons";
 
 import { Project, projects } from "@/data/projectsData";
 import AOSInitializer from "@/components/AOSInitializer";
+
+// Suspense fallback component
+const FallbackComponent = () => <div>Loading...</div>;
 
 export default function ProjectsPage() {
     const [activeCategory, setActiveCategory] = useState<"All" | "Main" | "Other">("All");
@@ -50,7 +53,7 @@ export default function ProjectsPage() {
     });
 
     return (
-        <>
+        <Suspense fallback={<FallbackComponent />}>
             <AOSInitializer />
             <div
                 id="projects"
@@ -306,6 +309,6 @@ export default function ProjectsPage() {
                     )}
                 </div>
             </div>
-        </>
+        </Suspense>
     );
 }
