@@ -1,8 +1,9 @@
 "use client";
 
-import { Fragment, useState } from "react";
+import { Suspense, Fragment, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useSearchParams, useRouter } from "next/navigation";
 import { Dialog, Transition } from "@headlessui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLinkAlt, faCode } from "@fortawesome/free-solid-svg-icons";
@@ -10,9 +11,41 @@ import { faExternalLinkAlt, faCode } from "@fortawesome/free-solid-svg-icons";
 import { Project, projects } from "@/data/projectsData";
 import AOSInitializer from "@/components/AOSInitializer";
 
+// Suspense fallback component
+const FallbackComponent = () => <div>Loading...</div>;
+
 export default function ProjectsPage() {
     const [activeCategory, setActiveCategory] = useState<"All" | "Main" | "Other">("All");
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
+    const searchParams = useSearchParams(); // Get search params
+    const router = useRouter(); // Get router
+
+    useEffect(() => {
+        const projectSlug = searchParams.get("project");
+
+        if (projectSlug) {
+            const project = projects.find((p) => p.slug === projectSlug);
+            if (project) {
+                setSelectedProject(project);
+            } else {
+                // Optionally handle invalid slug
+                console.warn(`Project with slug '${projectSlug}' not found.`);
+            }
+        }
+    }, [searchParams]);
+
+    const openProjectModal = (project: Project) => {
+        setSelectedProject(project);
+        // Update the URL with the project slug, preventing scrolling
+        router.push(`/projects?project=${project.slug}`, { scroll: false });
+    };
+
+    const closeProjectModal = () => {
+        setSelectedProject(null);
+        // Remove the project parameter from the URL, preventing scrolling
+        router.push("/projects", { scroll: false });
+    };
 
     const filteredProjects = projects.filter((project) => {
         if (activeCategory === "All") return true;
@@ -20,7 +53,7 @@ export default function ProjectsPage() {
     });
 
     return (
-        <>
+        <Suspense fallback={<FallbackComponent />}>
             <AOSInitializer />
             <div
                 id="projects"
@@ -54,10 +87,11 @@ export default function ProjectsPage() {
                         {["All", "Main", "Other"].map((category) => (
                             <button
                                 key={category}
-                                className={`px-4 py-2 rounded-md text-sm font-medium transition duration-200 transform ${activeCategory === category
+                                className={`px-4 py-2 rounded-md text-sm font-medium transition duration-200 transform ${
+                                    activeCategory === category
                                         ? "bg-white bg-opacity-80 text-indigo-700"
                                         : "bg-white bg-opacity-20 text-white hover:text-indigo-700"
-                                    } hover:bg-opacity-100 hover:scale-105`}
+                                } hover:bg-opacity-100 hover:scale-105`}
                                 onClick={() =>
                                     setActiveCategory(category as "All" | "Main" | "Other")
                                 }
@@ -75,7 +109,7 @@ export default function ProjectsPage() {
                                 key={project.title}
                                 className="group relative bg-white bg-opacity-20 border border-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transform hover:scale-105 transition duration-200 p-4 h-full flex flex-col hover:bg-white hover:bg-opacity-30 cursor-pointer"
                                 data-aos="zoom-in"
-                                onClick={() => setSelectedProject(project)}
+                                onClick={() => openProjectModal(project)}
                             >
                                 {/* Content Wrapper */}
                                 <div className="flex-grow">
@@ -86,8 +120,8 @@ export default function ProjectsPage() {
                                             alt={project.title}
                                             fill
                                             sizes="(max-width: 640px) 100vw,
-                             (max-width: 1024px) 50vw,
-                             33vw"
+                                 (max-width: 1024px) 50vw,
+                                 33vw"
                                             style={{ objectFit: "cover" }}
                                             className="rounded-lg"
                                             draggable={false}
@@ -142,10 +176,10 @@ export default function ProjectsPage() {
                         <Transition appear show={!!selectedProject} as={Fragment}>
                             <Dialog
                                 as="div"
-                                className="relative z-50"
                                 aria-labelledby="project-title"
                                 aria-describedby="project-description"
-                                onClose={() => setSelectedProject(null)}
+                                className="relative z-50"
+                                onClose={closeProjectModal}
                             >
                                 {/* Background Overlay */}
                                 <Transition.Child
@@ -175,7 +209,7 @@ export default function ProjectsPage() {
                                             <Dialog.Panel className="relative bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-2xl sm:w-full">
                                                 {/* Close Button */}
                                                 <button
-                                                    onClick={() => setSelectedProject(null)}
+                                                    onClick={closeProjectModal}
                                                     className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 rounded-full p-1 hover:bg-gray-100"
                                                     aria-label="Close modal"
                                                 >
@@ -275,6 +309,6 @@ export default function ProjectsPage() {
                     )}
                 </div>
             </div>
-        </>
+        </Suspense>
     );
 }
