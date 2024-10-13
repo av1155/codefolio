@@ -1,5 +1,6 @@
 export interface Project {
     title: string;
+    slug: string; // Added slug field
     description: string;
     detailedDescription: string;
     image: string;
@@ -13,6 +14,7 @@ export const projects: Project[] = [
     // Main Projects
     {
         title: "FlaskKeyring",
+        slug: "flaskkeyring",
         description: "A secure password manager using Flask, PostgreSQL, and Bootstrap.",
         detailedDescription:
             "FlaskKeyring is a fully-functional, full-stack web application that demonstrates my comprehensive skills in software development and a strong grasp of cybersecurity principles. This advanced password manager is built with a robust stack including Python, Flask, PostgreSQL, JavaScript, HTML, CSS, Bootstrap, jQuery, and AJAX, highlighting my ability to integrate multiple technologies for a cohesive solution. In FlaskKeyring's development, I utilized SQLite for local testing, ensuring robust quality before updates to the remote PostgreSQL database. The application features comprehensive user authentication, an intuitive UI/UX, and integration of Flask-Mail with Mailgun for custom domain email services.",
@@ -34,6 +36,7 @@ export const projects: Project[] = [
     },
     {
         title: "IndexNet Engine",
+        slug: "indexnext-engine",
         description:
             "A Java-based search engine simulation utilizing the PageRank algorithm and web crawling features.",
         detailedDescription:
@@ -46,6 +49,7 @@ export const projects: Project[] = [
     },
     {
         title: "The .dotfiles Project",
+        slug: "dotfiles-project",
         description: "Cross-Platform Unix Mastery & Automated Environment Setup",
         detailedDescription:
             "The .dotfiles repository is a cross-platform solution designed to automate and streamline the setup of development environments on macOS, Arch Linux, WSL (Windows Subsystem for Linux), and Debian-based systems. It includes a universal .zshrc and .zprofile that dynamically configure environments depending on the operating system and architecture. Additionally, the repository features a powerful macOS bootstrap script that automates the installation of essential development tools, applications, package managers like Homebrew, and configurations for macOS. The repository handles tasks such as managing Tmux sessions, configuring Neovim, handling Conda environments, and setting up shell plugins. The core philosophy is to ensure consistency and efficiency across various platforms, whether you're on a MacBook, an Arch Linux desktop, or a Raspberry Pi.",
@@ -69,6 +73,7 @@ export const projects: Project[] = [
     },
     {
         title: "Raspberry Pi 5 Codepi Setup Guide",
+        slug: "raspberrypi5-setup",
         description:
             "Seamless Integration and Development Environment setup guide for Raspberry Pi 5.",
         detailedDescription:
@@ -88,6 +93,7 @@ export const projects: Project[] = [
     },
     {
         title: "Empirical Evaluation of Classic Sorting Algorithms",
+        slug: "evaluation-of-sorting-algorithms",
         description:
             "An in-depth empirical study of Quick Sort, Merge Sort, and Heap Sort with varying dataset sizes and memory profiling.",
         detailedDescription:
@@ -106,6 +112,7 @@ export const projects: Project[] = [
     },
     {
         title: "Portfolio Website",
+        slug: "portfolio-website",
         description:
             "A personal portfolio website showcasing projects, skills, and experience as a software engineer.",
         detailedDescription:
@@ -118,6 +125,7 @@ export const projects: Project[] = [
     },
     {
         title: "GPA Calculator Webapp",
+        slug: "gpa-calculator-website",
         description:
             "Allows users to calculate their GPA easily. Streamlined Elegance in Academic Tracking.",
         detailedDescription:
@@ -130,6 +138,7 @@ export const projects: Project[] = [
     },
     {
         title: "PyPassManager CLI",
+        slug: "pypassmanager",
         description: "Mastering Password Security with Python and Fernet Encryption.",
         detailedDescription:
             "PyPassManager is a command-line interface program that is an advanced password manager combining Python, Fernet encryption, and the Colorama library. It delivers unbreakable 256-bit encryption, rapid key generation, and swift user authentication. The program is meticulously designed for safeguarding sensitive data, employing a robust file-based system for encrypted storage and integrating Pwinput for enhanced security.",
@@ -140,6 +149,7 @@ export const projects: Project[] = [
     },
     {
         title: "Space Invaders Clone",
+        slug: "space-invaders",
         description: "An Interactive Java Game Simulation of the classic Space Invaders game.",
         detailedDescription:
             "AlienInvaders is an action-packed game inspired by the classic Space Invaders, developed using Java Swing. This project showcases advanced game development techniques, including real-time rendering, collision detection, and comprehensive game state management, delivering a robust arcade experience. It introduces varied alien types with unique scoring impacts, adding depth to gameplay diversity.",
@@ -150,7 +160,19 @@ export const projects: Project[] = [
         technologies: ["Java", "Java Swing", "Game Development", "OOP"],
     },
     {
+        title: "Snake Game in Java",
+        slug: "snake-game",
+        description: "Classic snake game implemented in Java using Java Swing.",
+        detailedDescription:
+            "A classic snake game developed in Java using Java Swing for the GUI. The game features smooth controls, score tracking, and increasing difficulty as the snake grows.",
+        image: "/main_projects/SnakeGame.png",
+        sourceUrl: "https://github.com/av1155/SnakeGame/tree/main",
+        category: "Main",
+        technologies: ["Java", "Java Swing", "Game Development"],
+    },
+    {
         title: "Mastermind Trilogy",
+        slug: "mastermind",
         description:
             "Java Mastery in AI, Adaptability, and Strategy in the classic Mastermind game.",
         detailedDescription:
@@ -162,6 +184,7 @@ export const projects: Project[] = [
     },
     {
         title: "StockfolioHub",
+        slug: "stockfoliohub",
         description:
             "Real-Time Trading at Your Fingertips. A dynamic, full-stack web application for stock trading.",
         detailedDescription:
@@ -174,6 +197,7 @@ export const projects: Project[] = [
     },
     {
         title: "PlanetPath",
+        slug: "planetpath",
         description: "Mapping Sustainable Routes with Geopy and Streamlit Integration.",
         detailedDescription:
             "At the UHack Hackathon, I championed environmental awareness and secured 2nd place by crafting PlanetPath, an interactive Streamlit web app. Leveraging the Geopy library for precise distance calculations, this innovative tool educates users about carbon emissions and empowers them to make eco-conscious transportation choices.",
@@ -186,6 +210,7 @@ export const projects: Project[] = [
     },
     {
         title: "Weather Alert Program",
+        slug: "weather-alert-program",
         description: "Weather Alert Program with Twilio and API Integration.",
         detailedDescription:
             "This project is an impressive demonstration of my proficiency in Python programming and API integration. I have created a Weather Alert Program that provides real-time weather updates for any location through OpenWeatherMap API. To make it more convenient for users, I have also integrated Twilio, a messaging API, that sends prompt SMS weather alerts.",
@@ -194,10 +219,33 @@ export const projects: Project[] = [
         category: "Main",
         technologies: ["Python", "Twilio API", "OpenWeatherMap API", "SMS Integration"],
     },
+    {
+        title: "My Bash Scripts Repository",
+        slug: "bash-scripts",
+        description: "Collection of Useful Bash Scripts.",
+        detailedDescription:
+            "This repository contains a collection of Bash scripts that automate various tasks, improving efficiency and productivity. The scripts cover tasks like system maintenance, file management, and automation of routine operations.",
+        image: "/main_projects/BashScripts.png",
+        sourceUrl: "https://github.com/av1155/scripts",
+        category: "Main",
+        technologies: ["Bash", "Shell Scripting", "Automation", "Unix"],
+    },
+    {
+        title: "Custom Neovim Configuration",
+        slug: "neovim-config",
+        description: "A streamlined and efficient Neovim setup designed for productivity.",
+        detailedDescription:
+            "This Neovim configuration is built with Lua to provide a clean, fast, and flexible development environment. It integrates essential plugins, custom key mappings, and performance optimizations to enhance your coding workflow. Perfect for developers who want a customizable setup that maximizes Neovim’s potential.",
+        image: "/main_projects/NeovimConfiguration.png",
+        sourceUrl: "https://github.com/av1155/Neovim-Config",
+        category: "Main",
+        technologies: ["Neovim", "Lua", "Vimscript", "Text Editors"],
+    },
 
     // Other Projects
     {
         title: "FlaskKeyring iOS App",
+        slug: "flaskkeyring-ios",
         description: "WebKit Port for iOS.",
         detailedDescription:
             "This project is a WebKit port of the FlaskKeyring application for iOS devices. It allows users to access FlaskKeyring with a native app experience on iOS. This showcases my ability to adapt web applications into mobile platforms.",
@@ -208,6 +256,7 @@ export const projects: Project[] = [
     },
     {
         title: "Mastermind with Dynamic Guess Generation",
+        slug: "mastermind-dynamic",
         description: "Mastermind Game with Computer Algorithm for Guess Adaptation.",
         detailedDescription:
             "An extension of the classic Mastermind game implemented in Java, featuring a computer algorithm that adapts its guesses based on the player's input. This project demonstrates my skills in algorithm development and adaptive game mechanics.",
@@ -218,6 +267,7 @@ export const projects: Project[] = [
     },
     {
         title: "Python Learning Resources",
+        slug: "python-learning-resources",
         description: "Webapp with Resources for Learning Python.",
         detailedDescription:
             "A web application that compiles various resources for learning Python programming. It includes tutorials, exercises, and project ideas to help beginners and intermediate learners enhance their Python skills.",
@@ -228,6 +278,7 @@ export const projects: Project[] = [
     },
     {
         title: "Projectile Motion Calculator",
+        slug: "projectile-motion-calcualtor",
         description: "Java Application for Calculating Projectile Motion Parameters.",
         detailedDescription:
             "A Java application that calculates various parameters of projectile motion, such as range, maximum height, and time of flight. It applies physics formulas and allows users to input initial conditions to compute results.",
@@ -239,6 +290,7 @@ export const projects: Project[] = [
     },
     {
         title: "Bakery Shop Simulator",
+        slug: "bakery-shop-simulator",
         description: "Java Program Simulating a Bakery Order System.",
         detailedDescription:
             "A Java program that simulates a bakery shop's ordering system. Users can select from various baked goods, customize orders, and receive a summary with pricing. This project demonstrates object-oriented programming and user input handling.",
@@ -249,27 +301,8 @@ export const projects: Project[] = [
         technologies: ["Java", "OOP", "Console Application"],
     },
     {
-        title: "My Bash Scripts Repository",
-        description: "Collection of Useful Bash Scripts.",
-        detailedDescription:
-            "This repository contains a collection of Bash scripts that automate various tasks, improving efficiency and productivity. The scripts cover tasks like system maintenance, file management, and automation of routine operations.",
-        image: "/other_projects/BashScripts.png",
-        sourceUrl: "https://github.com/av1155/scripts",
-        category: "Other",
-        technologies: ["Bash", "Shell Scripting", "Automation", "Unix"],
-    },
-    {
-        title: "AstroNvim User Configuration",
-        description: "Custom Configuration for AstroNvim with Preferred Plugins and Mappings.",
-        detailedDescription:
-            "A custom configuration for AstroNvim, a Neovim configuration framework. This project includes preferred plugins, key mappings, and settings to enhance development productivity in Neovim.",
-        image: "/other_projects/NeovimConfiguration.png",
-        sourceUrl: "https://github.com/av1155/astronvim_config",
-        category: "Other",
-        technologies: ["Neovim", "Lua", "Vimscript", "Text Editors"],
-    },
-    {
         title: "CodeHub",
+        slug: "codehub",
         description: "Central Hub for Smaller Projects.",
         detailedDescription:
             "CodeHub is a repository that serves as a central hub for various smaller projects and code snippets. It includes experimental code, utility functions, and practice exercises in different programming languages.",
@@ -280,6 +313,7 @@ export const projects: Project[] = [
     },
     {
         title: "PyFun",
+        slug: "pyfun",
         description:
             "Python Program with Lottery, Pig Latin Translator, and Rock-Paper-Scissors Game.",
         detailedDescription:
@@ -291,6 +325,7 @@ export const projects: Project[] = [
     },
     {
         title: "String Edit",
+        slug: "string-edit",
         description: "Java Program for String Manipulation.",
         detailedDescription:
             "A Java program that performs various string manipulation tasks such as reversing strings, changing case, and finding substrings. It demonstrates proficiency in string handling and manipulation in Java.",
@@ -301,6 +336,7 @@ export const projects: Project[] = [
     },
     {
         title: "Volume Comparison",
+        slug: "volume-comparison",
         description: "Java Tool for Comparing Volumes of 3D Shapes.",
         detailedDescription:
             "A Java application that calculates and compares the volumes of different 3D shapes like spheres, cylinders, and cubes. It allows users to input dimensions and outputs the computed volumes.",
@@ -312,6 +348,7 @@ export const projects: Project[] = [
     },
     {
         title: "Gravity Calculator",
+        slug: "gravity-calculator",
         description: "Java Program for Calculating Speed and Distance of Falling Objects.",
         detailedDescription:
             "A Java program that calculates the speed and distance of an object in free fall under gravity. It applies physics formulas to compute the results based on time and initial conditions.",
@@ -323,6 +360,7 @@ export const projects: Project[] = [
     },
     {
         title: "Linear Equation Calculator",
+        slug: "linear-equation-caculator",
         description: "Java Program for Solving Linear Equations.",
         detailedDescription:
             "A Java application that solves linear equations in one variable. Users can input coefficients and constants, and the program computes the solution.",
@@ -334,6 +372,7 @@ export const projects: Project[] = [
     },
     {
         title: "GPA Calculator (CLI)",
+        slug: "gpa-calculator-cli",
         description: "Command-Line Tool for Calculating GPA.",
         detailedDescription:
             "A command-line tool developed in Python for calculating GPA. Users can input course grades and credit hours, and the program computes the GPA.",
@@ -344,6 +383,7 @@ export const projects: Project[] = [
     },
     {
         title: "Mastermind with Progressive Difficulty",
+        slug: "mastermind-progressive-difficulty",
         description: "Java-based Mastermind game with progressive difficulty.",
         detailedDescription:
             "An implementation of the Mastermind game in Java, featuring progressive difficulty levels. As the player advances, the game becomes more challenging, testing the player's logic and deduction skills.",
@@ -351,15 +391,5 @@ export const projects: Project[] = [
         sourceUrl: "https://github.com/av1155/Mastermind-Game",
         category: "Other",
         technologies: ["Java", "Game Development", "Algorithms"],
-    },
-    {
-        title: "Snake Game in Java",
-        description: "Classic snake game implemented in Java using Java Swing.",
-        detailedDescription:
-            "A classic snake game developed in Java using Java Swing for the GUI. The game features smooth controls, score tracking, and increasing difficulty as the snake grows.",
-        image: "/other_projects/SnakeGame.png",
-        sourceUrl: "https://github.com/av1155/SnakeGame/tree/main",
-        category: "Other",
-        technologies: ["Java", "Java Swing", "Game Development"],
     },
 ];
