@@ -6,6 +6,8 @@ import Footer from "@/components/footer";
 import { inter } from "@/app/fonts/fonts";
 // import { lusitana } from "@/app/fonts/fonts";
 
+import { ReactNode, Suspense } from "react";
+
 // Define global metadata
 export const metadata: Metadata = {
     title: "Andrea Venti - Software Engineer Portfolio",
@@ -91,11 +93,7 @@ export const viewport: Viewport = {
     maximumScale: 1,
 };
 
-export default function RootLayout({
-    children,
-}: Readonly<{
-    children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: ReactNode }) {
     return (
         <html lang="en" className={`${inter.className} antialiased`}>
             <head>
@@ -106,14 +104,16 @@ export default function RootLayout({
                 <link rel="apple-touch-icon" href="/favicon.jpg" />
             </head>
             <body className="font-sans antialiased bg-gradient-to-r from-indigo-700 via-purple-700 to-pink-700 bg-size-130">
-                {/* Accessibility Skip Link */}
-                <a href="#main-content" className="sr-only focus:not-sr-only">
-                    Skip to content
-                </a>
-                <Header />
-                <Analytics />
-                <main id="main-content">{children}</main>
-                <Footer />
+                <Suspense fallback={<div>Loading...</div>}>
+                    {/* Accessibility Skip Link */}
+                    <a href="#main-content" className="sr-only focus:not-sr-only">
+                        Skip to content
+                    </a>
+                    <Header />
+                    <Analytics />
+                    <main id="main-content">{children}</main>
+                    <Footer />
+                </Suspense>
             </body>
         </html>
     );
