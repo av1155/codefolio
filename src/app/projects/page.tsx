@@ -37,14 +37,14 @@ export default function ProjectsPage() {
 
     const openProjectModal = (project: Project) => {
         setSelectedProject(project);
-        // Update the URL with the project slug
-        router.push(`/projects?project=${project.slug}`);
+        // Update the URL with the project slug, preventing scrolling
+        router.push(`/projects?project=${project.slug}`, { scroll: false });
     };
 
     const closeProjectModal = () => {
         setSelectedProject(null);
-        // Remove the project parameter from the URL
-        router.push("/projects");
+        // Remove the project parameter from the URL, preventing scrolling
+        router.push("/projects", { scroll: false });
     };
 
     const filteredProjects = projects.filter((project) => {
