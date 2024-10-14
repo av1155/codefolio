@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
 import { Dialog, Transition, TransitionChild, DialogPanel, DialogTitle } from "@headlessui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { XMarkIcon } from "@heroicons/react/24/outline";
 import { faExternalLinkAlt, faCode } from "@fortawesome/free-solid-svg-icons";
 
 import { Project, projects } from "@/data/projectsData";
@@ -85,87 +86,91 @@ export default function ProjectsPage() {
                     {/* Category Buttons */}
                     <div className="mt-10 flex justify-center space-x-4">
                         {["All", "Main", "Other"].map((category) => (
-                            <button
+                            <div
                                 key={category}
-                                className={`px-4 py-2 rounded-md text-sm font-medium transition duration-200 transform ${
-                                    activeCategory === category
-                                        ? "bg-white bg-opacity-80 text-indigo-700"
-                                        : "bg-white bg-opacity-20 text-white hover:text-indigo-700"
-                                } hover:bg-opacity-100 hover:scale-105`}
-                                onClick={() =>
-                                    setActiveCategory(category as "All" | "Main" | "Other")
-                                }
-                                data-aos="fade-up"
+                                data-aos="fade-up" // Apply AOS animation to the parent div
                             >
-                                {category === "All" ? "All" : `${category} Projects`}
-                            </button>
+                                <button
+                                    className={`px-4 py-2 rounded-md text-sm font-medium transition duration-200 transform ${
+                                        activeCategory === category
+                                            ? "bg-white bg-opacity-80 text-indigo-700"
+                                            : "bg-white bg-opacity-20 text-white hover:text-indigo-700"
+                                    } hover:bg-opacity-100 hover:scale-105`}
+                                    onClick={() =>
+                                        setActiveCategory(category as "All" | "Main" | "Other")
+                                    }
+                                >
+                                    {category === "All" ? "All" : `${category} Projects`}
+                                </button>
+                            </div>
                         ))}
                     </div>
 
                     {/* Projects Grid */}
                     <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12">
                         {filteredProjects.map((project, index) => (
-                            <div
-                                key={project.title}
-                                className="group relative bg-white bg-opacity-20 border border-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transform hover:scale-105 transition duration-200 p-4 h-full flex flex-col hover:bg-white hover:bg-opacity-30 cursor-pointer"
-                                data-aos="zoom-in"
-                                onClick={() => openProjectModal(project)}
-                            >
-                                {/* Content Wrapper */}
-                                <div className="flex-grow">
-                                    {/* Image */}
-                                    <div className="relative w-full h-48 rounded-lg overflow-hidden group-hover:opacity-90 transition duration-200">
-                                        <Image
-                                            src={project.image}
-                                            alt={project.title}
-                                            fill
-                                            sizes="(max-width: 640px) 100vw,
-                                 (max-width: 1024px) 50vw,
-                                 33vw"
-                                            style={{ objectFit: "cover" }}
-                                            className="rounded-lg"
-                                            draggable={false}
-                                            priority={index < 6}
-                                            loading={index < 6 ? "eager" : "lazy"}
-                                        />
-                                    </div>
-                                    {/* Title */}
-                                    <h3 className="mt-6 text-lg font-bold text-white">
-                                        {project.title}
-                                    </h3>
-                                    {/* Description */}
-                                    <p className="mt-2 text-sm text-white">{project.description}</p>
-                                </div>
-                                {/* Buttons */}
+                            <div key={project.title} data-aos="zoom-in">
+                                {/* Inner container for hover effects */}
                                 <div
-                                    className="mt-auto flex space-x-3 pt-4"
-                                    onClick={(e) => e.stopPropagation()}
+                                    className="group relative bg-white bg-opacity-20 border border-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transform hover:scale-105 transition duration-200 p-4 h-full flex flex-col hover:bg-white hover:bg-opacity-30 cursor-pointer"
+                                    onClick={() => openProjectModal(project)}
                                 >
-                                    {project.liveUrl && (
-                                        <Link
-                                            href={project.liveUrl}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-indigo-700 bg-white bg-opacity-80 hover:bg-opacity-100 transform hover:scale-105 transition duration-200"
-                                        >
-                                            <FontAwesomeIcon
-                                                icon={faExternalLinkAlt}
-                                                className="mr-2"
+                                    {/* Content Wrapper */}
+                                    <div className="flex-grow">
+                                        {/* Image */}
+                                        <div className="relative w-full h-48 rounded-lg overflow-hidden group-hover:opacity-90 transition duration-200">
+                                            <Image
+                                                src={project.image}
+                                                alt={project.title}
+                                                fill
+                                                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                                style={{ objectFit: "cover" }}
+                                                className="rounded-lg"
+                                                draggable={false}
+                                                priority={index < 6}
+                                                loading={index < 6 ? "eager" : "lazy"}
                                             />
-                                            See Live
-                                        </Link>
-                                    )}
-                                    {project.sourceUrl && (
-                                        <Link
-                                            href={project.sourceUrl}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-indigo-700 bg-white bg-opacity-80 hover:bg-opacity-100 transform hover:scale-105 transition duration-200"
-                                        >
-                                            <FontAwesomeIcon icon={faCode} className="mr-2" />
-                                            Source Code
-                                        </Link>
-                                    )}
+                                        </div>
+                                        {/* Title */}
+                                        <h3 className="mt-6 text-lg font-bold text-white">
+                                            {project.title}
+                                        </h3>
+                                        {/* Description */}
+                                        <p className="mt-2 text-sm text-white">
+                                            {project.description}
+                                        </p>
+                                    </div>
+                                    {/* Buttons */}
+                                    <div
+                                        className="mt-auto flex space-x-3 pt-4"
+                                        onClick={(e) => e.stopPropagation()}
+                                    >
+                                        {project.liveUrl && (
+                                            <Link
+                                                href={project.liveUrl}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-indigo-700 bg-white bg-opacity-80 hover:bg-opacity-100 transform hover:scale-105 transition duration-200"
+                                            >
+                                                <FontAwesomeIcon
+                                                    icon={faExternalLinkAlt}
+                                                    className="mr-2"
+                                                />
+                                                See Live
+                                            </Link>
+                                        )}
+                                        {project.sourceUrl && (
+                                            <Link
+                                                href={project.sourceUrl}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-indigo-700 bg-white bg-opacity-80 hover:bg-opacity-100 transform hover:scale-105 transition duration-200"
+                                            >
+                                                <FontAwesomeIcon icon={faCode} className="mr-2" />
+                                                Source Code
+                                            </Link>
+                                        )}
+                                    </div>
                                 </div>
                             </div>
                         ))}
@@ -191,7 +196,7 @@ export default function ProjectsPage() {
                                     leaveFrom="opacity-100"
                                     leaveTo="opacity-0"
                                 >
-                                    <div className="fixed inset-0 bg-black bg-opacity-50 transition-opacity" />
+                                    <div className="fixed inset-0 backdrop-blur-sm bg-black bg-opacity-50 transition-opacity duration-200" />
                                 </TransitionChild>
 
                                 {/* Modal Content */}
@@ -210,24 +215,12 @@ export default function ProjectsPage() {
                                                 {/* Close Button */}
                                                 <button
                                                     onClick={closeProjectModal}
-                                                    className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 rounded-full p-1 hover:bg-gray-100"
+                                                    className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 rounded-full p-1 hover:bg-gray-100 transition-colors duration-200"
                                                     aria-label="Close modal"
                                                 >
-                                                    <svg
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        className="h-6 w-6"
-                                                        fill="none"
-                                                        viewBox="0 0 24 24"
-                                                        stroke="currentColor"
-                                                    >
-                                                        <path
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                            strokeWidth={2}
-                                                            d="M6 18L18 6M6 6l12 12"
-                                                        />
-                                                    </svg>
+                                                    <XMarkIcon className="h-6 w-6" />{" "}
                                                 </button>
+
                                                 {/* Modal Content */}
                                                 <div className="bg-white px-6 pt-6 pb-4">
                                                     <DialogTitle className="text-2xl font-bold text-gray-900">
@@ -250,6 +243,7 @@ export default function ProjectsPage() {
                                                     <p className="mt-4 text-gray-700">
                                                         {selectedProject.detailedDescription}
                                                     </p>
+
                                                     {/* Technologies */}
                                                     <div className="mt-4">
                                                         <h4 className="text-lg font-semibold text-gray-800">
@@ -268,6 +262,7 @@ export default function ProjectsPage() {
                                                             )}
                                                         </ul>
                                                     </div>
+
                                                     {/* Buttons */}
                                                     <div className="mt-6 flex space-x-3">
                                                         {selectedProject.liveUrl && (
