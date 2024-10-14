@@ -1,16 +1,16 @@
 "use client";
 
-import { Suspense, Fragment, useState, useEffect } from "react";
+import { faCode, faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Dialog, DialogPanel, DialogTitle, Transition, TransitionChild } from "@headlessui/react";
+import { XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
-import { useSearchParams, useRouter } from "next/navigation";
-import { Dialog, Transition, TransitionChild, DialogPanel, DialogTitle } from "@headlessui/react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { XMarkIcon } from "@heroicons/react/24/outline";
-import { faExternalLinkAlt, faCode } from "@fortawesome/free-solid-svg-icons";
+import { useRouter, useSearchParams } from "next/navigation";
+import { Fragment, Suspense, useEffect, useState } from "react";
 
-import { Project, projects } from "@/data/projectsData";
 import AOSInitializer from "@/components/AOSInitializer";
+import { Project, projects } from "@/data/projectsData";
 
 // Suspense fallback component
 const FallbackComponent = () => <div>Loading...</div>;

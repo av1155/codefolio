@@ -1,13 +1,13 @@
-import type { Metadata, Viewport } from "next";
-import { Analytics } from "@vercel/analytics/react";
-import "@/app/globals.css";
-import Header from "@/components/header";
-import Footer from "@/components/footer";
 import { inter } from "@/app/fonts/fonts";
+import "@/app/globals.css";
+import Footer from "@/components/footer";
+import Header from "@/components/header";
+import { Analytics } from "@vercel/analytics/react";
+import type { Metadata, Viewport } from "next";
 // import { lusitana } from "@/app/fonts/fonts";
 
-import { ReactNode, Suspense } from "react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { ReactNode, Suspense } from "react";
 
 // Define global metadata
 export const metadata: Metadata = {

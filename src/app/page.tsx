@@ -1,12 +1,12 @@
 "use client";
 
 import Clouds from "@/app/clouds";
-import Link from "next/link";
-import { ArrowRightIcon } from "@heroicons/react/24/solid";
 import AOSInitializer from "@/components/AOSInitializer";
+import { ArrowRightIcon } from "@heroicons/react/24/solid";
+import Link from "next/link";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Home() {
     return (

@@ -1,6 +1,6 @@
-import type { Config } from "tailwindcss";
 import forms from "@tailwindcss/forms"; // Tailwind Forms Plugin
 import typography from "@tailwindcss/typography"; // Tailwind Typography Plugin
+import type { Config } from "tailwindcss";
 
 // Tailwind CSS Configuration
 // Documentation: https://tailwindcss.com/docs/configuration

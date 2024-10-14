@@ -1,9 +1,9 @@
 "use client";
 
-import { useForm, ValidationError } from "@formspree/react";
 import AOSInitializer from "@/components/AOSInitializer";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useForm, ValidationError } from "@formspree/react";
 import { faEnvelope, faUser } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function ContactPage() {
     const formKey = process.env.NEXT_PUBLIC_FORMSPREE_KEY || "";

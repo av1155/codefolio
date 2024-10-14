@@ -1,5 +1,5 @@
-import { AcademicCapIcon, CodeBracketIcon, LightBulbIcon } from "@heroicons/react/24/outline";
 import AOSInitializer from "@/components/AOSInitializer";
+import { AcademicCapIcon, CodeBracketIcon, LightBulbIcon } from "@heroicons/react/24/outline";
 
 export default function AboutPage() {
     return (

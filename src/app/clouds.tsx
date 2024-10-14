@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import AOSInitializer from "@/components/AOSInitializer";
+import Image from "next/image";
 
 import { logos } from "@/data/logosData";
 
