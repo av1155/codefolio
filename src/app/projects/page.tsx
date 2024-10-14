@@ -4,7 +4,7 @@ import { Suspense, Fragment, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
-import { Dialog, Transition } from "@headlessui/react";
+import { Dialog, Transition, TransitionChild, DialogPanel, DialogTitle } from "@headlessui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLinkAlt, faCode } from "@fortawesome/free-solid-svg-icons";
 
@@ -182,7 +182,7 @@ export default function ProjectsPage() {
                                 onClose={closeProjectModal}
                             >
                                 {/* Background Overlay */}
-                                <Transition.Child
+                                <TransitionChild
                                     as={Fragment}
                                     enter="ease-out duration-300"
                                     enterFrom="opacity-0"
@@ -192,12 +192,12 @@ export default function ProjectsPage() {
                                     leaveTo="opacity-0"
                                 >
                                     <div className="fixed inset-0 bg-black bg-opacity-50 transition-opacity" />
-                                </Transition.Child>
+                                </TransitionChild>
 
                                 {/* Modal Content */}
                                 <div className="fixed inset-0 z-10 overflow-y-auto">
                                     <div className="flex min-h-full items-center justify-center p-4 text-center">
-                                        <Transition.Child
+                                        <TransitionChild
                                             as={Fragment}
                                             enter="ease-out duration-300 transform"
                                             enterFrom="opacity-0 scale-95"
@@ -206,7 +206,7 @@ export default function ProjectsPage() {
                                             leaveFrom="opacity-100 scale-100"
                                             leaveTo="opacity-0 scale-95"
                                         >
-                                            <Dialog.Panel className="relative bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-2xl sm:w-full">
+                                            <DialogPanel className="relative bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-2xl sm:w-full">
                                                 {/* Close Button */}
                                                 <button
                                                     onClick={closeProjectModal}
@@ -230,9 +230,9 @@ export default function ProjectsPage() {
                                                 </button>
                                                 {/* Modal Content */}
                                                 <div className="bg-white px-6 pt-6 pb-4">
-                                                    <Dialog.Title className="text-2xl font-bold text-gray-900">
+                                                    <DialogTitle className="text-2xl font-bold text-gray-900">
                                                         {selectedProject.title}
-                                                    </Dialog.Title>
+                                                    </DialogTitle>
                                                     {/* Image */}
                                                     <div className="mt-4">
                                                         <Image
@@ -300,8 +300,8 @@ export default function ProjectsPage() {
                                                         )}
                                                     </div>
                                                 </div>
-                                            </Dialog.Panel>
-                                        </Transition.Child>
+                                            </DialogPanel>
+                                        </TransitionChild>
                                     </div>
                                 </div>
                             </Dialog>
