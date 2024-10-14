@@ -1,5 +1,3 @@
-"use client";
-
 import AOSInitializer from "@/components/AOSInitializer";
 import Image from "next/image";
 
