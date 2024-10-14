@@ -4,7 +4,6 @@ import Clouds from "@/app/clouds";
 import Link from "next/link";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
 import AOSInitializer from "@/components/AOSInitializer";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
@@ -67,7 +66,6 @@ export default function Home() {
                 {/* Clouds Section*/}
                 <div className="relative z-10 mt-0 sm:mt-4 lg:mt-24" data-aos="fade-up">
                     <Clouds />
-                    <SpeedInsights />
                 </div>
             </div>
         </>

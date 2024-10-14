@@ -7,6 +7,7 @@ import { inter } from "@/app/fonts/fonts";
 // import { lusitana } from "@/app/fonts/fonts";
 
 import { ReactNode, Suspense } from "react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 // Define global metadata
 export const metadata: Metadata = {
@@ -40,9 +41,9 @@ export const metadata: Metadata = {
         "University of Miami",
         "Computer Science",
     ],
-    authors: [{ name: "Andrea A. Venti", url: "https://www.andrea-venti.com" }],
+    authors: [{ name: "Andrea A. Venti", url: "https://www.andreaventi.com" }],
     alternates: {
-        canonical: "https://www.andrea-venti.com",
+        canonical: "https://www.andreaventi.com",
         types: {
             "application/rss+xml": "/feed.xml",
         },
@@ -53,7 +54,7 @@ export const metadata: Metadata = {
     },
     openGraph: {
         type: "website",
-        url: "https://www.andrea-venti.com",
+        url: "https://www.andreaventi.com",
         title: "Andrea Venti - Software Engineer Portfolio",
         description:
             "Discover Andrea Venti's journey as a software engineer, highlighting innovative projects and a focus on modern technology solutions.",
@@ -105,12 +106,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             </head>
             <body className="font-sans antialiased bg-gradient-to-r from-indigo-700 via-purple-700 to-pink-700 bg-size-130">
                 <Suspense fallback={<div>Loading...</div>}>
-                    {/* Accessibility Skip Link */}
-                    <a href="#main-content" className="sr-only focus:not-sr-only">
-                        Skip to content
-                    </a>
                     <Header />
                     <Analytics />
+                    <SpeedInsights />
                     <main id="main-content">{children}</main>
                     <Footer />
                 </Suspense>
