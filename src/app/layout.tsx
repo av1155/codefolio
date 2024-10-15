@@ -3,11 +3,11 @@ import "@/app/globals.css";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import { Analytics } from "@vercel/analytics/react";
-import type { Metadata, Viewport } from "next";
-// import { lusitana } from "@/app/fonts/fonts";
-
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import type { Metadata, Viewport } from "next";
 import { ReactNode, Suspense } from "react";
+
+// import { lusitana } from "@/app/fonts/fonts";
 
 // Define global metadata
 export const metadata: Metadata = {
