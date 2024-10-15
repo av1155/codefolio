@@ -3,6 +3,8 @@
 import { faCode, faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Dialog, DialogPanel, DialogTitle, Transition, TransitionChild } from "@headlessui/react";
+import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
+import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
@@ -16,8 +18,9 @@ import { Project, projects } from "@/data/projectsData";
 const FallbackComponent = () => <div>Loading...</div>;
 
 export default function ProjectsPage() {
-    const [activeCategory, setActiveCategory] = useState<"All" | "Main" | "Other">("All");
+    const [activeCategory, setActiveCategory] = useState<"All" | "Projects" | "Programs">("All");
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+    const [activeLanguage, setActiveLanguage] = useState<string>("All");
 
     const searchParams = useSearchParams(); // Get search params
     const router = useRouter(); // Get router
@@ -49,8 +52,11 @@ export default function ProjectsPage() {
     };
 
     const filteredProjects = projects.filter((project) => {
-        if (activeCategory === "All") return true;
-        return project.category === activeCategory;
+        const categoryMatches = activeCategory === "All" || project.category === activeCategory;
+        const languageMatches =
+            activeLanguage === "All" || project.languages.includes(activeLanguage);
+
+        return categoryMatches && languageMatches;
     });
 
     return (
@@ -73,7 +79,7 @@ export default function ProjectsPage() {
                     </div>
                 </div>
 
-                <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
+                <div className="relative z-40 mx-auto max-w-7xl px-6 lg:px-8">
                     {/* Header */}
                     <div className="text-center text-white" data-aos="fade-down">
                         <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">Projects</h2>
@@ -83,31 +89,97 @@ export default function ProjectsPage() {
                         </p>
                     </div>
 
-                    {/* Category Buttons */}
-                    <div className="mt-10 flex justify-center space-x-4">
-                        {["All", "Main", "Other"].map((category) => (
-                            <div
-                                key={category}
-                                data-aos="fade-up" // Apply AOS animation to the parent div
-                            >
+                    {/* Category and Language Filter */}
+                    <div className="mt-10 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                        {/* Category Filter */}
+                        <div className="flex justify-center space-x-4" data-aos="fade-up">
+                            {["All", "Projects", "Programs"].map((category) => (
                                 <button
+                                    key={category}
                                     className={`px-4 py-2 rounded-md text-sm font-medium transition duration-200 transform ${
                                         activeCategory === category
                                             ? "bg-white bg-opacity-80 text-indigo-700"
                                             : "bg-white bg-opacity-20 text-white hover:text-indigo-700"
                                     } hover:bg-opacity-100 hover:scale-105`}
                                     onClick={() =>
-                                        setActiveCategory(category as "All" | "Main" | "Other")
+                                        setActiveCategory(
+                                            category as "All" | "Projects" | "Programs",
+                                        )
                                     }
                                 >
-                                    {category === "All" ? "All" : `${category} Projects`}
+                                    {category}
                                 </button>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
+
+                        {/* Language Filter using Headless UI */}
+                        <div
+                            className="z-[60] relative flex justify-center md:ml-4 space-x-4"
+                            data-aos="fade-up"
+                        >
+                            <Menu as="div" className="relative inline-block text-left">
+                                <MenuButton className="inline-flex justify-center items-center text-sm font-medium px-4 py-2 bg-white bg-opacity-20 text-white rounded-md transition duration-200 transform hover:scale-105 ">
+                                    {activeLanguage === "All" ? "Language" : activeLanguage}
+                                    <ChevronDownIcon
+                                        className="w-5 h-5 ml-2 -mr-1"
+                                        aria-hidden="true"
+                                    />
+                                </MenuButton>
+
+                                <Transition
+                                    as={Fragment}
+                                    enter="transition ease-out duration-100"
+                                    enterFrom="transform opacity-0 scale-95"
+                                    enterTo="transform opacity-100 scale-100"
+                                    leave="transition ease-in duration-75"
+                                    leaveFrom="transform opacity-100 scale-100"
+                                    leaveTo="transform opacity-0 scale-95"
+                                >
+                                    <MenuItems className="absolute left-0 mt-2 md:left-auto md:right-0 md:mt-2 w-40 origin-top-left bg-white bg-opacity-20 text-white backdrop-blur-xl rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                        <MenuItem>
+                                            {({ active }) => (
+                                                <button
+                                                    className={`${
+                                                        active ? "bg-indigo-500" : ""
+                                                    } block w-full px-4 py-2 text-left text-sm`}
+                                                    onClick={() => setActiveLanguage("All")}
+                                                >
+                                                    All
+                                                </button>
+                                            )}
+                                        </MenuItem>
+                                        {[
+                                            "Python",
+                                            "Java",
+                                            "JavaScript",
+                                            "TypeScript",
+                                            "C",
+                                            "C++",
+                                            "Bash",
+                                            "Lua",
+                                            "Swift",
+                                        ].map((language) => (
+                                            <MenuItem key={language}>
+                                                {({ active }) => (
+                                                    <button
+                                                        className={`${
+                                                            active ? "bg-indigo-500" : ""
+                                                        } block w-full px-4 py-2 text-left text-sm`}
+                                                        onClick={() => setActiveLanguage(language)}
+                                                    >
+                                                        {language}
+                                                    </button>
+                                                )}
+                                            </MenuItem>
+                                        ))}
+                                    </MenuItems>
+                                </Transition>
+                            </Menu>
+                        </div>
                     </div>
 
                     {/* Projects Grid */}
-                    <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12">
+                    <div className="mt-10 sm:mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12">
                         {filteredProjects.map((project, index) => (
                             <div key={project.title} data-aos="zoom-in">
                                 {/* Inner container for hover effects */}
@@ -216,24 +288,25 @@ export default function ProjectsPage() {
                                             leaveTo="opacity-0 scale-95"
                                         >
                                             <DialogPanel className="relative bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-2xl sm:w-full">
-                                                {/* Close Button */}
-                                                <button
-                                                    onClick={closeProjectModal}
-                                                    className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 rounded-full p-1 hover:bg-gray-100 transition-colors duration-200"
-                                                    aria-label="Close modal"
-                                                >
-                                                    <XMarkIcon className="h-6 w-6" />{" "}
-                                                </button>
-
-                                                {/* Modal Content */}
-                                                <div className="bg-white px-6 pt-6 pb-4">
-                                                    <DialogTitle className="text-2xl font-bold text-gray-900">
+                                                {/* Title and Close Button in Flex Layout */}
+                                                <div className="flex justify-between items-start px-6 pt-6 pb-2">
+                                                    <DialogTitle className="text-2xl font-bold text-gray-900 flex-grow">
                                                         {selectedProject.title}
                                                     </DialogTitle>
+                                                    <button
+                                                        onClick={closeProjectModal}
+                                                        className="ml-auto text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 rounded-full p-1 hover:bg-gray-100 transition-colors duration-200"
+                                                        aria-label="Close modal"
+                                                    >
+                                                        <XMarkIcon className="h-6 w-6" />{" "}
+                                                    </button>
+                                                </div>
 
+                                                {/* Modal Body Content */}
+                                                <div className="bg-white px-6 pb-4">
                                                     {/* Image */}
                                                     <div
-                                                        className="relative w-full"
+                                                        className="relative w-full mt-4"
                                                         style={{ aspectRatio: "1792 / 1024" }}
                                                     >
                                                         <Image
