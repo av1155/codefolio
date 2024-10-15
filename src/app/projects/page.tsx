@@ -25,6 +25,17 @@ export default function ProjectsPage() {
     const router = useRouter(); // Get router
 
     useEffect(() => {
+        const preloadImages = () => {
+            projects.forEach((project) => {
+                const img = new window.Image();
+                img.src = project.image;
+            });
+        };
+
+        preloadImages();
+    }, []);
+
+    useEffect(() => {
         const projectSlug = searchParams.get("project");
 
         if (projectSlug) {
@@ -32,7 +43,6 @@ export default function ProjectsPage() {
             if (project) {
                 setSelectedProject(project);
             } else {
-                // Optionally handle invalid slug
                 console.warn(`Project with slug '${projectSlug}' not found.`);
             }
         }
@@ -40,13 +50,11 @@ export default function ProjectsPage() {
 
     const openProjectModal = (project: Project) => {
         setSelectedProject(project);
-        // Update the URL with the project slug, preventing scrolling
         router.push(`/projects?project=${project.slug}`, { scroll: false });
     };
 
     const closeProjectModal = () => {
         setSelectedProject(null);
-        // Remove the project parameter from the URL, preventing scrolling
         router.push("/projects", { scroll: false });
     };
 
