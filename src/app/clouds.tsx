@@ -1,7 +1,6 @@
 import AOSInitializer from "@/components/AOSInitializer";
-import Image from "next/image";
-
 import { logos } from "@/data/logosData";
+import Image from "next/image";
 
 export default function Clouds() {
     // Duplicate the array for seamless looping
