@@ -13,7 +13,6 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useState } from "react";
 
-// Suspense fallback component
 const FallbackComponent = () => <div>Loading...</div>;
 
 export default function ProjectsPage() {
@@ -32,7 +31,6 @@ export default function ProjectsPage() {
             if (project) {
                 setSelectedProject(project);
             } else {
-                // Optionally handle invalid slug
                 console.warn(`Project with slug '${projectSlug}' not found.`);
             }
         }
@@ -40,13 +38,11 @@ export default function ProjectsPage() {
 
     const openProjectModal = (project: Project) => {
         setSelectedProject(project);
-        // Update the URL with the project slug, preventing scrolling
         router.push(`/projects?project=${project.slug}`, { scroll: false });
     };
 
     const closeProjectModal = () => {
         setSelectedProject(null);
-        // Remove the project parameter from the URL, preventing scrolling
         router.push("/projects", { scroll: false });
     };
 
