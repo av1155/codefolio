@@ -8,9 +8,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Fragment, Suspense, useEffect, useState } from "react";
-
 import AOSInitializer from "@/components/AOSInitializer";
-import { Project, projects } from "@/data/projectsData";
+import { Project } from "@/data/projectsData";
 
 // Suspense fallback component
 const FallbackComponent = () => <div>Loading...</div>;
@@ -18,6 +17,7 @@ const FallbackComponent = () => <div>Loading...</div>;
 export default function ProjectsPage() {
     const [activeCategory, setActiveCategory] = useState<"All" | "Main" | "Other">("All");
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+    const [projects, setProjects] = useState<Project[]>([]);
 
     const searchParams = useSearchParams(); // Get search params
     const router = useRouter(); // Get router
@@ -34,7 +34,18 @@ export default function ProjectsPage() {
                 console.warn(`Project with slug '${projectSlug}' not found.`);
             }
         }
-    }, [searchParams]);
+    }, [searchParams, projects]);
+
+    useEffect(() => {
+        // Fetch projects from the API route
+        const fetchProjects = async () => {
+            const res = await fetch("/api/projects"); // Call the API route
+            const data: Project[] = await res.json();
+            setProjects(data); // Set the fetched projects
+        };
+
+        fetchProjects();
+    }, []);
 
     const openProjectModal = (project: Project) => {
         setSelectedProject(project);
@@ -129,6 +140,8 @@ export default function ProjectsPage() {
                                                 draggable={false}
                                                 priority={index < 6}
                                                 loading={index < 6 ? "eager" : "lazy"}
+                                                placeholder="blur"
+                                                blurDataURL={project.blurDataURL}
                                             />
                                         </div>
                                         {/* Title */}
@@ -228,16 +241,30 @@ export default function ProjectsPage() {
                                                     </DialogTitle>
                                                     {/* Image */}
                                                     <div className="mt-4">
-                                                        <Image
-                                                            src={selectedProject.image}
-                                                            alt={selectedProject.title}
-                                                            width={800}
-                                                            height={600}
-                                                            className="rounded-lg"
-                                                            draggable={false}
-                                                            priority={true}
-                                                            loading="eager"
-                                                        />
+                                                        <div
+                                                            className="relative w-full"
+                                                            style={{
+                                                                paddingTop:
+                                                                    selectedProject.image.includes(
+                                                                        "/main_projects/",
+                                                                    )
+                                                                        ? "100%" // 1:1 aspect ratio for main_projects
+                                                                        : "56.25%", // 16:9 aspect ratio for other_projects
+                                                            }}
+                                                        >
+                                                            <Image
+                                                                src={selectedProject.image}
+                                                                alt={selectedProject.title}
+                                                                fill
+                                                                className="object-cover rounded-lg"
+                                                                draggable={false}
+                                                                priority={true}
+                                                                placeholder="blur"
+                                                                blurDataURL={
+                                                                    selectedProject.blurDataURL
+                                                                }
+                                                            />
+                                                        </div>
                                                     </div>
                                                     {/* Description */}
                                                     <p className="mt-4 text-gray-700">

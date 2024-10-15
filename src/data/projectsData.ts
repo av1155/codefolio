@@ -8,6 +8,7 @@ export interface Project {
     sourceUrl?: string;
     category: "Main" | "Other";
     technologies: string[];
+    blurDataURL?: string;
 }
 
 export const projects: Project[] = [
