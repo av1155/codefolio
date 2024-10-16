@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Footer() {
@@ -83,6 +84,14 @@ export default function Footer() {
                     <div>
                         <h4 className="text-xl font-semibold mb-4">Connect with Me</h4>
                         <ul className="flex space-x-6">
+                            <li>
+                                <a href="mailto:contact@andreaventi.com" aria-label="Email">
+                                    <FontAwesomeIcon
+                                        icon={faEnvelope}
+                                        className="h-8 w-8 text-gray-400 hover:text-white transition-colors duration-200"
+                                    />
+                                </a>
+                            </li>
                             <li>
                                 <a
                                     href="https://github.com/av1155"
