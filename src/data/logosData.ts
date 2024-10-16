@@ -18,18 +18,6 @@ export const logos = [
         height: 388,
     },
     {
-        name: "Lua",
-        src: "/technologies/lua.png",
-        width: 256,
-        height: 256,
-    },
-    {
-        name: "Bash",
-        src: "/technologies/bash.png",
-        width: 1080,
-        height: 524,
-    },
-    {
         name: "JavaScript/TypeScript",
         src: "/technologies/typescript.png",
         width: 920,
@@ -48,28 +36,10 @@ export const logos = [
         height: 1354,
     },
     {
-        name: "Flask",
-        src: "/technologies/flask.png",
-        width: 512,
-        height: 376,
-    },
-    {
-        name: "Tailwind",
-        src: "/technologies/tailwind.png",
-        width: 592,
-        height: 389,
-    },
-    {
-        name: "Bootstrap",
-        src: "/technologies/bootstrap.png",
-        width: 481,
-        height: 408,
-    },
-    {
-        name: "PostgreSQL",
-        src: "/technologies/postgresql.png",
-        width: 373,
-        height: 135,
+        name: "NodeJS",
+        src: "/technologies/nodejs.png",
+        width: 552,
+        height: 552,
     },
     {
         name: "Docker",
@@ -78,9 +48,39 @@ export const logos = [
         height: 377,
     },
     {
+        name: "PostgreSQL",
+        src: "/technologies/postgresql.png",
+        width: 373,
+        height: 135,
+    },
+    {
         name: "Git",
         src: "/technologies/git.png",
         width: 809,
+        height: 408,
+    },
+    {
+        name: "Tailwind",
+        src: "/technologies/tailwind.png",
+        width: 592,
+        height: 389,
+    },
+    {
+        name: "Flask",
+        src: "/technologies/flask.png",
+        width: 512,
+        height: 376,
+    },
+    {
+        name: "Bash",
+        src: "/technologies/bash.png",
+        width: 1080,
+        height: 524,
+    },
+    {
+        name: "Bootstrap",
+        src: "/technologies/bootstrap.png",
+        width: 481,
         height: 408,
     },
     {
@@ -100,5 +100,11 @@ export const logos = [
         src: "/technologies/netlify.png",
         width: 512,
         height: 512,
+    },
+    {
+        name: "Lua",
+        src: "/technologies/lua.png",
+        width: 256,
+        height: 256,
     },
 ];
