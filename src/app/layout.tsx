@@ -5,15 +5,13 @@ import Header from "@/components/header";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata, Viewport } from "next";
-import { ReactNode, Suspense } from "react";
-
-// import { lusitana } from "@/app/fonts/fonts";
+import { ReactNode } from "react";
 
 // Define global metadata
 export const metadata: Metadata = {
     title: "Andrea Venti - Software Engineer Portfolio",
     description:
-        "Welcome to Andrea Venti's portfolio showcasing projects in software engineering, development, and more.",
+        "Discover Andrea Venti's journey as a software engineer, highlighting innovative projects and a focus on modern technology solutions.",
     applicationName: "Andrea Venti Portfolio",
     referrer: "origin-when-cross-origin",
     manifest: "/site.webmanifest",
@@ -105,13 +103,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 <link rel="apple-touch-icon" href="/favicon.jpg" />
             </head>
             <body className="font-sans antialiased bg-gradient-to-r from-indigo-700 via-purple-700 to-pink-700 bg-size-130">
-                <Suspense fallback={<div>Loading...</div>}>
-                    <Header />
-                    <Analytics />
-                    <SpeedInsights />
-                    <main id="main-content">{children}</main>
-                    <Footer />
-                </Suspense>
+                <Header />
+                <Analytics />
+                <SpeedInsights />
+                <main id="main-content">{children}</main>
+                <Footer />
             </body>
         </html>
     );

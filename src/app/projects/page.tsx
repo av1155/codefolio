@@ -13,8 +13,6 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useState } from "react";
 
-const FallbackComponent = () => <div>Loading...</div>;
-
 export default function ProjectsPage() {
     const [activeCategory, setActiveCategory] = useState<"All" | "Projects" | "Programs">("All");
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -55,7 +53,7 @@ export default function ProjectsPage() {
     });
 
     return (
-        <Suspense fallback={<FallbackComponent />}>
+        <>
             <AOSInitializer />
             <div
                 id="projects"
@@ -163,12 +161,14 @@ export default function ProjectsPage() {
                     </div>
 
                     {/* Modal for Detailed View */}
-                    <ProjectModal
-                        selectedProject={selectedProject}
-                        closeProjectModal={closeProjectModal}
-                    />
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <ProjectModal
+                            selectedProject={selectedProject}
+                            closeProjectModal={closeProjectModal}
+                        />
+                    </Suspense>
                 </div>
             </div>
-        </Suspense>
+        </>
     );
 }
