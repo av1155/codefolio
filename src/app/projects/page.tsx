@@ -17,13 +17,20 @@ export default function ProjectsPage() {
     const [activeCategory, setActiveCategory] = useState<"All" | "Projects" | "Programs">("All");
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
     const [activeLanguage, setActiveLanguage] = useState<string>("All");
+    const [projectSlug, setProjectSlug] = useState<string | null>(null);
 
-    const searchParams = useSearchParams(); // Get search params
-    const router = useRouter(); // Get router
+    const searchParams = useSearchParams();
+    const router = useRouter();
 
     useEffect(() => {
-        const projectSlug = searchParams.get("project");
+        // Only run this on the client-side after mount
+        if (searchParams) {
+            const slug = searchParams.get("project");
+            setProjectSlug(slug);
+        }
+    }, [searchParams]);
 
+    useEffect(() => {
         if (projectSlug) {
             const project = projects.find((p) => p.slug === projectSlug);
             if (project) {
@@ -32,7 +39,7 @@ export default function ProjectsPage() {
                 console.warn(`Project with slug '${projectSlug}' not found.`);
             }
         }
-    }, [searchParams]);
+    }, [projectSlug]);
 
     const openProjectModal = (project: Project) => {
         setSelectedProject(project);
