@@ -10,36 +10,16 @@ import { faCode, faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
-import { Suspense, useEffect, useState } from "react";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import SearchParamsHandler from "@/components/projects/SearchParamsHandler";
 
 export default function ProjectsPage() {
     const [activeCategory, setActiveCategory] = useState<"All" | "Projects" | "Programs">("All");
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
     const [activeLanguage, setActiveLanguage] = useState<string>("All");
-    const [projectSlug, setProjectSlug] = useState<string | null>(null);
 
-    const searchParams = useSearchParams();
     const router = useRouter();
-
-    useEffect(() => {
-        // Only run this on the client-side after mount
-        if (searchParams) {
-            const slug = searchParams.get("project");
-            setProjectSlug(slug);
-        }
-    }, [searchParams]);
-
-    useEffect(() => {
-        if (projectSlug) {
-            const project = projects.find((p) => p.slug === projectSlug);
-            if (project) {
-                setSelectedProject(project);
-            } else {
-                console.warn(`Project with slug '${projectSlug}' not found.`);
-            }
-        }
-    }, [projectSlug]);
 
     const openProjectModal = (project: Project) => {
         setSelectedProject(project);
@@ -60,7 +40,10 @@ export default function ProjectsPage() {
     });
 
     return (
-        <Suspense fallback={<div>Loading project page...</div>}>
+        <>
+            {/* SearchParamsHandler ensures that the modal opens if a project is in the URL */}
+            <SearchParamsHandler setSelectedProject={setSelectedProject} />
+
             <AOSInitializer />
             <div
                 id="projects"
@@ -168,12 +151,14 @@ export default function ProjectsPage() {
                     </div>
 
                     {/* Modal for Detailed View */}
-                    <ProjectModal
-                        selectedProject={selectedProject}
-                        closeProjectModal={closeProjectModal}
-                    />
+                    {selectedProject && (
+                        <ProjectModal
+                            selectedProject={selectedProject}
+                            closeProjectModal={closeProjectModal}
+                        />
+                    )}
                 </div>
             </div>
-        </Suspense>
+        </>
     );
 }
