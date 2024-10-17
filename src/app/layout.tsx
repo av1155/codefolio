@@ -7,8 +7,6 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata, Viewport } from "next";
 import { ReactNode, Suspense } from "react";
 
-// import { lusitana } from "@/app/fonts/fonts";
-
 // Define global metadata
 export const metadata: Metadata = {
     title: "Andrea Venti - Software Engineer Portfolio",
@@ -92,6 +90,11 @@ export const viewport: Viewport = {
     width: "device-width",
     initialScale: 1,
     maximumScale: 1,
+    userScalable: false,
+    themeColor: [
+        { media: "(prefers-color-scheme: light)", color: "#FFFFFF" },
+        { media: "(prefers-color-scheme: dark)", color: "#101827" },
+    ],
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

@@ -13,16 +13,17 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useState } from "react";
 
-const FallbackComponent = () => <div>Loading...</div>;
-
 export default function ProjectsPage() {
+    // State hooks
     const [activeCategory, setActiveCategory] = useState<"All" | "Projects" | "Programs">("All");
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
     const [activeLanguage, setActiveLanguage] = useState<string>("All");
 
-    const searchParams = useSearchParams(); // Get search params
-    const router = useRouter(); // Get router
+    // Next.js hooks for handling search params and router navigation
+    const searchParams = useSearchParams();
+    const router = useRouter();
 
+    // useEffect to handle search params and set selected project based on the query
     useEffect(() => {
         const projectSlug = searchParams.get("project");
 
@@ -36,6 +37,7 @@ export default function ProjectsPage() {
         }
     }, [searchParams]);
 
+    // Functions for opening and closing the project modal
     const openProjectModal = (project: Project) => {
         setSelectedProject(project);
         router.push(`/projects?project=${project.slug}`, { scroll: false });
@@ -46,6 +48,7 @@ export default function ProjectsPage() {
         router.push("/projects", { scroll: false });
     };
 
+    // Filtering logic for displaying projects based on active category and language
     const filteredProjects = projects.filter((project) => {
         const categoryMatches = activeCategory === "All" || project.category === activeCategory;
         const languageMatches =
@@ -55,7 +58,7 @@ export default function ProjectsPage() {
     });
 
     return (
-        <Suspense fallback={<FallbackComponent />}>
+        <Suspense fallback={<div>Loading...</div>}>
             <AOSInitializer />
             <div
                 id="projects"
