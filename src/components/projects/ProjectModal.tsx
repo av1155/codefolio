@@ -80,6 +80,8 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ selectedProject, closeProje
                                             draggable={false}
                                             priority={true}
                                             loading="eager"
+                                            placeholder="blur"
+                                            blurDataURL={selectedProject.blurDataURL}
                                         />
                                     </div>
 
