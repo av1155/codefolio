@@ -7,9 +7,9 @@ import { AcademicCapIcon, CodeBracketIcon, LightBulbIcon } from "@heroicons/reac
 import ImageCarousel from "@/components/ImageCarousel";
 
 const carouselImages = [
+    { src: "/about/dog-park.jpeg", alt: "Andrea at a dog park with her pet" },
     { src: "/about/backyard.jpeg", alt: "Andrea relaxing in a backyard setting" },
     { src: "/about/snowboarding-colorado.jpeg", alt: "Andrea snowboarding in Colorado" },
-    { src: "/about/dog-park.jpeg", alt: "Andrea at a dog park with her pet" },
     { src: "/about/shellhacks-2023-team.jpeg", alt: "Andrea with her team at ShellHacks 2023" },
     { src: "/about/university-of-miami.jpeg", alt: "University of Miami campus view" },
     { src: "/about/colorado-hike-trail.jpeg", alt: "Andrea hiking on a trail in Colorado" },
