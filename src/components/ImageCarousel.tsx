@@ -49,7 +49,9 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
                             fill
                             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                             className="object-cover rounded-lg"
-                            draggable="false"
+                            draggable={false}
+                            priority={true}
+                            loading="eager"
                         />
                     </Transition>
                 ))}

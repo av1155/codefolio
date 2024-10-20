@@ -1,23 +1,32 @@
 "use client";
 
+import { useEffect } from "react";
 import AOSInitializer from "@/components/AOSInitializer";
 import BackgroundShape from "@/components/BackgroundShape";
 import { AcademicCapIcon, CodeBracketIcon, LightBulbIcon } from "@heroicons/react/24/outline";
 import ImageCarousel from "@/components/ImageCarousel";
 
+const carouselImages = [
+    { src: "/about/backyard.jpeg", alt: "Andrea relaxing in a backyard setting" },
+    { src: "/about/snowboarding-colorado.jpeg", alt: "Andrea snowboarding in Colorado" },
+    { src: "/about/dog-park.jpeg", alt: "Andrea at a dog park with her pet" },
+    { src: "/about/shellhacks-2023-team.jpeg", alt: "Andrea with her team at ShellHacks 2023" },
+    { src: "/about/university-of-miami.jpeg", alt: "University of Miami campus view" },
+    { src: "/about/colorado-hike-trail.jpeg", alt: "Andrea hiking on a trail in Colorado" },
+    { src: "/about/dog-beach-walk.jpeg", alt: "Andrea walking her dog on the beach" },
+    { src: "/about/colorado-walk.jpeg", alt: "Andrea on a scenic walk in Colorado" },
+    { src: "/about/boating-trip.jpeg", alt: "Andrea enjoying a boating trip" },
+    { src: "/about/horseback-riding.jpeg", alt: "Andrea horseback riding" },
+];
+
 export default function AboutPage() {
-    const carouselImages = [
-        { src: "/about/backyard.jpeg", alt: "Your description for image 1" },
-        { src: "/about/snowboarding-colorado.jpeg", alt: "Your description for image 3" },
-        { src: "/about/dog-park.jpeg", alt: "Your description for image 2" },
-        { src: "/about/shellhacks-2023-team.jpeg", alt: "Your description for image 3" },
-        { src: "/about/university-of-miami.jpeg", alt: "Your description for image 3" },
-        { src: "/about/colorado-hike-trail.jpeg", alt: "Your description for image 3" },
-        { src: "/about/dog-beach-walk.jpeg", alt: "Your description for image 3" },
-        { src: "/about/colorado-walk.jpeg", alt: "Your description for image 3" },
-        { src: "/about/boating-trip.jpeg", alt: "Your description for image 3" },
-        { src: "/about/horseback-riding.jpeg", alt: "Your description for image 3" },
-    ];
+    // Preload images when the component mounts
+    useEffect(() => {
+        carouselImages.forEach((image) => {
+            const img = new Image();
+            img.src = image.src;
+        });
+    }, []);
 
     return (
         <>
