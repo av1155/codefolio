@@ -5,7 +5,7 @@ import "aos/dist/aos.css";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faLinkedin, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -94,6 +94,19 @@ export default function Footer() {
                             </li>
                             <li>
                                 <a
+                                    href="https://www.linkedin.com/in/andrea-venti/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="LinkedIn"
+                                >
+                                    <FontAwesomeIcon
+                                        icon={faLinkedin}
+                                        className="h-8 w-8 text-gray-400 hover:text-white transition-colors duration-200"
+                                    />
+                                </a>
+                            </li>
+                            <li>
+                                <a
                                     href="https://github.com/av1155"
                                     target="_blank"
                                     rel="noopener noreferrer"
@@ -107,13 +120,13 @@ export default function Footer() {
                             </li>
                             <li>
                                 <a
-                                    href="https://www.linkedin.com/in/andrea-venti/"
+                                    href="https://www.instagram.com/andreaventif/"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    aria-label="LinkedIn"
+                                    aria-label="Instagram"
                                 >
                                     <FontAwesomeIcon
-                                        icon={faLinkedin}
+                                        icon={faInstagram}
                                         className="h-8 w-8 text-gray-400 hover:text-white transition-colors duration-200"
                                     />
                                 </a>

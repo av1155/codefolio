@@ -1,8 +1,24 @@
+"use client";
+
 import AOSInitializer from "@/components/AOSInitializer";
 import BackgroundShape from "@/components/BackgroundShape";
 import { AcademicCapIcon, CodeBracketIcon, LightBulbIcon } from "@heroicons/react/24/outline";
+import ImageCarousel from "@/components/ImageCarousel";
 
 export default function AboutPage() {
+    const carouselImages = [
+        { src: "/about/backyard.jpeg", alt: "Your description for image 1" },
+        { src: "/about/snowboarding-colorado.jpeg", alt: "Your description for image 3" },
+        { src: "/about/dog-park.jpeg", alt: "Your description for image 2" },
+        { src: "/about/shellhacks-2023-team.jpeg", alt: "Your description for image 3" },
+        { src: "/about/university-of-miami.jpeg", alt: "Your description for image 3" },
+        { src: "/about/colorado-hike-trail.jpeg", alt: "Your description for image 3" },
+        { src: "/about/dog-beach-walk.jpeg", alt: "Your description for image 3" },
+        { src: "/about/colorado-walk.jpeg", alt: "Your description for image 3" },
+        { src: "/about/boating-trip.jpeg", alt: "Your description for image 3" },
+        { src: "/about/horseback-riding.jpeg", alt: "Your description for image 3" },
+    ];
+
     return (
         <>
             <AOSInitializer />
@@ -110,6 +126,14 @@ export default function AboutPage() {
                         >
                             Get in Touch
                         </a>
+                    </div>
+
+                    {/* Image Carousel */}
+                    <div className="mt-16" data-aos="fade-up">
+                        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-8">
+                            A Glimpse of Me
+                        </h2>
+                        <ImageCarousel images={carouselImages} />
                     </div>
                 </div>
             </div>
