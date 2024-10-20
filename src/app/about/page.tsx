@@ -87,7 +87,8 @@ export default function AboutPage() {
                                 Proficient in languages like{" "}
                                 <span className="font-bold">Python</span>,{" "}
                                 <span className="font-bold">Java</span>,{" "}
-                                <span className="font-bold">C/C++</span>,{" "}
+                                <span className="font-bold">C</span>,{" "}
+                                <span className="font-bold">Go</span>,{" "}
                                 <span className="font-bold">TypeScript</span>, among others. Andrea
                                 is skilled in tools such as{" "}
                                 <span className="font-bold">Docker</span>,{" "}
