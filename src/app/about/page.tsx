@@ -1,32 +1,47 @@
-"use client";
-
-import { useEffect } from "react";
 import AOSInitializer from "@/components/AOSInitializer";
 import BackgroundShape from "@/components/BackgroundShape";
 import { AcademicCapIcon, CodeBracketIcon, LightBulbIcon } from "@heroicons/react/24/outline";
+
 import ImageCarousel from "@/components/ImageCarousel";
+import { Metadata } from "next";
+import { getPlaiceholder } from "plaiceholder";
+import path from "path";
 
-const carouselImages = [
-    { src: "/about/dog-park.jpeg", alt: "Andrea at a dog park with her pet" },
-    { src: "/about/backyard.jpeg", alt: "Andrea relaxing in a backyard setting" },
-    { src: "/about/snowboarding-colorado.jpeg", alt: "Andrea snowboarding in Colorado" },
-    { src: "/about/shellhacks-2023-team.jpeg", alt: "Andrea with her team at ShellHacks 2023" },
-    { src: "/about/university-of-miami.jpeg", alt: "University of Miami campus view" },
-    { src: "/about/colorado-hike-trail.jpeg", alt: "Andrea hiking on a trail in Colorado" },
-    { src: "/about/dog-beach-walk.jpeg", alt: "Andrea walking her dog on the beach" },
-    { src: "/about/colorado-walk.jpeg", alt: "Andrea on a scenic walk in Colorado" },
-    { src: "/about/boating-trip.jpeg", alt: "Andrea enjoying a boating trip" },
-    { src: "/about/horseback-riding.jpeg", alt: "Andrea horseback riding" },
-];
+export const metadata: Metadata = {
+    title: "About Me - Andrea Venti",
+    description: "Learn more about Andrea Venti.",
+};
 
-export default function AboutPage() {
-    // Preload images when the component mounts
-    useEffect(() => {
-        carouselImages.forEach((image) => {
-            const img = new Image();
-            img.src = image.src;
-        });
-    }, []);
+interface ImageProps {
+    src: string;
+    alt: string;
+    blurDataURL?: string;
+}
+
+export default async function AboutPage() {
+    const images: ImageProps[] = [
+        { src: "/about/dog-park.jpeg", alt: "Andrea at a dog park with her pet" },
+        { src: "/about/backyard.jpeg", alt: "Andrea relaxing in a backyard setting" },
+        { src: "/about/snowboarding-colorado.jpeg", alt: "Andrea snowboarding in Colorado" },
+        { src: "/about/shellhacks-2023-team.jpeg", alt: "Andrea with her team at ShellHacks 2023" },
+        { src: "/about/university-of-miami.jpeg", alt: "University of Miami campus view" },
+        { src: "/about/colorado-hike-trail.jpeg", alt: "Andrea hiking on a trail in Colorado" },
+        { src: "/about/dog-beach-walk.jpeg", alt: "Andrea walking her dog on the beach" },
+        { src: "/about/colorado-walk.jpeg", alt: "Andrea on a scenic walk in Colorado" },
+        { src: "/about/boating-trip.jpeg", alt: "Andrea enjoying a boating trip" },
+        { src: "/about/horseback-riding.jpeg", alt: "Andrea horseback riding" },
+    ];
+
+    // Generate blurDataURL for each image
+    const imagesWithBlurData = await Promise.all(
+        images.map(async (image) => {
+            const { base64 } = await getPlaiceholder(path.join(process.cwd(), "public", image.src));
+            return {
+                ...image,
+                blurDataURL: base64,
+            };
+        }),
+    );
 
     return (
         <>
@@ -143,7 +158,7 @@ export default function AboutPage() {
                         <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-8">
                             A Glimpse of Me
                         </h2>
-                        <ImageCarousel images={carouselImages} />
+                        <ImageCarousel images={imagesWithBlurData} />
                     </div>
                 </div>
             </div>

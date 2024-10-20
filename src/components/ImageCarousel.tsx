@@ -1,11 +1,19 @@
-import { useState } from "react";
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import { Transition } from "@headlessui/react";
 import { useSwipeable } from "react-swipeable";
 
+interface ImageProps {
+    src: string;
+    alt: string;
+    blurDataURL?: string;
+}
+
 interface ImageCarouselProps {
-    images: { src: string; alt: string }[];
+    images: ImageProps[];
 }
 
 const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
@@ -52,6 +60,8 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
                             draggable={false}
                             priority={true}
                             loading="eager"
+                            placeholder="blur"
+                            blurDataURL={image.blurDataURL}
                         />
                     </Transition>
                 ))}
