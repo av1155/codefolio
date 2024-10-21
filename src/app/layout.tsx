@@ -104,6 +104,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 {/* Link to Web App Manifest */}
                 <link rel="manifest" href="/site.webmanifest" />
 
+                {/* Prefetch resume PDF */}
+                <link rel="prefetch" href="/resume.pdf" as="fetch" type="application/pdf" />
+
                 {/* Additional icons */}
                 <link rel="apple-touch-icon" href="/favicon.jpg" />
             </head>

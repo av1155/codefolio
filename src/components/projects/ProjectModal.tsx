@@ -69,12 +69,13 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ selectedProject, closeProje
                                     {/* Image */}
                                     <div
                                         className="relative w-full mt-2"
-                                        style={{ aspectRatio: "1792 / 1024" }}
+                                        style={{ aspectRatio: "1100 / 629" }}
                                     >
                                         <Image
                                             src={selectedProject.image}
                                             alt={selectedProject.title}
                                             fill={true}
+                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 50vw"
                                             style={{ objectFit: "cover" }}
                                             className="rounded-lg"
                                             draggable={false}
