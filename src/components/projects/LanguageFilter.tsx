@@ -23,7 +23,7 @@ const LanguageFilter: React.FC<LanguageFilterProps> = ({ activeLanguage, setActi
     return (
         <div className="z-[60] relative flex justify-center md:ml-4 space-x-4" data-aos="fade-up">
             <Menu as="div" className="relative inline-block text-left">
-                <MenuButton className="inline-flex justify-center items-center text-sm font-medium px-4 py-2 bg-white bg-opacity-20 text-white rounded-md transition duration-200 transform hover:scale-105">
+                <MenuButton className="inline-flex justify-center items-center text-sm font-medium px-4 py-2 shadow-md bg-white bg-opacity-20 text-white rounded-md transition duration-200 transform hover:scale-105">
                     {activeLanguage === "All" ? "Language" : activeLanguage}
                     <ChevronDownIcon className="w-5 h-5 ml-2 -mr-1" aria-hidden="true" />
                 </MenuButton>

@@ -136,6 +136,11 @@ export default async function AboutPage() {
                         </div>
                     </div>
 
+                    {/* Image Carousel */}
+                    <div className="mt-16" data-aos="fade-up">
+                        <ImageCarousel images={imagesWithBlurData} />
+                    </div>
+
                     {/* Call to Action */}
                     <div className="mt-16 text-center" data-aos="fade-up">
                         <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
@@ -151,14 +156,6 @@ export default async function AboutPage() {
                         >
                             Get in Touch
                         </a>
-                    </div>
-
-                    {/* Image Carousel */}
-                    <div className="mt-16" data-aos="fade-up">
-                        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-8">
-                            A Glimpse of Me
-                        </h2>
-                        <ImageCarousel images={imagesWithBlurData} />
                     </div>
                 </div>
             </div>

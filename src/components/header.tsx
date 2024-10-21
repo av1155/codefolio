@@ -98,10 +98,14 @@ export default function Header() {
                         <Link
                             key={name}
                             href={href}
-                            className={`text-lg font-semibold leading-6 transition-transform duration-300 ${
+                            className={`text-lg font-semibold leading-6 transition duration-300 ${
                                 isActive(href)
-                                    ? "text-indigo-600"
-                                    : "text-gray-900 hover:text-indigo-600"
+                                    ? scrolled
+                                        ? "text-indigo-600"
+                                        : "text-indigo-800"
+                                    : scrolled
+                                      ? "text-gray-900 hover:text-indigo-600"
+                                      : "text-gray-900 hover:text-indigo-800"
                             } transform hover:scale-105`}
                         >
                             {name}
