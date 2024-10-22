@@ -4,6 +4,7 @@
 
 -   [Portfolio Website](#portfolio-website)
     -   [Tech Stack](#tech-stack)
+    -   [Preview](#preview)
     -   [Project Structure](#project-structure)
     -   [Key Features](#key-features)
     -   [Production Dependencies](#production-dependencies)
@@ -22,6 +23,12 @@ This repository contains the source code for my personal portfolio website, host
 -   **Animation Library:** AOS (Animate on Scroll)
 -   **Build Tools:** PostCSS, pnpm
 -   **Deployment:** Vercel
+
+## Preview
+
+![Website Preview](public/WebsitePreview.png)
+
+![Page Speed Insights](public/PageSpeedInsights.png)
 
 ## Project Structure
 
