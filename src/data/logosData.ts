@@ -18,6 +18,12 @@ export const logos = [
         height: 388,
     },
     {
+        name: "Go",
+        src: "/technologies/golang.png",
+        width: 512,
+        height: 512,
+    },
+    {
         name: "JavaScript/TypeScript",
         src: "/technologies/typescript.png",
         width: 920,
