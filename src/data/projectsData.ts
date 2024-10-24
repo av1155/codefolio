@@ -120,7 +120,8 @@ export const projects: Project[] = [
         detailedDescription:
             "This project benchmarks Quick Sort, Merge Sort, and Heap Sort algorithms, evaluating their performance across different dataset sizes (10,000 to 800,000 elements). The analysis includes comparisons, execution time, and memory usage, with results presented through detailed comparison tables and graphs. The study also compares algorithm performance on non-decreasing and non-increasing input orders, providing insights into real-world efficiency.",
         image: "/projects/SortingAlgorithmEvaluation.png",
-        sourceUrl: "https://github.com/av1155/sorting-algorithm-performance-analysis",
+        sourceUrl:
+            "https://gitfront.io/r/av1155/AbQeNWzfig3F/sorting-algorithm-performance-analysis/",
         category: "Projects",
         technologies: [
             "Python",
