@@ -318,9 +318,9 @@ export const projects: Project[] = [
     {
         title: "Python Learning Resources",
         slug: "python-learning-resources",
-        description: "A web app compiling resources for learning Python.",
+        description: "A Streamlit-powered web app curating resources for Python learning.",
         detailedDescription:
-            "This web app compiles various resources, including tutorials, exercises, and project ideas, to help learners enhance their Python programming skills. It is an excellent starting point for beginners and intermediate programmers.",
+            "This web app, built with Streamlit in Python, offers a curated collection of resources to support Python learners at various levels. It includes interactive sections for tutorials, exercises, and project ideas, all structured to enhance learning experiences directly within a streamlined web interface. Streamlit’s features make it easy for users to explore resources, making this app a valuable tool for beginners and intermediate Python enthusiasts.",
         image: "/programs/PythonLearningResources.png",
         sourceUrl: "https://github.com/av1155/Python-Learning-Resources",
         liveUrl:
@@ -330,14 +330,50 @@ export const projects: Project[] = [
         languages: ["Python"],
     },
     {
+        title: "Boat Management System",
+        slug: "boat-management-system",
+        description: "A C project for managing boats and their storage details in a marina.",
+        detailedDescription:
+            "This C project serves as a comprehensive boat management system for marinas, allowing users to add, remove, and display boat information, process payments, and track monthly fees based on storage location. The project includes support for different storage types (slip, land, trailer, storage) with respective rates, dynamically expands memory for new entries, and validates user input. It also supports file-based data persistence, enabling data to be saved and loaded from CSV files, and displays boats in alphabetical order for easy inventory management. Key features include robust memory management, user input validation, and structured output of all data entries.",
+        image: "/projects/BoatManagementSystem.png",
+        sourceUrl: "https://github.com/",
+        category: "Projects",
+        technologies: ["C", "File Handling", "Dynamic Memory Allocation", "Structs", "Enums"],
+        languages: ["C"],
+    },
+    {
+        title: "Dynamic Structs",
+        slug: "dynamic-structs",
+        description: "A C program to manage dynamically allocated structures with relational data.",
+        detailedDescription:
+            "This C program allows users to create and store information about people, including their names, ages, and best friends. The program dynamically allocates memory for each person, storing up to ten entries and allowing users to assign best friends within the list. It demonstrates dynamic memory allocation, struct manipulation, and relational data management through pointers, offering clear input validation and structured output for all entries.",
+        image: "/programs/DynamicStructs.png",
+        sourceUrl: "https://github.com/",
+        category: "Programs",
+        technologies: ["C", "Dynamic Memory Allocation", "Structs", "Pointer Relationships"],
+        languages: ["C"],
+    },
+    {
+        title: "Species Log",
+        slug: "species-log",
+        description: "A C program for recording and categorizing animal species.",
+        detailedDescription:
+            "This C program allows users to log various animal species, including their name, size, and type (mammal, insect, bird, or fish). It dynamically expands memory as needed to accommodate new entries, enabling users to input multiple species until 'exit' is entered. The program includes robust input validation and displays all recorded species in a structured format, making it useful for demonstrating dynamic memory allocation, enums, and struct-based data storage in C.",
+        image: "/programs/SpeciesLog.png",
+        sourceUrl: "https://github.com/",
+        category: "Programs",
+        technologies: ["C", "Dynamic Memory Allocation", "Enums", "Structs"],
+        languages: ["C"],
+    },
+    {
         title: "Dynamic Matrices",
         slug: "dynamic-matrices",
         description:
-            "A C program that dynamically allocates memory for matrices and performs operations.",
+            "A C program that dynamically allocates memory for matrices and performs matrix multiplication.",
         detailedDescription:
-            "This program is written in C and utilizes dynamic memory allocation to create and manipulate matrices. It includes functionality for matrix addition, subtraction, and multiplication. The program ensures that the correct dimensions are checked before performing operations. This project demonstrates the efficient handling of memory in C and understanding of matrix operations.",
+            "This program, written in C, demonstrates dynamic memory allocation for matrix creation and performs matrix multiplication. It includes input validation to ensure compatible dimensions before multiplication. The project focuses on basic memory handling and matrix manipulation in C, making it ideal for practicing dynamic allocation and understanding row-major matrix storage.",
         image: "/programs/DynamicMatrices.png",
-        sourceUrl: "https://github.com/UM-CSC322-24F/labtask-6-av1155/blob/main/DynamicMatrices.c",
+        sourceUrl: "https://github.com/",
         category: "Programs",
         technologies: [
             "C",
@@ -351,11 +387,11 @@ export const projects: Project[] = [
     {
         title: "Sort Pointers",
         slug: "sort-pointers",
-        description: "A pointer-based sorting algorithm implementation in C.",
+        description: "A C program demonstrating sorting using pointers.",
         detailedDescription:
-            "This C program implements sorting algorithms like quicksort, mergesort, and bubble sort using pointers. It focuses on how sorting can be performed using pointer manipulation instead of array indexing, demonstrating a deep understanding of memory addresses and pointer arithmetic. The project is particularly useful for learning low-level memory management.",
+            "This C program demonstrates sorting with pointers through a basic implementation of bubble sort. It initializes an array of integers and an array of pointers to these integers, sorting both by using pointers for in-place comparisons and swaps. This program is helpful for understanding fundamental pointer usage and basic sorting logic.",
         image: "/programs/SortPointers.png",
-        sourceUrl: "https://github.com/UM-CSC322-24F/labtask-5-av1155/blob/main/SortPointers.c",
+        sourceUrl: "https://github.com/",
         category: "Programs",
         technologies: ["C", "Pointers", "Sorting Algorithms", "Memory Management"],
         languages: ["C"],
@@ -363,11 +399,11 @@ export const projects: Project[] = [
     {
         title: "Bitwise Operations",
         slug: "bitwise-operations",
-        description: "A C++ program demonstrating various bitwise operations.",
+        description: "A C program demonstrating bitwise operations for specific checks.",
         detailedDescription:
-            "This C++ program showcases the use of bitwise operators to perform tasks such as checking if a number is even or odd, swapping variables without using a temporary variable, and performing binary shifts. It is designed to help users grasp the importance of bitwise operations in low-level programming and optimization.",
+            "This C program demonstrates the use of bitwise operations to perform basic checks, including determining if a number is even or odd, checking if a specific bit is set, and verifying if all bits in a given range are on. It provides a straightforward way to explore bitwise logic, helping users understand practical applications of bitwise operators in C.",
         image: "/programs/BitOps.png",
-        sourceUrl: "https://github.com/UM-CSC322-24F/labtask-5-av1155/blob/main/BitOps.c",
+        sourceUrl: "https://github.com/",
         category: "Programs",
         technologies: ["C", "Bitwise Operations", "Binary Arithmetic", "Optimization"],
         languages: ["C"],
@@ -375,11 +411,11 @@ export const projects: Project[] = [
     {
         title: "Tax Calculator",
         slug: "tax-calculator",
-        description: "A simple C program to calculate taxes based on income brackets.",
+        description: "A C program to compute taxes based on income and deductions.",
         detailedDescription:
-            "This C program allows users to input their annual income and calculates the tax owed based on predefined income tax brackets. The program is structured to handle progressive tax rates and provides clear output with tax breakdowns. It demonstrates conditionals, arithmetic operations, and user input handling in C.",
+            "This C program allows users to input their income and deductions to calculate taxable income and the resulting tax owed. The program assigns a tax group based on predefined income brackets and applies appropriate tax rates, with a maximum tax cap. It demonstrates conditional statements, user input handling, and arithmetic operations in C.",
         image: "/programs/TaxCalculator.png",
-        sourceUrl: "https://github.com/UM-CSC322-24F/labtask-4-av1155/blob/main/TaxCalculator.c",
+        sourceUrl: "https://github.com/",
         category: "Programs",
         technologies: ["C", "Math"],
         languages: ["C"],
@@ -387,13 +423,11 @@ export const projects: Project[] = [
     {
         title: "Oxygen Pressure Calculator",
         slug: "oxygen-pressure-calculator",
-        description:
-            "A C program that calculates oxygen pressure based on depth in underwater diving.",
+        description: "A C program for calculating oxygen pressure at different depths underwater.",
         detailedDescription:
-            "This C program calculates the oxygen pressure experienced by a diver at different depths underwater. It includes options for inputting different depths and calculates the partial pressure of oxygen using a simplified model. It is ideal for use in diving simulations or training, providing an accurate representation of pressure changes with depth.",
+            "This C program calculates the partial pressure of oxygen (O2) based on depth in feet and the percentage of oxygen in the gas mix. It computes the ambient pressure at a given depth and the corresponding O2 pressure, assigning a pressure group and checking if it exceeds maximum and contingency safety limits. This project illustrates pressure calculation and input validation in C.",
         image: "/programs/OxygenPressureCalculator.png",
-        sourceUrl:
-            "https://github.com/UM-CSC322-24F/labtask-4-av1155/blob/main/OxygenPressureCalculator.c",
+        sourceUrl: "https://github.com/",
         category: "Programs",
         technologies: ["C", "Physics", "Math"],
         languages: ["C"],
@@ -402,11 +436,11 @@ export const projects: Project[] = [
         title: "Kangaroo Roadkill Probability Calculator",
         slug: "kangaroo-roadkill-probability-calculator",
         description:
-            "A C console program to calculate the expected number of kangaroo roadkills based on density, road length, and other factors.",
+            "A C program to estimate the expected number of kangaroo roadkills based on environmental and road factors.",
         detailedDescription:
-            "This C program calculates the expected number of kangaroo roadkills in a region based on user inputs for the region size, road length, and the number of kangaroos. The program uses predefined constants for road width and kill probability to calculate the number of expected kills. It prompts users to input the side of a square region in kilometers, the road length, and the number of kangaroos, then computes the kangaroo density and the road surface area to predict the likelihood of roadkills. The program emphasizes accurate input validation and outputs the result in a clear format.",
+            "This C program estimates the expected number of kangaroo roadkills within a defined region based on user input for region size, road length, and kangaroo population. It calculates kangaroo density from the region’s area, determines road surface area using an average road width, and applies a probability constant to estimate potential roadkill occurrences. This program emphasizes user input validation and provides clear output, helping users understand how environmental factors influence roadkill probability.",
         image: "/programs/KangarooRoadkillCalculator.png",
-        sourceUrl: "https://github.com/UM-CSC322-24F/labtask-3-av1155/blob/main/RooKill.c",
+        sourceUrl: "https://github.com/",
         category: "Programs",
         technologies: ["C", "Console Application", "Math"],
         languages: ["C"],
