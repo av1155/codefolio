@@ -336,7 +336,7 @@ export const projects: Project[] = [
         detailedDescription:
             "This C project serves as a comprehensive boat management system for marinas, allowing users to add, remove, and display boat information, process payments, and track monthly fees based on storage location. The project includes support for different storage types (slip, land, trailer, storage) with respective rates, dynamically expands memory for new entries, and validates user input. It also supports file-based data persistence, enabling data to be saved and loaded from CSV files, and displays boats in alphabetical order for easy inventory management. Key features include robust memory management, user input validation, and structured output of all data entries.",
         image: "/projects/BoatManagementSystem.png",
-        sourceUrl: "https://github.com/",
+        sourceUrl: "https://gist.github.com/av1155/bf9f2d478d3621722cb672e3a5e7f116",
         category: "Projects",
         technologies: ["C", "File Handling", "Dynamic Memory Allocation", "Structs", "Enums"],
         languages: ["C"],
@@ -348,7 +348,7 @@ export const projects: Project[] = [
         detailedDescription:
             "This C program allows users to create and store information about people, including their names, ages, and best friends. The program dynamically allocates memory for each person, storing up to ten entries and allowing users to assign best friends within the list. It demonstrates dynamic memory allocation, struct manipulation, and relational data management through pointers, offering clear input validation and structured output for all entries.",
         image: "/programs/DynamicStructs.png",
-        sourceUrl: "https://github.com/",
+        sourceUrl: "https://gist.github.com/av1155/65dcb1dd20eca77ac6edae5cdeb8aae0",
         category: "Programs",
         technologies: ["C", "Dynamic Memory Allocation", "Structs", "Pointer Relationships"],
         languages: ["C"],
@@ -360,7 +360,7 @@ export const projects: Project[] = [
         detailedDescription:
             "This C program allows users to log various animal species, including their name, size, and type (mammal, insect, bird, or fish). It dynamically expands memory as needed to accommodate new entries, enabling users to input multiple species until 'exit' is entered. The program includes robust input validation and displays all recorded species in a structured format, making it useful for demonstrating dynamic memory allocation, enums, and struct-based data storage in C.",
         image: "/programs/SpeciesLog.png",
-        sourceUrl: "https://github.com/",
+        sourceUrl: "https://gist.github.com/av1155/bc348c6653199835e32b302aa3d2c9c6",
         category: "Programs",
         technologies: ["C", "Dynamic Memory Allocation", "Enums", "Structs"],
         languages: ["C"],
@@ -373,7 +373,7 @@ export const projects: Project[] = [
         detailedDescription:
             "This program, written in C, demonstrates dynamic memory allocation for matrix creation and performs matrix multiplication. It includes input validation to ensure compatible dimensions before multiplication. The project focuses on basic memory handling and matrix manipulation in C, making it ideal for practicing dynamic allocation and understanding row-major matrix storage.",
         image: "/programs/DynamicMatrices.png",
-        sourceUrl: "https://github.com/",
+        sourceUrl: "https://gist.github.com/av1155/1a21178fcea0061dce9922f9d99b4af2",
         category: "Programs",
         technologies: [
             "C",
@@ -391,7 +391,7 @@ export const projects: Project[] = [
         detailedDescription:
             "This C program demonstrates sorting with pointers through a basic implementation of bubble sort. It initializes an array of integers and an array of pointers to these integers, sorting both by using pointers for in-place comparisons and swaps. This program is helpful for understanding fundamental pointer usage and basic sorting logic.",
         image: "/programs/SortPointers.png",
-        sourceUrl: "https://github.com/",
+        sourceUrl: "https://gist.github.com/av1155/22c35597ba9c4eb0f80b21587a855cfd",
         category: "Programs",
         technologies: ["C", "Pointers", "Sorting Algorithms", "Memory Management"],
         languages: ["C"],
@@ -403,7 +403,7 @@ export const projects: Project[] = [
         detailedDescription:
             "This C program demonstrates the use of bitwise operations to perform basic checks, including determining if a number is even or odd, checking if a specific bit is set, and verifying if all bits in a given range are on. It provides a straightforward way to explore bitwise logic, helping users understand practical applications of bitwise operators in C.",
         image: "/programs/BitOps.png",
-        sourceUrl: "https://github.com/",
+        sourceUrl: "https://gist.github.com/av1155/4a379b143a6d296d26b9afb545ef8510",
         category: "Programs",
         technologies: ["C", "Bitwise Operations", "Binary Arithmetic", "Optimization"],
         languages: ["C"],
@@ -415,7 +415,7 @@ export const projects: Project[] = [
         detailedDescription:
             "This C program allows users to input their income and deductions to calculate taxable income and the resulting tax owed. The program assigns a tax group based on predefined income brackets and applies appropriate tax rates, with a maximum tax cap. It demonstrates conditional statements, user input handling, and arithmetic operations in C.",
         image: "/programs/TaxCalculator.png",
-        sourceUrl: "https://github.com/",
+        sourceUrl: "https://gist.github.com/av1155/8bce594c9f69b2c0a79a5fe9aedb4cbe",
         category: "Programs",
         technologies: ["C", "Math"],
         languages: ["C"],
@@ -427,7 +427,7 @@ export const projects: Project[] = [
         detailedDescription:
             "This C program calculates the partial pressure of oxygen (O2) based on depth in feet and the percentage of oxygen in the gas mix. It computes the ambient pressure at a given depth and the corresponding O2 pressure, assigning a pressure group and checking if it exceeds maximum and contingency safety limits. This project illustrates pressure calculation and input validation in C.",
         image: "/programs/OxygenPressureCalculator.png",
-        sourceUrl: "https://github.com/",
+        sourceUrl: "https://gist.github.com/av1155/8830c79d08f6221875306eff86b263d6",
         category: "Programs",
         technologies: ["C", "Physics", "Math"],
         languages: ["C"],
@@ -440,7 +440,7 @@ export const projects: Project[] = [
         detailedDescription:
             "This C program estimates the expected number of kangaroo roadkills within a defined region based on user input for region size, road length, and kangaroo population. It calculates kangaroo density from the region’s area, determines road surface area using an average road width, and applies a probability constant to estimate potential roadkill occurrences. This program emphasizes user input validation and provides clear output, helping users understand how environmental factors influence roadkill probability.",
         image: "/programs/KangarooRoadkillCalculator.png",
-        sourceUrl: "https://github.com/",
+        sourceUrl: "https://gist.github.com/av1155/79b43b8c7218e0dccd0adf49db0087b3",
         category: "Programs",
         technologies: ["C", "Console Application", "Math"],
         languages: ["C"],
