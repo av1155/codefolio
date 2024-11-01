@@ -22,7 +22,7 @@ export const projects: Project[] = [
         detailedDescription:
             "FlaskKeyring is a comprehensive password management solution utilizing a zero-knowledge model with client-side AES-GCM encryption and PBKDF2-derived keys, ensuring sensitive information remains secure end-to-end. User encryption keys are derived from their master password, stored only on the client. Flask-Login powers user authentication, while Flask-Mail and Mailgun support secure email validation and password recovery. The application leverages RESTful APIs, a responsive Bootstrap interface, and Jinja2 for dynamic templating. For deployment, it uses Heroku with PostgreSQL for production and SQLite for local testing. Key database elements include the master password hash, encrypted passwords, IV, and salt, all designed to protect user data with strong client-side encryption.",
         image: "/projects/FlaskKeyring.png",
-        liveUrl: "https://flaskkeyring.tech",
+        liveUrl: "https://www.flaskkeyring.com",
         sourceUrl: "https://github.com/av1155/FlaskKeyring",
         category: "Projects",
         technologies: [
