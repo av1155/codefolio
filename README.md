@@ -67,3 +67,5 @@ This repository contains the source code for my personal portfolio website, host
 ## License
 
 This project is licensed under a Proprietary License. See the [`LICENSE`](LICENSE) file for more details.
+
+**Note:** _All project illustrations on this website were generated using OpenAI's DALL·E._

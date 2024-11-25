@@ -119,6 +119,20 @@ export const projects: Project[] = [
         languages: ["Bash"],
     },
     {
+        title: "Matrix Chain Multiplication Analysis",
+        slug: "matrix-chain-multiplication-analysis",
+        description:
+            "A Go and Python project analyzing computation cost reduction for matrix chain multiplication using dynamic programming.",
+        detailedDescription:
+            "This project evaluates computation-cost reduction strategies for matrix chain multiplication using dynamic programming and compares it to sequential left-to-right multiplication. The analysis is performed using sequences of matrix dimensions, generating detailed results and visualizations for empirical insights. The project is implemented in Go for computational efficiency and Python for data analysis and visualization.",
+        image: "/projects/matrix_chain_multiplication_analysis.png",
+        sourceUrl:
+            "https://gitfront.io/r/av1155/XHHyfd35fp3D/matrix-chain-multiplication-analysis/",
+        category: "Programs",
+        technologies: ["Go", "Python", "Dynamic Programming", "Data Analysis", "Visualization"],
+        languages: ["Go", "Python"],
+    },
+    {
         title: "Empirical Evaluation of Classic Sorting Algorithms",
         slug: "evaluation-of-sorting-algorithms",
         description:
@@ -552,6 +566,55 @@ export const projects: Project[] = [
         category: "Programs",
         technologies: ["Java", "Game Development", "Algorithms"],
         languages: ["Java"],
+    },
+    {
+        title: "Batch Executor",
+        slug: "batch-executor",
+        description: "A C program that executes commands from a file in batch mode.",
+        detailedDescription: `
+        Batch Executor is a C program designed to execute a series of shell commands specified in a file. 
+        The program reads each command, spawns a child process using \`fork()\`, and executes the command 
+        in the background with \`execvp()\`. It ensures that all commands are executed concurrently and waits 
+        for all processes to complete before terminating. This project demonstrates a strong understanding 
+        of process management, inter-process communication, and system-level programming concepts in Unix/Linux.`,
+        image: "/programs/BatchExecutor.png",
+        sourceUrl: "https://gist.github.com/av1155/9602cf8e075cee1ce3d0f38d35ab4c39",
+        category: "Programs",
+        technologies: ["C", "Process Management", "Fork", "Execvp", "Waitpid", "Unix/Linux"],
+        languages: ["C"],
+    },
+    {
+        title: "Qualities Parser",
+        slug: "qualities-parser",
+        description: "A C program to extract, process, and save user-described qualities.",
+        detailedDescription: `
+        Qualities Parser is a C program that collects user input to extract self-described qualities 
+        starting with the phrase "I am". It writes these qualities to a file, concatenates them into 
+        a single string, displays the results, and deletes the file after confirmation. The program 
+        uses dynamic string manipulation and file handling to efficiently process the data, ensuring 
+        robustness through input validation and error handling. It also demonstrates mastery of basic 
+        string and file operations in C.`,
+        image: "/programs/QualitiesParser.png",
+        sourceUrl: "https://gist.github.com/av1155/cb220cc301ca238dcae9e57951c09fcf",
+        category: "Programs",
+        technologies: ["C", "File Handling", "String Manipulation", "Memory Management"],
+        languages: ["C"],
+    },
+    {
+        title: "Sentence Analyzer",
+        slug: "sentence-analyzer",
+        description: "A C program for sentence and word-level analysis using regex.",
+        detailedDescription: `
+        Sentence Analyzer is a robust C program that performs sentence-level analysis on user input. 
+        It splits text into sentences based on punctuation (.!?), checks each sentence against a user-provided 
+        regular expression to determine matches, and counts the number of words in each sentence. This program 
+        demonstrates the use of advanced C features, including regex handling, tokenization with strtok_r, 
+        and memory-safe string manipulation, providing an efficient and interactive tool for text analysis.`,
+        image: "/programs/SentenceAnalyzer.png",
+        sourceUrl: "https://gist.github.com/av1155/fef215ccd527c205449920b44e81c012",
+        category: "Programs",
+        technologies: ["C", "Regex", "Text Analysis", "Tokenization"],
+        languages: ["C"],
     },
     {
         title: "Bakery Shop Simulator",
