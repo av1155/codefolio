@@ -362,6 +362,26 @@ export const projects: Project[] = [
         languages: ["C"],
     },
     {
+        title: "Stream Editor (svi)",
+        slug: "stream-editor-svi",
+        description:
+            "A C project that mimics the functionality of a stream editor, applying a list of edit commands to text files.",
+        detailedDescription:
+            "The Stream Editor (svi) is a C-based program that processes lines of text from standard input according to a set of commands provided in a file. This project supports a variety of edit operations, including inserting, appending, deleting, and substituting text with optional line range specifications. Commands are stored using efficient data structures, including enums and unions, and are executed with robust error handling. The program features a modular design with a Makefile for easy compilation and testing, ensuring maintainability and scalability. Key functionalities include handling complex edit operations with dynamic memory, user-friendly syntax for commands, and high-performance line processing.",
+        image: "/projects/StreamEditorSvi.png",
+        sourceUrl: "https://gist.github.com/av1155/ab4ac9f92869ed1422afb37d45180e92",
+        category: "Projects",
+        technologies: [
+            "C",
+            "File Handling",
+            "Dynamic Memory Allocation",
+            "Structs",
+            "Enums",
+            "Makefile",
+        ],
+        languages: ["C"],
+    },
+    {
         title: "Dynamic Structs",
         slug: "dynamic-structs",
         description: "A C program to manage dynamically allocated structures with relational data.",
