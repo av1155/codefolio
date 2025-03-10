@@ -13,6 +13,7 @@ const LanguageFilter: React.FC<LanguageFilterProps> = ({ activeLanguage, setActi
         "Java",
         "JavaScript",
         "TypeScript",
+        "Go",
         "C",
         "C++",
         "Bash",

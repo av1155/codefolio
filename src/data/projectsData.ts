@@ -126,9 +126,8 @@ export const projects: Project[] = [
         detailedDescription:
             "This project evaluates computation-cost reduction strategies for matrix chain multiplication using dynamic programming and compares it to sequential left-to-right multiplication. The analysis is performed using sequences of matrix dimensions, generating detailed results and visualizations for empirical insights. The project is implemented in Go for computational efficiency and Python for data analysis and visualization.",
         image: "/projects/matrix_chain_multiplication_analysis.png",
-        sourceUrl:
-            "https://gitfront.io/r/av1155/XHHyfd35fp3D/matrix-chain-multiplication-analysis/",
-        category: "Programs",
+        sourceUrl: "https://github.com/av1155/matrix-chain-multiplication-analysis",
+        category: "Projects",
         technologies: ["Go", "Python", "Dynamic Programming", "Data Analysis", "Visualization"],
         languages: ["Go", "Python"],
     },
@@ -150,6 +149,27 @@ export const projects: Project[] = [
             "NumPy",
             "Pandas",
             "Memory Profiling",
+        ],
+        languages: ["Python"],
+    },
+    {
+        title: "Kruskal & Prim Implementation",
+        slug: "kruskal-prim-implementation",
+        description:
+            "A Python project implementing and comparing Kruskal's and Prim's algorithms for computing the Minimum Spanning Tree (MST) of a graph.",
+        detailedDescription:
+            "This project provides Python implementations of two classic graph algorithms—Kruskal's and Prim's—for finding the Minimum Spanning Tree (MST) in an undirected, weighted graph. It includes scripts that execute both algorithms on sample input graphs, along with a performance evaluation module that uses NetworkX to generate random graphs and matplotlib to visualize execution times across various graph sizes and densities. Detailed documentation, user manuals, and performance reports (in PDF and CSV formats) support a comprehensive understanding of the algorithms, their implementations, and their efficiency.",
+        image: "/programs/kruskal_prim_implementation.png",
+        sourceUrl: "https://github.com/av1155/kruskal-prim-implementation",
+        category: "Programs",
+        technologies: [
+            "Python",
+            "Graph Algorithms",
+            "Kruskal's Algorithm",
+            "Prim's Algorithm",
+            "NetworkX",
+            "Matplotlib",
+            "Pandas",
         ],
         languages: ["Python"],
     },
