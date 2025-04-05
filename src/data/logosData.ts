@@ -18,6 +18,12 @@ export const logos = [
         height: 388,
     },
     {
+        name: "Dart",
+        src: "/technologies/dart.png",
+        width: 1024,
+        height: 1024,
+    },
+    {
         name: "Go",
         src: "/technologies/golang.png",
         width: 512,

@@ -9,12 +9,12 @@
         "lint": "next lint"
     },
     "dependencies": {
-        "@formspree/react": "^2.5.4",
+        "@formspree/react": "^2.5.5",
         "@fortawesome/fontawesome-svg-core": "^6.7.2",
         "@fortawesome/free-brands-svg-icons": "^6.7.2",
         "@fortawesome/free-solid-svg-icons": "^6.7.2",
         "@fortawesome/react-fontawesome": "^0.2.2",
-        "@headlessui/react": "^2.2.0",
+        "@headlessui/react": "^2.2.1",
         "@heroicons/react": "^2.2.0",
         "@vercel/analytics": "^1.5.0",
         "@vercel/speed-insights": "^1.2.0",
@@ -30,13 +30,13 @@
         "@tailwindcss/forms": "^0.5.10",
         "@tailwindcss/typography": "^0.5.16",
         "@types/node": "22.7.7",
-        "@types/react": "^18.3.18",
-        "@types/react-dom": "^18.3.5",
+        "@types/react": "^18.3.20",
+        "@types/react-dom": "^18.3.6",
         "eslint": "^8.57.1",
         "eslint-config-next": "14.2.13",
         "postcss": "^8.5.3",
         "tailwindcss": "^3.4.17",
-        "typescript": "^5.8.2"
+        "typescript": "^5.8.3"
     },
     "packageManager": "pnpm@9.12.0+sha512.4abf725084d7bcbafbd728bfc7bee61f2f791f977fd87542b3579dcb23504d170d46337945e4c66485cd12d588a0c0e570ed9c477e7ccdd8507cf05f3f92eaca"
 }

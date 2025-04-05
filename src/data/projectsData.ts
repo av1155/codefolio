@@ -58,6 +58,27 @@ export const projects: Project[] = [
         languages: ["Java"],
     },
     {
+        title: "BridgeChat",
+        slug: "bridgechat",
+        description:
+            "A real-time chat application with integrated on-the-fly translation that breaks language barriers across platforms.",
+        detailedDescription:
+            "BridgeChat is a comprehensive real-time chat application designed to facilitate seamless communication between users of different languages. It integrates automatic message translation based on each user's preferred language, ensuring a smooth conversation flow without language limitations. Built with Flutter for cross-platform support (web, mobile, and desktop) and Firebase for authentication, real-time messaging, and backend services, BridgeChat emphasizes privacy with username-based registration. The project also features robust CI/CD pipelines, extensive documentation covering system architecture, testing, and deployment, and is designed to scale for future enhancements.",
+        image: "/projects/BridgeChat.png",
+        liveUrl: "https://av1155-bridgechat.web.app/",
+        sourceUrl: "https://github.com/av1155/bridgechat",
+        category: "Projects",
+        technologies: [
+            "Flutter",
+            "Firebase",
+            "Dart",
+            "Cloud Functions",
+            "Real-Time Messaging",
+            "CI/CD",
+        ],
+        languages: ["Dart"],
+    },
+    {
         title: "Portfolio Website",
         slug: "portfolio-website",
         description:
