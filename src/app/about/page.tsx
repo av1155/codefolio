@@ -61,14 +61,21 @@ export default async function AboutPage() {
                         Hi, I&apos;m Andrea Venti
                     </h1>
                     <p className="mt-6 text-lg leading-8" data-aos="fade-up">
-                        Andrea Venti is a passionate{" "}
-                        <span className="font-bold">Software Engineer</span> who thrives on crafting
-                        efficient and elegant solutions to complex problems. Currently pursuing a{" "}
-                        <span className="font-bold">B.S. in Computer Science </span>
-                        with a minor in Mathematics at the{" "}
-                        <span className="font-bold">University of Miami</span>, Andrea turns ideas
-                        into reality through code, with a deep love for innovation and
-                        problem-solving.
+                        I’m a Computer Science student at the{" "}
+                        <span className="font-bold">University of Miami</span> with a passion for
+                        building systems that are not just functional, but reliable, secure, and
+                        maintainable. My background blends{" "}
+                        <span className="font-bold">Software Engineering</span> fundamentals with a
+                        growing focus on{" "}
+                        <span className="font-bold">Site Reliability Engineering</span> and{" "}
+                        <span className="font-bold">DevOps</span>.
+                    </p>
+                    <p className="mt-6 text-lg leading-8" data-aos="fade-up">
+                        Whether I’m writing code, managing containerized deployments, or optimizing
+                        my homelab’s high-availability setup, I love working at the intersection of
+                        code, infrastructure, automation, and scalability. My projects span from
+                        full-stack apps and microservices to self-hosted platforms that mirror
+                        real-world production environments.
                     </p>
 
                     {/* Cards Section */}
@@ -83,11 +90,13 @@ export default async function AboutPage() {
                                 Academic Excellence
                             </h3>
                             <p className="mt-4 text-base leading-7">
-                                A consistent achiever, Andrea has earned distinctions such as{" "}
+                                I’m proud to have been recognized with honors like the{" "}
                                 <span className="font-bold">Dean’s List</span> and{" "}
-                                <span className="font-bold">Provost Honor Roll</span>, and secured{" "}
-                                <span className="font-bold">2nd place</span> in the prestigious{" "}
-                                <span className="font-bold">UHack Hackathon</span>.
+                                <span className="font-bold">Provost Honor Roll</span> at the
+                                University of Miami. I also earned{" "}
+                                <span className="font-bold">2nd place</span> at{" "}
+                                <span className="font-bold">UHack Hackathon</span> for building a
+                                sustainability project.
                             </p>
                         </div>
 
@@ -97,23 +106,28 @@ export default async function AboutPage() {
                             data-aos="zoom-in"
                         >
                             <CodeBracketIcon className="h-12 w-12 text-white transform hover:scale-125 transition duration-300" />
-                            <h3 className="mt-4 text-xl font-semibold text-white">Tech Stack</h3>
+                            <h3 className="mt-4 text-xl font-semibold text-white">
+                                Engineering Toolkit
+                            </h3>
                             <p className="mt-4 text-base leading-7">
-                                Proficient in languages like{" "}
-                                <span className="font-bold">Python</span>,{" "}
-                                <span className="font-bold">Java</span>,{" "}
-                                <span className="font-bold">C</span>,{" "}
+                                I work fluently with <span className="font-bold">Python</span>,{" "}
                                 <span className="font-bold">Go</span>,{" "}
-                                <span className="font-bold">TypeScript</span>, among others. Andrea
-                                is skilled in tools such as{" "}
+                                <span className="font-bold">Java</span>,{" "}
+                                <span className="font-bold">C</span>, and{" "}
+                                <span className="font-bold">TypeScript</span>. I&apos;m experienced
+                                with <span className="font-bold">Linux</span>,{" "}
                                 <span className="font-bold">Docker</span>,{" "}
-                                <span className="font-bold">Git</span>,{" "}
-                                <span className="font-bold">React</span>,{" "}
-                                <span className="font-bold">Next.js</span>, and{" "}
-                                <span className="font-bold">Flask</span>. With experience in cloud
-                                platforms like <span className="font-bold">Vercel</span> and{" "}
-                                <span className="font-bold">Heroku</span>, Andrea delivers
-                                high-quality, full-stack software solutions.
+                                <span className="font-bold">AWS</span>, and{" "}
+                                <span className="font-bold">GitHub Actions</span> for CI/CD.
+                            </p>
+                            <p className="mt-4 text-base leading-7">
+                                I’ve deployed and monitored containerized systems using{" "}
+                                <span className="font-bold">Uptime Kuma</span>,{" "}
+                                <span className="font-bold">CloudWatch</span>, and{" "}
+                                <span className="font-bold">Grafana</span>, and I’m learning{" "}
+                                <span className="font-bold">Terraform</span> and{" "}
+                                <span className="font-bold">Ansible</span> for infrastructure as
+                                code.
                             </p>
                         </div>
 
@@ -123,15 +137,26 @@ export default async function AboutPage() {
                             data-aos="zoom-in"
                         >
                             <LightBulbIcon className="h-12 w-12 text-white transform hover:scale-125 transition duration-300" />
-                            <h3 className="mt-4 text-xl font-semibold text-white">Philosophy</h3>
+                            <h3 className="mt-4 text-xl font-semibold text-white">
+                                Reliability Mindset
+                            </h3>
                             <p className="mt-4 text-base leading-7">
-                                Believing in the power of continuous learning and innovation, Andrea
-                                strives to create software that is{" "}
-                                <span className="font-bold">reliable</span>,{" "}
-                                <span className="font-bold">scalable</span>, and{" "}
-                                <span className="font-bold">user-friendly</span>. Whether building
-                                web applications or exploring AI, each project is approached with a
-                                commitment to quality and efficiency.
+                                I design systems to be <span className="font-bold">resilient</span>,{" "}
+                                <span className="font-bold">highly available</span>,{" "}
+                                <span className="font-bold">observable</span>, and{" "}
+                                <span className="font-bold">automated</span>. In my homelab, I treat
+                                every service like production; scripting{" "}
+                                <span className="font-bold">backups</span>, managing{" "}
+                                <span className="font-bold">TLS</span>, and building tools like my{" "}
+                                <a
+                                    href="https://github.com/av1155/rpi-usb-nas-restore"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="underline font-bold"
+                                >
+                                    Raspberry Pi restore workflow
+                                </a>{" "}
+                                to streamline recovery and improve reliability.
                             </p>
                         </div>
                     </div>
