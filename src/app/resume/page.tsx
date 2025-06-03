@@ -23,23 +23,7 @@ export default function ResumePage() {
                         Resume
                     </h1>
 
-                    <p className="mt-4 text-lg leading-8 max-w-3xl mx-auto">
-                        I&apos;m currently focused on{" "}
-                        <span className="font-bold">Site Reliability Engineering</span> and{" "}
-                        <span className="font-bold">DevOps</span> roles. Below is my tailored resume
-                        for those fields. For teams hiring full-stack developers, my{" "}
-                        <a
-                            href="/swe-resume.pdf"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="underline font-bold"
-                        >
-                            Software Engineering resume
-                        </a>{" "}
-                        is also available.
-                    </p>
-
-                    <div className="mt-8 flex justify-center space-x-4" data-aos="zoom-in">
+                    <div className="mt-6 flex justify-center space-x-4" data-aos="zoom-in">
                         <a
                             href="/sre-resume.pdf"
                             target="_blank"
@@ -56,7 +40,7 @@ export default function ResumePage() {
                                     navigator
                                         .share({
                                             title: "Andrea Venti Fuentes - Resume",
-                                            text: "Check out Andrea Venti Fuentes' SRE/DevOps resume. View or download it here.",
+                                            text: "Check out Andrea Venti Fuentes' professional resume. View or download it here.",
                                             url: window.location.href,
                                         })
                                         .then(() => console.log("Shared successfully!"))
@@ -77,7 +61,7 @@ export default function ResumePage() {
                             <iframe
                                 src="/sre-resume.pdf#zoom=page-width&view=FitH"
                                 className="w-full h-[80vh] sm:h-screen rounded-lg border-2 border-white"
-                                title="SRE Resume"
+                                title="Resume PDF"
                             ></iframe>
                         </div>
                     </div>
