@@ -20,6 +20,8 @@ const LanguageFilter: React.FC<LanguageFilterProps> = ({ activeLanguage, setActi
         "Bash",
         "Lua",
         "Swift",
+        "YAML",
+        "Markdown",
     ];
 
     return (

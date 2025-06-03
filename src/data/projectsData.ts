@@ -15,6 +15,52 @@ export interface Project {
 export const projects: Project[] = [
     // Main Projects
     {
+        title: "Self-Hosted Homelab Infrastructure",
+        slug: "homelab-infrastructure",
+        description:
+            "A production-grade homelab with VLAN networking, GitHub CI/CD, and 60+ Docker containers across Proxmox, NAS, and Raspberry Pi.",
+        detailedDescription: `This homelab replicates real-world infrastructure with a focus on high availability, observability, and automation. It spans a Proxmox high-availability (HA) cluster using ZFS replication and LXC for OS-level virtualization, composed of an Intel NUC12, NUC11, and a Raspberry Pi 5 acting as a QDevice for quorum. A Synology DS423+ NAS provides redundant NFS storage and backup, while the Raspberry Pi also handles lightweight auxiliary services.
+        
+        Key services run in Docker containers and include: Portainer, Watchtower, Uptime Kuma, AdGuard Home, Vaultwarden, WireGuard, NGINX Proxy Manager, and the Kestra orchestration engine, among others. The network is segmented into VLANs (e.g., IoT, Infra) using UniFi gear and is secured with Cloudflare DNS proxying and Zero Trust access control.
+
+        TLS certificates are issued and renewed via two complementary mechanisms. First, acme.sh on the Synology NAS uses scheduled tasks and the Cloudflare DNS API to manage wildcard certificates, with deployment to Synology DSM and Slack webhook notifications for visibility—covering services like MailPlus Server. Second, NGINX Proxy Manager, running in a Docker container within an unprivileged Proxmox LXC, handles automated certificate creation via the Cloudflare API for reverse-proxied services such as nas.andreaventi.com and it-tools.andreaventi.com.
+
+        Automated full-system backups are managed via cron and Bash scripts, with ZFS snapshot replication over NFS from LXC containers, including retention policies and alerting. To streamline recovery, a custom Raspberry Pi USB restore workflow was implemented using a Bash script and GitHub-hosted image, allowing fully automated reimaging via a simple \`curl | bash\` command. This enables rapid disaster recovery for critical services running on lightweight hardware.
+
+        Observability is implemented with Prometheus, Grafana, Alertmanager, and Uptime Kuma, utilizing Node and Blackbox Exporters, custom dashboards, status pages, and SMTP notifications for service health alerts. A centralized dashboard powered by GetHomepage aggregates real-time metrics, quick-access links, and service states for over 30 applications.
+
+        Kubernetes workloads are deployed using K3s running in a dedicated Proxmox VM, with Helm used for application lifecycle management. CI/CD pipelines are managed through GitHub Actions, automating container builds and deployments.
+
+        The infrastructure is documented using Material for MkDocs, hosted on GitHub Pages, and deployed via GitHub Actions with access secured by Cloudflare Zero Trust. Configuration and provisioning are handled using Terraform and Ansible, following infrastructure-as-code best practices.`,
+        image: "/projects/homelab.png",
+        liveUrl: "https://docs.andreaventi.com",
+        sourceUrl: "https://github.com/av1155/homelab-docs",
+        category: "Projects",
+        technologies: [
+            "Proxmox VE",
+            "ZFS",
+            "LXC",
+            "Docker",
+            "K3s",
+            "Helm",
+            "Terraform",
+            "Ansible",
+            "GitHub Actions",
+            "Cloudflare Zero Trust",
+            "NGINX Proxy Manager",
+            "acme.sh",
+            "Prometheus",
+            "Grafana",
+            "Alertmanager",
+            "Uptime Kuma",
+            "UniFi VLANs",
+            "Synology DSM",
+            "Material for MkDocs",
+            "WireGuard",
+        ],
+        languages: ["Bash", "YAML", "Markdown"],
+    },
+    {
         title: "FlaskKeyring",
         slug: "flaskkeyring",
         description:

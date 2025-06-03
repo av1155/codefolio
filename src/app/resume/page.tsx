@@ -36,14 +36,12 @@ export default function ResumePage() {
                         <button
                             className="rounded-md bg-white bg-opacity-80 px-4 py-2 text-md font-semibold text-indigo-700 hover:bg-opacity-100 transform hover:scale-105 transition duration-300 flex items-center justify-center w-36"
                             onClick={() => {
-                                const shareUrl = `${window.location.origin}/sre-resume.pdf`;
-
                                 if (navigator.share) {
                                     navigator
                                         .share({
                                             title: "Andrea Venti Fuentes - Resume",
                                             text: "Check out Andrea Venti Fuentes' professional resume. View or download it here.",
-                                            url: shareUrl,
+                                            url: window.location.href,
                                         })
                                         .then(() => console.log("Shared successfully!"))
                                         .catch((error) => console.error("Error sharing:", error));

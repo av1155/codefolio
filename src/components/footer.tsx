@@ -35,8 +35,8 @@ export default function Footer() {
                     <div>
                         <h4 className="text-xl font-semibold mb-4">About Me</h4>
                         <p className="text-gray-300 leading-relaxed">
-                            Software Engineer & Innovator passionate about building modern,
-                            efficient, and scalable software solutions.
+                            Software & Platform Engineer focused on building scalable, reliable
+                            systems through automation, infrastructure, and modern tooling.
                         </p>
                     </div>
 

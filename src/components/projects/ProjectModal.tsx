@@ -87,9 +87,13 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ selectedProject, closeProje
                                     </div>
 
                                     {/* Description */}
-                                    <p className="mt-4 text-gray-700">
-                                        {selectedProject.detailedDescription}
-                                    </p>
+                                    <div className="mt-4 text-gray-700 space-y-4">
+                                        {selectedProject.detailedDescription
+                                            .split("\n\n")
+                                            .map((para, idx) => (
+                                                <p key={idx}>{para}</p>
+                                            ))}
+                                    </div>
 
                                     {/* Technologies */}
                                     <div className="mt-4">

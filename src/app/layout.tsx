@@ -9,9 +9,9 @@ import { ReactNode, Suspense } from "react";
 
 // Define global metadata
 export const metadata: Metadata = {
-    title: "Andrea Venti - Software Engineer Portfolio",
+    title: "Andrea Venti - Software & Platform Engineer Portfolio",
     description:
-        "Welcome to Andrea Venti's portfolio showcasing projects in software engineering, development, and more.",
+        "Software & Platform Engineer focused on building scalable, reliable systems through automation, infrastructure, and modern tooling.",
     applicationName: "Andrea Venti Portfolio",
     referrer: "origin-when-cross-origin",
     manifest: "/site.webmanifest",
@@ -53,9 +53,9 @@ export const metadata: Metadata = {
     openGraph: {
         type: "website",
         url: "https://www.andreaventi.com",
-        title: "Andrea Venti - Software Engineer Portfolio",
+        title: "Andrea Venti - Software & Platform Engineer Portfolio",
         description:
-            "Discover Andrea Venti's journey as a software engineer, highlighting innovative projects and a focus on modern technology solutions.",
+            "Software & Platform Engineer focused on building scalable, reliable systems through automation, infrastructure, and modern tooling.",
         siteName: "Andrea Venti Portfolio",
         images: [
             {
@@ -70,9 +70,9 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         site: "@Andru_VF",
         creator: "@Andru_VF",
-        title: "Andrea Venti - Software Engineer",
+        title: "Andrea Venti - Software & Platform Engineer Portfolio",
         description:
-            "Discover Andrea Venti's journey as a software engineer, highlighting innovative projects and a focus on modern technology solutions.",
+            "Software & Platform Engineer focused on building scalable, reliable systems through automation, infrastructure, and modern tooling.",
         images: [
             {
                 url: "/favicon.jpg",

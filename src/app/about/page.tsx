@@ -20,16 +20,38 @@ interface ImageProps {
 
 export default async function AboutPage() {
     const images: ImageProps[] = [
-        { src: "/about/dog-park.jpeg", alt: "Andrea at a dog park with her pet" },
-        { src: "/about/backyard.jpeg", alt: "Andrea relaxing in a backyard setting" },
-        { src: "/about/snowboarding-colorado.jpeg", alt: "Andrea snowboarding in Colorado" },
-        { src: "/about/shellhacks-2023-team.jpeg", alt: "Andrea with her team at ShellHacks 2023" },
-        { src: "/about/university-of-miami.jpeg", alt: "University of Miami campus view" },
-        { src: "/about/colorado-hike-trail.jpeg", alt: "Andrea hiking on a trail in Colorado" },
-        { src: "/about/dog-beach-walk.jpeg", alt: "Andrea walking her dog on the beach" },
-        { src: "/about/colorado-walk.jpeg", alt: "Andrea on a scenic walk in Colorado" },
-        { src: "/about/boating-trip.jpeg", alt: "Andrea enjoying a boating trip" },
-        { src: "/about/horseback-riding.jpeg", alt: "Andrea horseback riding" },
+        {
+            src: "/about/snowboarding-colorado.jpeg",
+            alt: "Andrea snowboarding on a scenic mountain slope in Colorado",
+        },
+        {
+            src: "/about/university-of-miami.jpeg",
+            alt: "Andrea posing with his dog in front of the University of Miami 'U' statue",
+        },
+        {
+            src: "/about/shellhacks-2023-team.jpeg",
+            alt: "Andrea with his hackathon team at ShellHacks 2023, sitting around a table with laptops",
+        },
+        {
+            src: "/about/iPad+RaspberryPi5.jpeg",
+            alt: "iPad running terminal session connected to a Raspberry Pi 5 on Andrea’s desk",
+        },
+        {
+            src: "/about/homelab.jpeg",
+            alt: "Andrea’s homelab setup with UniFi gear, Intel NUCs, Raspberry Pi, and a Synology NAS",
+        },
+        {
+            src: "/about/dog-beach-walk.jpeg",
+            alt: "Andrea walking his German Shepherd along the beach at sunset",
+        },
+        {
+            src: "/about/boating-trip.jpeg",
+            alt: "Andrea standing on the edge of a boat holding a rope, looking out at the water",
+        },
+        {
+            src: "/about/horseback-riding.jpeg",
+            alt: "Andrea riding a horse through a wooded trail with sun filtering through the trees",
+        },
     ];
 
     // Generate blurDataURL for each image
