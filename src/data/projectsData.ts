@@ -19,7 +19,7 @@ export const projects: Project[] = [
         slug: "homelab-infrastructure",
         description:
             "A production-grade homelab with VLAN networking, GitHub CI/CD, and 60+ Docker containers across Proxmox, NAS, and Raspberry Pi.",
-        detailedDescription: `This homelab replicates real-world infrastructure with a focus on high availability, observability, and automation. It spans a Proxmox high-availability (HA) cluster using ZFS replication and LXC for OS-level virtualization, composed of an Intel NUC12, NUC11, and a Raspberry Pi 5 acting as a QDevice for quorum. A Synology DS423+ NAS provides redundant NFS storage and backup, while the Raspberry Pi also handles lightweight auxiliary services.
+        detailedDescription: `This homelab replicates real-world infrastructure with a focus on high availability, observability, and automation. It spans a Proxmox high-availability two-node cluster using ZFS replication and LXC for OS-level virtualization, composed of an Intel NUC12, NUC11, and a Raspberry Pi 5 acting as a QDevice for quorum. A Synology DS423+ NAS provides redundant NFS storage and backup, and additionally runs a variety of services including a self-hosted MailPlus Server, Synology Drive, Photos, Syncthing, among others. The Raspberry Pi also handles lightweight auxiliary services.
         
         Key services run in Docker containers and include: Portainer, Watchtower, Uptime Kuma, AdGuard Home, Vaultwarden, WireGuard, NGINX Proxy Manager, and the Kestra orchestration engine, among others. The network is segmented into VLANs (e.g., IoT, Infra) using UniFi gear and is secured with Cloudflare DNS proxying and Zero Trust access control.
 
