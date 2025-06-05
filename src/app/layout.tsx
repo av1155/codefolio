@@ -9,6 +9,7 @@ import { ReactNode, Suspense } from "react";
 
 // Define global metadata
 export const metadata: Metadata = {
+    metadataBase: new URL("https://andreaventi.com"),
     title: "Andrea Venti - Software & Platform Engineer Portfolio",
     description:
         "Software & Platform Engineer focused on building scalable, reliable systems through automation, infrastructure, and modern tooling.",
@@ -39,9 +40,9 @@ export const metadata: Metadata = {
         "University of Miami",
         "Computer Science",
     ],
-    authors: [{ name: "Andrea A. Venti", url: "https://www.andreaventi.com" }],
+    authors: [{ name: "Andrea A. Venti", url: "https://andreaventi.com" }],
     alternates: {
-        canonical: "https://www.andreaventi.com",
+        canonical: "https://andreaventi.com",
         types: {
             "application/rss+xml": "/feed.xml",
         },
@@ -52,7 +53,7 @@ export const metadata: Metadata = {
     },
     openGraph: {
         type: "website",
-        url: "https://www.andreaventi.com",
+        url: "https://andreaventi.com",
         title: "Andrea Venti - Software & Platform Engineer Portfolio",
         description:
             "Software & Platform Engineer focused on building scalable, reliable systems through automation, infrastructure, and modern tooling.",
