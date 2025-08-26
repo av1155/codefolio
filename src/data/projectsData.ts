@@ -15,48 +15,42 @@ export interface Project {
 export const projects: Project[] = [
     // Main Projects
     {
-        title: "Self-Hosted Homelab Infrastructure",
+        title: "Homelab — Cloud-Inspired SRE/DevOps Platform",
         slug: "homelab-infrastructure",
         description:
-            "A production-grade homelab with VLAN networking, GitHub CI/CD, and 60+ Docker containers across Proxmox, NAS, and Raspberry Pi.",
-        detailedDescription: `This homelab replicates real-world infrastructure with a focus on high availability, observability, and automation. It consists of a Proxmox HA two-node cluster using ZFS replication and LXC, built on an Intel NUC12, NUC11, and a Raspberry Pi 5 serving as a QDevice for quorum. A Synology DS423+ NAS provides redundant NFS storage, backups, and runs services like MailPlus Server, Synology Drive, Photos, and Syncthing. The Raspberry Pi also handles lightweight auxiliary services.
+            "A UPS-protected Proxmox HA cluster running GitOps-driven Docker stacks and Kubernetes VMs, backed by full CI/CD pipelines, Cloudflare Zero Trust for secure access, NGINX Proxy Manager for ingress & certificate automation, and end-to-end observability — built to demonstrate real-world SRE/DevOps disciplines in automation, reliability, and operations.",
+        detailedDescription: `This homelab is a cloud-inspired platform engineered to mirror how modern SRE/DevOps teams run services in production. It’s a 2-node Proxmox cluster (Intel NUC 12 + NUC 11) with a Raspberry Pi 5 as a quorum device, ZFS-backed NVMe storage on each node for snapshots/replication, and Synology NAS for multi-tier backups. High availability is configured with automated failover (~<3 min) and periodic ZFS replication (~<15 min RPO for non-critical workloads). Workloads are split intentionally: lightweight LXC containers (Docker/Compose) host user-facing services, while VMs run a Kubernetes lab (1 master + 3 workers) to practice cluster operations and scaling.
 
-        Core services, including Portainer, Watchtower, Uptime Kuma, AdGuard Home, Vaultwarden, WireGuard, NGINX Proxy Manager, and the Kestra orchestration engine, run in Docker containers managed via Portainer stacks for portability and ease of deployment. These services are highly available by design, hosted on the Proxmox HA cluster. Networking is segmented via VLANs (e.g., IoT, Infra) using UniFi gear and secured with Cloudflare DNS proxying and Zero Trust access control.
+        Operations are fully codified. Portainer (with agents across all servers) enforces GitOps workflows by reconciling docker-compose stacks from my public "av1155/homelab" repository; secrets are injected at the host level to avoid leakage in source. A self-hosted Dokploy instance handles webhook-triggered builds and automated app/DB backups to Cloudflare R2, enabling me to deploy, manage, and self-host applications created by me (e.g., FlaskKeyring — a Flask + PostgreSQL + JavaScript password manager, my personal Next.js portfolio, and a MkDocs-powered homelab documentation site) without third-party PaaS. GitHub Actions enforces quality and security gates on every change made to the Docker stacks: workflow linting, YAML/Compose validation, TruffleHog for secret detection, weekly Trivy CRITICAL-CVE scans across all images, and a sticky 'broken stacks' cache that blocks regressions until fixed. The result: main is always deployable.
 
-        TLS certificates are managed via two complementary mechanisms. First, acme.sh on the Synology NAS uses scheduled tasks and the Cloudflare DNS API to provision wildcard certificates, deploying them to DSM and sending Slack webhook notifications for visibility—covering services like MailPlus Server. Second, NGINX Proxy Manager, running in a Docker container within an unprivileged Proxmox LXC, automates certificate issuance via the Cloudflare API for reverse-proxied domains such as nas.andreaventi.com and it-tools.andreaventi.com. All reverse-proxied services are protected behind Cloudflare's proxy, with only HTTPS (port 443) exposed externally, thanks to wildcard certificate support and strict end-to-end TLS.
+        Networking and security reflect enterprise patterns: Cloudflare proxying + Zero Trust, Nginx Proxy Manager for ingress and certificate automation (via Cloudflare API), VLAN segmentation on UniFi gear, WireGuard VPN for remote admin, and a least-exposed router footprint. Observability and ops hygiene include Uptime Kuma for synthetic monitoring, Dozzle (with remote agents) for fleet-wide logs, and Slack + SMTP alerts for change/health notifications. The entire homelab is UPS-backed, with NUT scripts coordinating graceful shutdowns across all nodes; alerts are relayed via NAS and Proxmox to email/Slack, with remote visibility exposed securely through Cloudflare Zero Trust (PeaNUT). 
 
-        Automated full-system backups run on cron-driven Bash scripts: Proxmox LXC containers replicate ZFS snapshots over NFS to the NAS (with retention and alerting). The Raspberry Pi 5 runs its own backup script on cron to image its root filesystem to an NFS share, applying daily/weekly/monthly retention rules. To streamline recovery, an interactive GitHub-hosted restore script lets you boot a Pi from USB, mount the NAS share, and choose a backup image. A single \`curl | bash\` command then writes that image back to a chosen drive, enabling rapid disaster recovery for critical services on lightweight hardware.
+        Backups follow a layered strategy: Proxmox → NAS, then NAS → cloud (Google Drive/OneDrive) + local SSD. Services include multiple categories, such as core infra/security (AdGuard Home, Vaultwarden, WireGuard), orchestration/data (Kestra, MariaDB+PhpMyAdmin, Dokploy, Portainer), and monitoring/UX (Uptime Kuma, Dozzle, getHomepage). I also operate resource-intensive workloads such as GPU-accelerated transcoding pipelines (Tdarr, Plex) with VPN-protected egress (qBittorrent, GlueTun) and health-gated startup; demonstrating orchestration of high-bandwidth, stateful applications.
 
-        Observability is implemented with Prometheus, Grafana, Alertmanager, and Uptime Kuma, utilizing Node and Blackbox Exporters, custom dashboards, status pages, and SMTP notifications for service health alerts. A centralized dashboard powered by GetHomepage aggregates real-time metrics, quick-access links, and service states for over 30 applications.
+        Why it matters for SRE/DevOps: this project demonstrates the fundamentals hiring teams expect; automation and CI/CD discipline, container orchestration, reliability patterns (HA, replication, defined RTO/RPO), observability, security-minded networking, reproducibility via GitOps, and clear operational run-books embedded as code. It’s tangible, reproducible, and built to the standards used in real environments.
 
-        Kubernetes workloads are deployed via K3s running in a dedicated Proxmox VM, with Helm used for application lifecycle management. CI/CD pipelines are managed through GitHub Actions, automating container builds and deployments.
-
-        The infrastructure is documented using Material for MkDocs, hosted on GitHub Pages at a custom domain, and deployed via GitHub Actions. Access is secured by Cloudflare Zero Trust, which is also enforced across other critical services that lack native authentication, ensuring identity-based access control throughout the environment. Configuration and provisioning are managed using Terraform and Ansible, adhering to infrastructure-as-code best practices.`,
+        Planned extensions include adopting Terraform and Ansible for full infrastructure-as-code workflows, and building out a Prometheus + Grafana + Alertmanager stack for enterprise-grade observability.`,
         image: "/projects/homelab.png",
         liveUrl: "https://docs.andreaventi.com",
-        sourceUrl: "https://github.com/av1155/homelab-docs",
+        sourceUrl: "https://github.com/av1155/homelab",
         category: "Projects",
         technologies: [
-            "Proxmox VE",
+            "Proxmox",
             "ZFS",
-            "LXC",
             "Docker",
-            "K3s",
-            "Helm",
-            "Terraform",
-            "Ansible",
-            "GitHub Actions",
+            "Docker Compose",
+            "Portainer (GitOps)",
+            "Kubernetes",
             "Cloudflare Zero Trust",
-            "NGINX Proxy Manager",
-            "acme.sh",
-            "Prometheus",
-            "Grafana",
-            "Alertmanager",
-            "Uptime Kuma",
-            "UniFi VLANs",
-            "Synology DSM",
-            "Material for MkDocs",
+            "Nginx Proxy Manager",
             "WireGuard",
+            "Synology NAS (NFS/SHR)",
+            "GitHub Actions",
+            "Kestra",
+            "Uptime Kuma",
+            "Dozzle",
+            "Vaultwarden",
+            "Cloudflare R2",
         ],
         languages: ["Bash", "YAML", "Markdown"],
     },
