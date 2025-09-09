@@ -18,39 +18,40 @@ export const projects: Project[] = [
         title: "Homelab — Cloud-Inspired SRE/DevOps Platform",
         slug: "homelab-infrastructure",
         description:
-            "A UPS-protected Proxmox HA cluster running GitOps-driven Docker stacks and Kubernetes VMs, backed by full CI/CD pipelines, Cloudflare Zero Trust for secure access, NGINX Proxy Manager for ingress & certificate automation, and end-to-end observability — built to demonstrate real-world SRE/DevOps disciplines in automation, reliability, and operations.",
-        detailedDescription: `This homelab is a cloud-inspired platform engineered to mirror how modern SRE/DevOps teams run services in production. It’s a 2-node Proxmox cluster (Intel NUC 12 + NUC 11) with a Raspberry Pi 5 as a quorum device, ZFS-backed NVMe storage on each node for snapshots/replication, and Synology NAS for multi-tier backups. High availability is configured with automated failover (~<3 min) and periodic ZFS replication (~<15 min RPO for non-critical workloads). Workloads are split intentionally: lightweight LXC containers (Docker/Compose) host user-facing services, while VMs run a Kubernetes lab (1 master + 3 workers) to practice cluster operations and scaling.
+            "Homelab with 3-node Proxmox HA and 6-node Kubernetes HA clusters, GitOps workflows, IaC (Terraform, Ansible, Packer), CI/CD via self-hosted GitHub Actions, HashiCorp Vault, Prometheus/Grafana, and off-site DR backups.",
+        detailedDescription: `
+        Focus: production-grade reliability in a small footprint (RTO ≤ 3m · RPO ≈ 15m)
 
-        Operations are fully codified. Portainer (with agents across all servers) enforces GitOps workflows by reconciling docker-compose stacks from my public "av1155/homelab" repository; secrets are injected at the host level to avoid leakage in source. A self-hosted Dokploy instance handles webhook-triggered builds and automated app/DB backups to Cloudflare R2, enabling me to deploy, manage, and self-host applications created by me (e.g., FlaskKeyring — a Flask + PostgreSQL + JavaScript password manager, my personal Next.js portfolio, and a MkDocs-powered homelab documentation site) without third-party PaaS. GitHub Actions enforces quality and security gates on every change made to the Docker stacks: workflow linting, YAML/Compose validation, TruffleHog for secret detection, weekly Trivy CRITICAL-CVE scans across all images, and a sticky 'broken stacks' cache that blocks regressions until fixed. The result: main is always deployable.
+        • Architecture: Proxmox HA + Kubernetes (kube-vip, MetalLB, Longhorn)
 
-        Networking and security reflect enterprise patterns: Cloudflare proxying + Zero Trust, Nginx Proxy Manager for ingress and certificate automation (via Cloudflare API), VLAN segmentation on UniFi gear, WireGuard VPN for remote admin, and a least-exposed router footprint. Observability and ops hygiene include Uptime Kuma for synthetic monitoring, Dozzle (with remote agents) for fleet-wide logs, and Slack + SMTP alerts for change/health notifications. The entire homelab is UPS-backed, with NUT scripts coordinating graceful shutdowns across all nodes; alerts are relayed via NAS and Proxmox to email/Slack, with remote visibility exposed securely through Cloudflare Zero Trust (PeaNUT). 
+        • IaC & images: Terraform, Ansible, and Packer templates
 
-        Backups follow a layered strategy: Proxmox → NAS, then NAS → cloud (Google Drive/OneDrive) + local SSD. Services include multiple categories, such as core infra/security (AdGuard Home, Vaultwarden, WireGuard), orchestration/data (Kestra, MariaDB+PhpMyAdmin, Dokploy, Portainer), and monitoring/UX (Uptime Kuma, Dozzle, getHomepage). I also operate resource-intensive workloads such as GPU-accelerated transcoding pipelines (Tdarr, Plex) with VPN-protected egress (qBittorrent, GlueTun) and health-gated startup; demonstrating orchestration of high-bandwidth, stateful applications.
+        • GitOps & CI/CD: Argo CD and self-hosted GitHub Actions with policy gates
 
-        Why it matters for SRE/DevOps: this project demonstrates the fundamentals hiring teams expect; automation and CI/CD discipline, container orchestration, reliability patterns (HA, replication, defined RTO/RPO), observability, security-minded networking, reproducibility via GitOps, and clear operational run-books embedded as code. It’s tangible, reproducible, and built to the standards used in real environments.
+        • Security & access: HashiCorp Vault; Cloudflare Zero Trust, Nginx Proxy Manager, WireGuard, VLANs
 
-        Planned extensions include adopting Terraform and Ansible for full infrastructure-as-code workflows, and building out a Prometheus + Grafana + Alertmanager stack for enterprise-grade observability.`,
+        • Observability & Alerts: Prometheus/Grafana, Beszel, Uptime Kuma, Dozzle
+
+        • Apps & DR: Dokploy for apps/DBs; Proxmox + K8s → NAS → off-site cloud; databases → Cloudflare R2
+
+        • Scale: 11 GitOps stacks (28 containers) within a 29-stack fleet (95 containers)
+        `,
         image: "/projects/homelab.png",
-        liveUrl: "https://docs.andreaventi.com",
         sourceUrl: "https://github.com/av1155/homelab",
         category: "Projects",
         technologies: [
             "Proxmox",
-            "ZFS",
-            "Docker",
-            "Docker Compose",
-            "Portainer (GitOps)",
             "Kubernetes",
-            "Cloudflare Zero Trust",
-            "Nginx Proxy Manager",
-            "WireGuard",
-            "Synology NAS (NFS/SHR)",
+            "Longhorn",
+            "MetalLB",
+            "Terraform",
+            "Ansible",
+            "Packer",
+            "GitOps",
+            "CI/CD",
+            "HashiCorp Vault",
+            "Docker",
             "GitHub Actions",
-            "Kestra",
-            "Uptime Kuma",
-            "Dozzle",
-            "Vaultwarden",
-            "Cloudflare R2",
         ],
         languages: ["Bash", "YAML", "Markdown"],
     },
