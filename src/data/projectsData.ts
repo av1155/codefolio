@@ -20,21 +20,7 @@ export const projects: Project[] = [
         description:
             "Homelab with 3-node Proxmox HA and 6-node Kubernetes HA clusters, GitOps workflows, IaC (Terraform, Ansible, Packer), CI/CD via self-hosted GitHub Actions, HashiCorp Vault, Prometheus/Grafana, and off-site DR backups.",
         detailedDescription: `
-        Focus: production-grade reliability in a small footprint (RTO ≤ 3m · RPO ≈ 15m)
-
-        • Architecture: Proxmox HA + Kubernetes (kube-vip, MetalLB, Longhorn)
-
-        • IaC & images: Terraform, Ansible, and Packer templates
-
-        • GitOps & CI/CD: Argo CD and self-hosted GitHub Actions with policy gates
-
-        • Security & access: HashiCorp Vault; Cloudflare Zero Trust, Nginx Proxy Manager, WireGuard, VLANs
-
-        • Observability & Alerts: Prometheus/Grafana, Beszel, Uptime Kuma, Dozzle
-
-        • Apps & DR: Dokploy for apps/DBs; Proxmox + K8s → NAS → off-site cloud; databases → Cloudflare R2
-
-        • Scale: 11 GitOps stacks (28 containers) within a 29-stack fleet (95 containers)
+        This homelab is engineered for production-grade reliability in a small footprint, with an RTO of ≤ 3 minutes and an RPO of ~15 minutes. It consists of a Proxmox HA cluster and a highly available Kubernetes environment (kube-vip, MetalLB, Longhorn, and NGINX Ingress Controller). Infrastructure is defined entirely as code with Terraform, Ansible, and Packer templates, while GitOps workflows are driven by Argo CD and a self-hosted GitHub Actions runner that executes pipelines with built-in policy gates and security scans. Security and access are managed through HashiCorp Vault, Cloudflare Zero Trust, Nginx Proxy Manager, WireGuard, and segmented VLANs. Observability is covered by Prometheus, Grafana, Alertmanager, Beszel, Uptime Kuma, and Dozzle for fleet-wide logs. Applications and disaster recovery are orchestrated via Dokploy, with Proxmox and Kubernetes workloads replicated to a NAS and off-site cloud storage, while databases are backed up to Cloudflare R2. The entire environment is UPS-backed, with automated shutdown coordination to protect workloads and maintain consistency during power events. At present, the platform runs 11 GitOps stacks (28 containers) as part of a larger 29-stack fleet totaling 95 Docker containers.
         `,
         image: "/projects/homelab.png",
         sourceUrl: "https://github.com/av1155/homelab",
