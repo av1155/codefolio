@@ -43,9 +43,6 @@ export const metadata: Metadata = {
     authors: [{ name: "Andrea A. Venti", url: "https://andreaventi.com" }],
     alternates: {
         canonical: "https://andreaventi.com",
-        types: {
-            "application/rss+xml": "/feed.xml",
-        },
     },
     robots: {
         index: true,
