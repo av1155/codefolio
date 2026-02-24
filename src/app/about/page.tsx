@@ -8,8 +8,9 @@ import { getPlaiceholder } from "plaiceholder";
 import path from "path";
 
 export const metadata: Metadata = {
-    title: "About Me - Andrea Venti",
-    description: "Learn more about Andrea Venti.",
+    title: "About - Andrea Venti | Software & Platform Engineer",
+    description:
+        "Computer Science graduate from the University of Miami. Software & Platform Engineer with a focus on SRE, DevOps, Kubernetes, infrastructure automation, and full-stack development.",
 };
 
 interface ImageProps {

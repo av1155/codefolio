@@ -43,9 +43,6 @@ export const metadata: Metadata = {
     authors: [{ name: "Andrea A. Venti", url: "https://andreaventi.com" }],
     alternates: {
         canonical: "https://andreaventi.com",
-        types: {
-            "application/rss+xml": "/feed.xml",
-        },
     },
     robots: {
         index: true,
@@ -90,8 +87,6 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
     width: "device-width",
     initialScale: 1,
-    maximumScale: 1,
-    userScalable: false,
     themeColor: [
         { media: "(prefers-color-scheme: light)", color: "#FFFFFF" },
         { media: "(prefers-color-scheme: dark)", color: "#101827" },
