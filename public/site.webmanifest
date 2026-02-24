@@ -1,7 +1,7 @@
 {
-    "name": "Andrea Venti - Software Engineer Portfolio",
+    "name": "Andrea Venti - Software & Platform Engineer Portfolio",
     "short_name": "Andrea Venti",
-    "description": "Discover Andrea Venti's journey as a software engineer, highlighting innovative projects and a focus on modern technology solutions.",
+    "description": "Software & Platform Engineer focused on building scalable, reliable systems through automation, infrastructure, and modern tooling.",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#101827",
@@ -10,7 +10,7 @@
         {
             "src": "/favicon.jpg",
             "sizes": "1024x1024",
-            "type": "image/jpeg"
+            "type": "image/png"
         },
         {
             "src": "/favicon.ico",
