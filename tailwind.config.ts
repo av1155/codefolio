@@ -17,7 +17,6 @@ const config: Config = {
     // Safelist classes to prevent them from being purged
     // Documentation: https://tailwindcss.com/docs/content-configuration#safelisting-classes
     safelist: [
-        "transform",
         "animate-marquee-sm",
         "animate-marquee-md",
         "animate-marquee-lg",
