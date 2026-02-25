@@ -19,6 +19,7 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
+          standalone: true
           # Reads version from the packageManager field in package.json
           run_install: false
 
