@@ -28,13 +28,13 @@ export default function ResumePageClient() {
                             href="/sre-resume.pdf"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="rounded-md bg-white bg-opacity-80 px-4 py-2 text-md font-semibold text-indigo-700 hover:bg-opacity-100 transform hover:scale-105 transition duration-300 flex items-center justify-center w-36"
+                            className="rounded-md bg-white bg-opacity-80 px-4 py-2 text-base font-semibold text-indigo-700 hover:bg-opacity-100 transform hover:scale-105 transition duration-300 flex items-center justify-center w-36"
                         >
                             <ArrowDownTrayIcon className="h-5 w-5 mr-2" />
                             Download
                         </a>
                         <button
-                            className="rounded-md bg-white bg-opacity-80 px-4 py-2 text-md font-semibold text-indigo-700 hover:bg-opacity-100 transform hover:scale-105 transition duration-300 flex items-center justify-center w-36"
+                            className="rounded-md bg-white bg-opacity-80 px-4 py-2 text-base font-semibold text-indigo-700 hover:bg-opacity-100 transform hover:scale-105 transition duration-300 flex items-center justify-center w-36"
                             onClick={() => {
                                 if (navigator.share) {
                                     navigator
@@ -43,7 +43,6 @@ export default function ResumePageClient() {
                                             text: "Check out Andrea Venti Fuentes' professional resume. View or download it here.",
                                             url: window.location.href,
                                         })
-                                        .then(() => console.log("Shared successfully!"))
                                         .catch((error) => console.error("Error sharing:", error));
                                 } else {
                                     alert("Your browser does not support the Share feature.");

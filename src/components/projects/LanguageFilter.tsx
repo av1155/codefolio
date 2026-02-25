@@ -1,13 +1,13 @@
 import { Menu, MenuButton, MenuItem, MenuItems, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
-import React, { Fragment } from "react";
+import { Fragment } from "react";
 
 interface LanguageFilterProps {
     activeLanguage: string;
     setActiveLanguage: (language: string) => void;
 }
 
-const LanguageFilter: React.FC<LanguageFilterProps> = ({ activeLanguage, setActiveLanguage }) => {
+const LanguageFilter = ({ activeLanguage, setActiveLanguage }: LanguageFilterProps) => {
     const languages = [
         "Python",
         "Java",
