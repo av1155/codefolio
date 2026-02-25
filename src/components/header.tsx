@@ -57,7 +57,7 @@ export default function Header() {
                     <div className="relative h-10 w-10 overflow-hidden hover:ring-2 hover:ring-teal-400 transition-all">
                         <Image
                             alt="Portfolio Logo"
-                            src="/favicon.jpg"
+                            src="/favicon.png"
                             fill
                             sizes="40px"
                             className="object-cover"
@@ -133,7 +133,7 @@ export default function Header() {
                         <div className="relative h-10 w-10 overflow-hidden">
                             <Image
                                 alt="Portfolio Logo"
-                                src="/favicon.jpg"
+                                src="/favicon.png"
                                 fill
                                 sizes="40px"
                                 className="object-cover"
