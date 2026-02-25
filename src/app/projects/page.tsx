@@ -1,4 +1,5 @@
 import { projects as allProjects } from "@/data/projectsData";
+import fs from "fs/promises";
 import type { Metadata } from "next";
 import { getPlaiceholder } from "plaiceholder";
 import path from "path";
@@ -21,7 +22,8 @@ export default async function ProjectsPage() {
                     "public",
                     project.image.replace(/^\/+/, ""),
                 );
-                const { base64 } = await getPlaiceholder(imgPath);
+                const buffer = await fs.readFile(imgPath);
+                const { base64 } = await getPlaiceholder(buffer);
                 return { ...project, blurDataURL: base64 };
             } catch {
                 return { ...project, blurDataURL: "" };
