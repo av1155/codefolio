@@ -9,6 +9,7 @@ export const metadata: Metadata = {
     title: "Projects - Andrea Venti | Software & Platform Engineer",
     description:
         "Browse Andrea Venti's engineering projects: homelab SRE platform, full-stack web apps, CLI tools, algorithms, and more — built with TypeScript, Python, Go, Java, and C.",
+    alternates: { canonical: "/projects" },
 };
 
 export default async function ProjectsPage() {
