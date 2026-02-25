@@ -2,8 +2,6 @@ import { inter } from "@/app/fonts/fonts";
 import "@/app/globals.css";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata, Viewport } from "next";
 import { ReactNode } from "react";
 
@@ -105,8 +103,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             </head>
             <body className="font-sans antialiased bg-gradient-to-r from-indigo-700 via-purple-700 to-pink-700 bg-size-130">
                 <Header />
-                <Analytics />
-                <SpeedInsights />
                 <main id="main-content">{children}</main>
                 <Footer />
             </body>
