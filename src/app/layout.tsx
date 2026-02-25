@@ -52,7 +52,7 @@ export const metadata: Metadata = {
         siteName: "Andrea Venti Portfolio",
         images: [
             {
-                url: "/favicon.jpg",
+                url: "/favicon.png",
                 width: 1024,
                 height: 1024,
                 alt: "Andrea Venti - Software Engineer",
@@ -68,14 +68,14 @@ export const metadata: Metadata = {
             "Software & Platform Engineer focused on building scalable, reliable systems through automation, infrastructure, and modern tooling.",
         images: [
             {
-                url: "/favicon.jpg",
+                url: "/favicon.png",
                 alt: "Andrea Venti - Software Engineer",
             },
         ],
     },
     icons: {
-        icon: "/favicon.jpg",
-        apple: "/favicon.jpg",
+        icon: "/favicon.png",
+        apple: "/favicon.png",
     },
 };
 
@@ -99,7 +99,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 <link rel="prefetch" href="/sre-resume.pdf" as="fetch" type="application/pdf" />
 
                 {/* Additional icons */}
-                <link rel="apple-touch-icon" href="/favicon.jpg" />
+                <link rel="apple-touch-icon" href="/favicon.png" />
             </head>
             <body className="font-sans antialiased bg-gradient-to-r from-indigo-700 via-purple-700 to-pink-700 bg-size-130">
                 <Header />
