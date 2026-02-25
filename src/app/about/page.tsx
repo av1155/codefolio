@@ -4,6 +4,7 @@ import { AcademicCapIcon, CodeBracketIcon, LightBulbIcon } from "@heroicons/reac
 
 import ImageCarousel from "@/components/ImageCarousel";
 import { Metadata } from "next";
+import fs from "fs/promises";
 import { getPlaiceholder } from "plaiceholder";
 import path from "path";
 
@@ -59,7 +60,8 @@ export default async function AboutPage() {
     // Generate blurDataURL for each image
     const imagesWithBlurData = await Promise.all(
         images.map(async (image) => {
-            const { base64 } = await getPlaiceholder(path.join(process.cwd(), "public", image.src));
+            const buffer = await fs.readFile(path.join(process.cwd(), "public", image.src));
+            const { base64 } = await getPlaiceholder(buffer);
             return {
                 ...image,
                 blurDataURL: base64,
