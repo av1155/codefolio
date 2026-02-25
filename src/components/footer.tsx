@@ -16,14 +16,9 @@ export default function Footer() {
     const footerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        // Initialize AOS
-        AOS.init({
-            offset: 0, // Trigger animation as soon as the element is rendered
-        });
-
-        // Manually trigger AOS to animate the footer
+        // Refresh AOS to detect the footer element after mount
         if (footerRef.current) {
-            AOS.refresh(); // Refresh AOS to detect new elements
+            AOS.refresh();
         }
     }, []);
 

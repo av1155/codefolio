@@ -60,8 +60,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
                                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                 className="object-cover rounded-lg shadow-md"
                                 draggable={false}
-                                priority={true}
-                                loading="eager"
+                                priority={index === 0}
                                 placeholder="blur"
                                 blurDataURL={image.blurDataURL}
                             />
