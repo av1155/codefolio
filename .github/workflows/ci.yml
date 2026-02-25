@@ -16,11 +16,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          # Reads version from the packageManager field in package.json
-          run_install: false
+      # Node 20 ships with Corepack; it will install the pnpm version declared
+      # in package.json's packageManager field when pnpm commands run.
+      - name: Enable Corepack
+        run: corepack enable pnpm
 
       - name: Setup Node.js
         uses: actions/setup-node@v4

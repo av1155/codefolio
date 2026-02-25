@@ -61,12 +61,24 @@ export default async function AboutPage() {
     // Generate blurDataURL for each image
     const imagesWithBlurData = await Promise.all(
         images.map(async (image) => {
-            const buffer = await fs.readFile(path.join(process.cwd(), "public", image.src));
-            const { base64 } = await getPlaiceholder(buffer);
-            return {
-                ...image,
-                blurDataURL: base64,
-            };
+            try {
+                const imgPath = path.join(
+                    process.cwd(),
+                    "public",
+                    image.src.replace(/^\/+/, ""),
+                );
+                const buffer = await fs.readFile(imgPath);
+                const { base64 } = await getPlaiceholder(buffer);
+                return {
+                    ...image,
+                    blurDataURL: base64,
+                };
+            } catch {
+                return {
+                    ...image,
+                    blurDataURL: "",
+                };
+            }
         }),
     );
 
