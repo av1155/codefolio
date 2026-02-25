@@ -99,7 +99,7 @@ export default function ProjectsPageClient({ projectsWithBlurData }: ProjectsPag
                     {/* Projects Grid */}
                     <div className="mt-10 sm:mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12">
                         {filteredProjects.map((project, index) => (
-                            <div key={project.title} data-aos="zoom-in">
+                            <div key={project.slug} data-aos="zoom-in">
                                 {/* Inner container for hover effects */}
                                 <div
                                     className="group relative bg-white bg-opacity-20 border border-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transform hover:scale-105 transition duration-200 p-4 h-full flex flex-col hover:bg-white hover:bg-opacity-30 cursor-pointer"
@@ -121,7 +121,6 @@ export default function ProjectsPageClient({ projectsWithBlurData }: ProjectsPag
                                                 className="rounded-lg"
                                                 draggable={false}
                                                 priority={index < 6}
-                                                loading={index < 6 ? "eager" : "lazy"}
                                                 placeholder="blur"
                                                 blurDataURL={project.blurDataURL}
                                             />

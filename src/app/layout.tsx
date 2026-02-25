@@ -92,14 +92,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     return (
         <html lang="en" className={`${inter.className} antialiased`}>
             <head>
-                {/* Link to Web App Manifest */}
-                <link rel="manifest" href="/site.webmanifest" />
-
                 {/* Prefetch resume PDF */}
                 <link rel="prefetch" href="/sre-resume.pdf" as="fetch" type="application/pdf" />
-
-                {/* Additional icons */}
-                <link rel="apple-touch-icon" href="/favicon.png" />
             </head>
             <body className="font-sans antialiased bg-gradient-to-r from-indigo-700 via-purple-700 to-pink-700 bg-size-130">
                 <Header />

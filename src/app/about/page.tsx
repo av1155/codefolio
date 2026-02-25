@@ -3,6 +3,7 @@ import BackgroundShape from "@/components/BackgroundShape";
 import { AcademicCapIcon, CodeBracketIcon, LightBulbIcon } from "@heroicons/react/24/outline";
 
 import ImageCarousel from "@/components/ImageCarousel";
+import Link from "next/link";
 import { Metadata } from "next";
 import { getPlaiceholder } from "plaiceholder";
 import path from "path";
@@ -85,7 +86,7 @@ export default async function AboutPage() {
                         Hi, I&apos;m Andrea Venti
                     </h1>
                     <p className="mt-6 text-lg leading-8" data-aos="fade-up">
-                        I’m a Computer Science student at the{" "}
+                        I’m a Computer Science graduate from the{" "}
                         <span className="font-bold">University of Miami</span> with a passion for
                         building systems that are not just functional, but reliable, secure, and
                         maintainable. My background blends{" "}
@@ -199,12 +200,12 @@ export default async function AboutPage() {
                             Always eager to connect with like-minded professionals and explore new
                             opportunities. Let’s work together to bring innovative ideas to life!
                         </p>
-                        <a
+                        <Link
                             href="/contact"
                             className="mt-6 inline-block rounded-md bg-white bg-opacity-80 px-6 py-3 text-sm font-semibold text-indigo-700 hover:bg-opacity-100 transform hover:scale-105 transition duration-300"
                         >
                             Get in Touch
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>
