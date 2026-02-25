@@ -45,7 +45,7 @@ const config: Config = {
                 "marquee-sm": "marquee 30s linear infinite", // smartphone screen
                 "marquee-md": "marquee 45s linear infinite", // medium screen
                 "marquee-lg": "marquee 70s linear infinite", // wide screen
-                gradientMove: "gradientMove 10s ease infinite",
+                "gradient-move": "gradient-move 10s ease infinite",
             },
             // Keyframes for custom animations
             // Documentation: https://tailwindcss.com/docs/animation#customizing-keyframes
@@ -54,7 +54,7 @@ const config: Config = {
                     "0%": { transform: "translateX(0%)" },
                     "100%": { transform: "translateX(-100%)" },
                 },
-                gradientMove: {
+                "gradient-move": {
                     "0%": { backgroundPosition: "0% 50%" },
                     "50%": { backgroundPosition: "100% 50%" },
                     "100%": { backgroundPosition: "0% 50%" },

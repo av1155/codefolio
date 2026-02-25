@@ -5,7 +5,7 @@ import { Dialog, DialogPanel, DialogTitle, Transition, TransitionChild } from "@
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
-import { Fragment } from "react";
+import React, { Fragment } from "react";
 
 interface ProjectModalProps {
     selectedProject: Project | null;
@@ -80,7 +80,6 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ selectedProject, closeProje
                                             className="rounded-lg"
                                             draggable={false}
                                             priority={true}
-                                            loading="eager"
                                             placeholder="blur"
                                             blurDataURL={selectedProject.blurDataURL}
                                         />
