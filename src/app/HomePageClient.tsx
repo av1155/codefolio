@@ -41,8 +41,9 @@ export default function HomePageClient() {
                             href="https://github.com/av1155"
                             className="rounded-md bg-white px-5 py-3 text-base font-semibold text-indigo-600 hover:bg-gray-200 ease-in-out shadow-lg hover:bg-opacity-100 transform hover:scale-105 transition duration-300 inline-flex items-center"
                             target="_blank"
+                            rel="noopener noreferrer"
                         >
-                            <FontAwesomeIcon icon={faGithub} className="w-5 h-5 mr-2" />{" "}
+                            <FontAwesomeIcon icon={faGithub} className="w-5 h-5 mr-2" aria-hidden="true" />{" "}
                             {/* GitHub icon */}
                             Explore GitHub
                         </Link>

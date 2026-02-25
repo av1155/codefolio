@@ -47,7 +47,10 @@ export default function Header() {
                 scrolled ? "bg-white shadow-md" : "bg-transparent"
             }`}
         >
-            <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+            <nav
+                className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8"
+                aria-label="Primary navigation"
+            >
                 {/* Logo Section */}
                 <Link
                     href="/"
@@ -107,6 +110,7 @@ export default function Header() {
                                       ? "text-gray-900 hover:text-indigo-600"
                                       : "text-gray-900 hover:text-indigo-800"
                             } transform hover:scale-105`}
+                            aria-current={isActive(href) ? "page" : undefined}
                         >
                             {name}
                         </Link>
@@ -153,7 +157,7 @@ export default function Header() {
                 </div>
 
                 {/* Mobile Navigation */}
-                <nav className="mt-6 space-y-2">
+                <nav className="mt-6 space-y-2" aria-label="Mobile navigation">
                     {navigation.map(({ name, href }) => (
                         <Link
                             key={name}
@@ -164,6 +168,7 @@ export default function Header() {
                                     : "text-gray-900 hover:bg-gray-50"
                             }`}
                             onClick={() => setMobileMenuOpen(false)}
+                            aria-current={isActive(href) ? "page" : undefined}
                         >
                             {name}
                         </Link>

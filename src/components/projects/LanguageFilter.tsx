@@ -1,3 +1,4 @@
+import { projects } from "@/data/projectsData";
 import { Menu, MenuButton, MenuItem, MenuItems, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import { Fragment } from "react";
@@ -7,23 +8,11 @@ interface LanguageFilterProps {
     setActiveLanguage: (language: string) => void;
 }
 
-const LanguageFilter = ({ activeLanguage, setActiveLanguage }: LanguageFilterProps) => {
-    const languages = [
-        "Python",
-        "Java",
-        "JavaScript",
-        "TypeScript",
-        "Dart",
-        "Go",
-        "C",
-        "C++",
-        "Bash",
-        "Lua",
-        "Swift",
-        "YAML",
-        "Markdown",
-    ];
+const languages = Array.from(
+    new Set(projects.flatMap((project) => project.languages)),
+).sort((a, b) => a.localeCompare(b));
 
+const LanguageFilter = ({ activeLanguage, setActiveLanguage }: LanguageFilterProps) => {
     return (
         <div className="z-[60] relative flex justify-center md:ml-4 space-x-4" data-aos="fade-up">
             <Menu as="div" className="relative inline-block text-left">
