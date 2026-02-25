@@ -1,11 +1,17 @@
 declare module "plaiceholder" {
-    export function getPlaiceholder(src: string): Promise<{
+    interface IGetPlaiceholder {
+        base64: string;
         img: {
             src: string;
             width: number;
             height: number;
-            type: string;
+            type?: string;
+            blurDataURL: string;
         };
-        base64: string;
-    }>;
+    }
+
+    export function getPlaiceholder(
+        src: string,
+        options?: { size?: number },
+    ): Promise<IGetPlaiceholder>;
 }
