@@ -41,9 +41,6 @@ export const metadata: Metadata = {
         "Computer Science",
     ],
     authors: [{ name: "Andrea A. Venti", url: "https://andreaventi.com" }],
-    alternates: {
-        canonical: "https://andreaventi.com",
-    },
     robots: {
         index: true,
         follow: true,
