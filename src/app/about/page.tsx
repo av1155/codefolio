@@ -10,9 +10,9 @@ import { getPlaiceholder } from "plaiceholder";
 import path from "path";
 
 export const metadata: Metadata = {
-    title: "About - Andrea Venti | Software & Platform Engineer",
+    title: "About - Andrea Venti | DevOps & Platform Engineer",
     description:
-        "Computer Science graduate from the University of Miami. Software & Platform Engineer with a focus on SRE, DevOps, Kubernetes, infrastructure automation, and full-stack development.",
+        "Computer Science graduate from the University of Miami. DevOps and Platform Engineer focused on site reliability, infrastructure automation, Kubernetes, Terraform, Ansible, and CI/CD.",
     alternates: { canonical: "/about" },
 };
 
@@ -100,21 +100,15 @@ export default async function AboutPage() {
                         Hi, I&apos;m Andrea Venti
                     </h1>
                     <p className="mt-6 text-lg leading-8" data-aos="fade-up">
-                        I’m a Computer Science graduate from the{" "}
-                        <span className="font-bold">University of Miami</span> with a passion for
-                        building systems that are not just functional, but reliable, secure, and
-                        maintainable. My background blends{" "}
-                        <span className="font-bold">Software Engineering</span> fundamentals with a
-                        growing focus on{" "}
-                        <span className="font-bold">Site Reliability Engineering</span> and{" "}
-                        <span className="font-bold">DevOps</span>.
-                    </p>
-                    <p className="mt-6 text-lg leading-8" data-aos="fade-up">
-                        Whether I’m writing code, managing containerized deployments, or optimizing
-                        my homelab’s high-availability setup, I love working at the intersection of
-                        code, infrastructure, automation, and scalability. My projects span from
-                        full-stack apps and microservices to self-hosted platforms that mirror
-                        real-world production environments.
+                        I&apos;m a Computer Science graduate from the{" "}
+                        <span className="font-bold">University of Miami</span> focused on{" "}
+                        <span className="font-bold">site reliability</span>,{" "}
+                        <span className="font-bold">DevOps</span>, and infrastructure. I build
+                        small, production-like systems: containerized services on{" "}
+                        <span className="font-bold">AWS</span>, automated with{" "}
+                        <span className="font-bold">CI/CD</span> and infrastructure as code,
+                        monitored with real alerting and runbooks. My homelab is where I
+                        pressure-test all of it before it matters.
                     </p>
 
                     {/* Cards Section */}
@@ -149,24 +143,25 @@ export default async function AboutPage() {
                                 Engineering Toolkit
                             </h3>
                             <p className="mt-4 text-base leading-7">
-                                I work fluently with <span className="font-bold">Python</span>,{" "}
+                                I work with <span className="font-bold">Python</span>,{" "}
                                 <span className="font-bold">Go</span>,{" "}
                                 <span className="font-bold">Java</span>,{" "}
                                 <span className="font-bold">C</span>, and{" "}
-                                <span className="font-bold">TypeScript</span>. I&apos;m experienced
-                                with <span className="font-bold">Linux</span>,{" "}
-                                <span className="font-bold">Docker</span>,{" "}
-                                <span className="font-bold">AWS</span>, and{" "}
+                                <span className="font-bold">TypeScript</span>. On the infrastructure
+                                side: <span className="font-bold">Docker</span>,{" "}
+                                <span className="font-bold">Kubernetes</span>,{" "}
+                                <span className="font-bold">Terraform</span>,{" "}
+                                <span className="font-bold">Ansible</span>,{" "}
+                                <span className="font-bold">Packer</span>, and{" "}
                                 <span className="font-bold">GitHub Actions</span> for CI/CD.
                             </p>
                             <p className="mt-4 text-base leading-7">
-                                I’ve deployed and monitored containerized systems using{" "}
-                                <span className="font-bold">Uptime Kuma</span>,{" "}
-                                <span className="font-bold">CloudWatch</span>, and{" "}
-                                <span className="font-bold">Grafana</span>, and I’m learning{" "}
-                                <span className="font-bold">Terraform</span> and{" "}
-                                <span className="font-bold">Ansible</span> for infrastructure as
-                                code.
+                                For observability:{" "}
+                                <span className="font-bold">Prometheus</span>,{" "}
+                                <span className="font-bold">Grafana</span>,{" "}
+                                <span className="font-bold">Alertmanager</span>,{" "}
+                                <span className="font-bold">Uptime Kuma</span>, and{" "}
+                                <span className="font-bold">CloudWatch</span>.
                             </p>
                         </div>
 
@@ -183,8 +178,8 @@ export default async function AboutPage() {
                                 I design systems to be <span className="font-bold">resilient</span>,{" "}
                                 <span className="font-bold">highly available</span>,{" "}
                                 <span className="font-bold">observable</span>, and{" "}
-                                <span className="font-bold">automated</span>. In my homelab, I treat
-                                every service like production; scripting{" "}
+                                <span className="font-bold">automated</span>. I treat every service
+                                like production: scripting{" "}
                                 <span className="font-bold">backups</span>, managing{" "}
                                 <span className="font-bold">TLS</span>, and building tools like my{" "}
                                 <a
@@ -211,8 +206,10 @@ export default async function AboutPage() {
                             Ready to Collaborate!
                         </h2>
                         <p className="mt-4 text-lg leading-8">
-                            Always eager to connect with like-minded professionals and explore new
-                            opportunities. Let’s work together to bring innovative ideas to life!
+                            I&apos;m looking for DevOps, SRE, platform, or infrastructure roles
+                            where I can help teams ship faster, automate reliably, and keep
+                            customer-facing systems stable. If that sounds like your team,
+                            let&apos;s talk.
                         </p>
                         <Link
                             href="/contact"

@@ -42,6 +42,20 @@ export const projects: Project[] = [
         languages: ["Bash", "YAML", "Markdown"],
     },
     {
+        title: "Houndarr",
+        slug: "houndarr",
+        description:
+            "Open-source, self-hosted companion for *arr apps (Radarr, Sonarr, Lidarr, Readarr) that searches for missing library items in polite, rate-limited batches. Features a live dashboard, bcrypt auth, and CSRF protection.",
+        detailedDescription:
+            "Radarr, Sonarr, and the rest do a great job with new releases, but they don't go back and search for items already in your library that are missing or below your quality cutoff. Their built-in search fires everything at once, overwhelming indexer API limits. Houndarr fills that gap: configurable batch sizes, per-item cooldowns, hourly API caps, and download-queue backpressure gating keep searches slow and polite. It ships with a dark-themed web dashboard (FastAPI + HTMX + Tailwind CSS), a filterable log viewer with multi-format export, API keys encrypted at rest, bcrypt auth, and CSRF protection. Distributed as a Docker image and a Helm chart for Kubernetes.",
+        image: "/projects/Houndarr.jpg",
+        liveUrl: "https://av1155.github.io/houndarr/",
+        sourceUrl: "https://github.com/av1155/houndarr",
+        category: "Projects",
+        technologies: ["FastAPI", "HTMX", "Tailwind CSS", "Docker", "Helm"],
+        languages: ["Python"],
+    },
+    {
         title: "FlaskKeyring",
         slug: "flaskkeyring",
         description:
@@ -88,7 +102,7 @@ export const projects: Project[] = [
         title: "BridgeChat",
         slug: "bridgechat",
         description:
-            "A real-time chat application with integrated on-the-fly translation that breaks language barriers across platforms.",
+            "Semester-long software engineering class project. I pitched the idea and solo-developed the prototype: a real-time chat app with on-the-fly translation across languages. Voted best project of the semester by the class, winning both the mid-semester and final presentation votes.",
         detailedDescription:
             "BridgeChat is a comprehensive real-time chat application designed to facilitate seamless communication between users of different languages. It integrates automatic message translation based on each user's preferred language, ensuring a smooth conversation flow without language limitations. Built with Flutter for cross-platform support (web, mobile, and desktop) and Firebase for authentication, real-time messaging, and backend services, BridgeChat emphasizes privacy with username-based registration. The project also features robust CI/CD pipelines, extensive documentation covering system architecture, testing, and deployment, and is designed to scale for future enhancements.",
         image: "/projects/BridgeChat.png",

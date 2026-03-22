@@ -8,9 +8,9 @@ import { ReactNode } from "react";
 // Define global metadata
 export const metadata: Metadata = {
     metadataBase: new URL("https://andreaventi.com"),
-    title: "Andrea Venti - Software & Platform Engineer Portfolio",
+    title: "Andrea Venti - DevOps & Platform Engineer Portfolio",
     description:
-        "Software & Platform Engineer focused on building scalable, reliable systems through automation, infrastructure, and modern tooling.",
+        "DevOps & Platform Engineer focused on site reliability, infrastructure automation, and keeping systems stable.",
     applicationName: "Andrea Venti Portfolio",
     referrer: "origin-when-cross-origin",
     manifest: "/site.webmanifest",
@@ -46,16 +46,16 @@ export const metadata: Metadata = {
     openGraph: {
         type: "website",
         url: "https://andreaventi.com",
-        title: "Andrea Venti - Software & Platform Engineer Portfolio",
+        title: "Andrea Venti - DevOps & Platform Engineer Portfolio",
         description:
-            "Software & Platform Engineer focused on building scalable, reliable systems through automation, infrastructure, and modern tooling.",
+            "DevOps & Platform Engineer focused on site reliability, infrastructure automation, and keeping systems stable.",
         siteName: "Andrea Venti Portfolio",
         images: [
             {
                 url: "/favicon.png",
                 width: 1024,
                 height: 1024,
-                alt: "Andrea Venti - Software Engineer",
+                alt: "Andrea Venti - DevOps & Platform Engineer",
             },
         ],
     },
@@ -63,13 +63,13 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         site: "@Andru_VF",
         creator: "@Andru_VF",
-        title: "Andrea Venti - Software & Platform Engineer Portfolio",
+        title: "Andrea Venti - DevOps & Platform Engineer Portfolio",
         description:
-            "Software & Platform Engineer focused on building scalable, reliable systems through automation, infrastructure, and modern tooling.",
+            "DevOps & Platform Engineer focused on site reliability, infrastructure automation, and keeping systems stable.",
         images: [
             {
                 url: "/favicon.png",
-                alt: "Andrea Venti - Software Engineer",
+                alt: "Andrea Venti - DevOps & Platform Engineer",
             },
         ],
     },

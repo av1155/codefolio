@@ -30,7 +30,7 @@ export default function HomePageClient() {
                         className="mt-6 text-xl sm:text-2xl leading-8 text-gray-200"
                         data-aos="zoom-in"
                     >
-                        B.S. in Computer Science & Minor in Mathematics @ University of Miami
+                        DevOps & Platform Engineer | CS Graduate, University of Miami
                     </p>
 
                     <div
