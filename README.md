@@ -42,8 +42,6 @@ This repository contains the source code for my personal portfolio website, host
         - For icons used in the UI.
 - **Headless UI**: `@headlessui/react` - For accessible UI components.
 - **Heroicons**: `@heroicons/react` - For additional icons.
-- **Vercel Analytics**: `@vercel/analytics` - For tracking analytics on Vercel.
-- **Vercel Speed Insights**: `@vercel/speed-insights` - For performance insights.
 - **AOS**: `aos` - Animation on scroll.
 - **Plaiceholder**: `plaiceholder` - For handling image placeholders with blur effects.
 - **React**: `react` - For building the UI.

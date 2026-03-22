@@ -125,12 +125,12 @@ export const projects: Project[] = [
         description:
             "A personal portfolio website showcasing projects, skills, and software engineering experience.",
         detailedDescription:
-            "A Next.js-based portfolio website featuring responsive design, project showcases, an about page, resume, and a contact form. The website is powered by AOS for animations, TypeScript for functionality, Tailwind CSS for styling, and Headless UI for project page modals. It is hosted on Vercel, utilizing modern build tools like PostCSS and pnpm for efficient development workflows.",
+            "A Next.js-based portfolio website featuring responsive design, project showcases, an about page, resume, and a contact form. The website is powered by AOS for animations, TypeScript for functionality, Tailwind CSS for styling, and Headless UI for project page modals. It is self-hosted on Dokploy, utilizing modern build tools like PostCSS and pnpm for efficient development workflows.",
         image: "/projects/PortfolioWebsite.png",
         liveUrl: "https://www.andreaventi.com",
         sourceUrl: "https://github.com/av1155/codefolio",
         category: "Projects",
-        technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel", "Formspree"],
+        technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Dokploy", "Formspree"],
         languages: ["TypeScript", "JavaScript"],
     },
     {

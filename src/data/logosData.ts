@@ -96,12 +96,6 @@ export const logos = [
         height: 408,
     },
     {
-        name: "Vercel",
-        src: "/technologies/vercel.png",
-        width: 3840,
-        height: 2160,
-    },
-    {
         name: "Heroku",
         src: "/technologies/heroku.png",
         width: 1024,
