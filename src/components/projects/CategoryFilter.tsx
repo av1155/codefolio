@@ -9,11 +9,11 @@ const CategoryFilter = ({ activeCategory, setActiveCategory }: CategoryFilterPro
             {["All", "Projects", "Programs"].map((category) => (
                 <button
                     key={category}
-                    className={`px-4 py-2 rounded-md text-sm font-medium transition duration-200 transform shadow-md ${
-                        activeCategory === category
-                            ? "bg-white bg-opacity-80 text-indigo-700"
-                            : "bg-white bg-opacity-20 text-white hover:text-indigo-700"
-                    } hover:bg-opacity-100 hover:scale-105`}
+                        className={`px-4 py-2 rounded-md text-sm font-medium transition duration-200 transform shadow-md ${
+                            activeCategory === category
+                                ? "bg-white/80 text-indigo-700"
+                                : "bg-white/20 text-white hover:text-indigo-700"
+                    } hover:bg-white hover:scale-105`}
                     onClick={() => setActiveCategory(category as "All" | "Projects" | "Programs")}
                 >
                     {category}

@@ -1,26 +1,16 @@
 import forms from "@tailwindcss/forms"; // Tailwind Forms Plugin
 import typography from "@tailwindcss/typography"; // Tailwind Typography Plugin
-import type { Config } from "tailwindcss";
 
 // Tailwind CSS Configuration
 // Documentation: https://tailwindcss.com/docs/configuration
 
-const config: Config = {
+const config = {
     // Paths to all of the template files in the project
     // Documentation: https://tailwindcss.com/docs/content-configuration
     content: [
         "./src/pages/**/*.{js,ts,jsx,tsx,mdx}", // Includes all page files
         "./src/components/**/*.{js,ts,jsx,tsx,mdx}", // Includes all component files
         "./src/app/**/*.{js,ts,jsx,tsx,mdx}", // Includes all application files
-    ],
-
-    // Safelist classes to prevent them from being purged
-    // Documentation: https://tailwindcss.com/docs/content-configuration#safelisting-classes
-    safelist: [
-        "animate-marquee-sm",
-        "animate-marquee-md",
-        "animate-marquee-lg",
-        "animate-gradient-move",
     ],
 
     // Extending Tailwind's default theme

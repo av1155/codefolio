@@ -64,7 +64,7 @@ export default function ContactPageClient() {
                                         id="email-field"
                                         placeholder="Your email"
                                         required
-                                        className="block w-full pl-10 rounded-md border border-white bg-white bg-opacity-20 px-4 py-3 text-white placeholder-white focus:border-indigo-300 focus:ring-indigo-300"
+                                        className="block w-full pl-10 rounded-md border border-white bg-white/20 px-4 py-3 text-white placeholder-white focus:border-indigo-300 focus:ring-indigo-300"
                                     />
                                     <div className="absolute left-0 -bottom-5 w-full">
                                         <ValidationError
@@ -91,7 +91,7 @@ export default function ContactPageClient() {
                                         id="name-field"
                                         placeholder="Your name"
                                         required
-                                        className="block w-full pl-10 rounded-md border border-white bg-white bg-opacity-20 px-4 py-3 text-white placeholder-white focus:border-indigo-300 focus:ring-indigo-300"
+                                        className="block w-full pl-10 rounded-md border border-white bg-white/20 px-4 py-3 text-white placeholder-white focus:border-indigo-300 focus:ring-indigo-300"
                                     />
                                 </div>
 
@@ -106,7 +106,7 @@ export default function ContactPageClient() {
                                         rows={8}
                                         required
                                         placeholder="Your message"
-                                        className="block w-full rounded-md border border-white bg-white bg-opacity-20 px-4 py-3 text-white placeholder-white focus:border-indigo-300 focus:ring-indigo-300"
+                                        className="block w-full rounded-md border border-white bg-white/20 px-4 py-3 text-white placeholder-white focus:border-indigo-300 focus:ring-indigo-300"
                                     ></textarea>
                                     <ValidationError
                                         prefix="Message"
@@ -120,7 +120,7 @@ export default function ContactPageClient() {
                                 <div>
                                     <button
                                         type="submit"
-                                        className="inline-flex w-full items-center justify-center rounded-md bg-white bg-opacity-80 px-4 py-3 font-semibold text-indigo-700 shadow-md hover:bg-opacity-100 transform hover:scale-105 transition duration-300"
+                                        className="inline-flex w-full items-center justify-center rounded-md bg-white/80 px-4 py-3 font-semibold text-indigo-700 shadow-md hover:bg-white transform hover:scale-105 transition duration-300"
                                     >
                                         Send Message
                                     </button>

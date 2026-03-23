@@ -2,7 +2,7 @@
 
 import { Project } from "@/data/projectsData";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import AOSInitializer from "@/components/AOSInitializer";
 import BackgroundShape from "@/components/BackgroundShape";
 import CategoryFilter from "@/components/projects/CategoryFilter";
@@ -20,36 +20,24 @@ interface ProjectsPageClientProps {
 export default function ProjectsPageClient({ projectsWithBlurData }: ProjectsPageClientProps) {
     // State hooks
     const [activeCategory, setActiveCategory] = useState<"All" | "Projects" | "Programs">("All");
-    const [selectedProject, setSelectedProject] = useState<Project | null>(null);
     const [activeLanguage, setActiveLanguage] = useState<string>("All");
 
     // Next.js hooks for handling search params and router navigation
     const searchParams = useSearchParams();
     const router = useRouter();
 
-    // useEffect to handle search params and set selected project based on the query
-    useEffect(() => {
-        const projectSlug = searchParams.get("project");
-
-        if (projectSlug) {
-            const project = projectsWithBlurData.find((p) => p.slug === projectSlug);
-            if (project) {
-                setSelectedProject(project);
-            } else {
-                console.warn(`Project with slug '${projectSlug}' not found.`);
-            }
-        }
-    }, [searchParams, projectsWithBlurData]);
+    const selectedProjectSlug = searchParams.get("project");
+    const selectedProject = selectedProjectSlug
+        ? projectsWithBlurData.find((project) => project.slug === selectedProjectSlug) ?? null
+        : null;
 
     // Function to open the project modal
     const openProjectModal = (project: Project) => {
-        setSelectedProject(project);
         router.push(`/projects?project=${project.slug}`, { scroll: false });
     };
 
     // Function to close the project modal
     const closeProjectModal = () => {
-        setSelectedProject(null);
         router.push("/projects", { scroll: false });
     };
 
@@ -102,7 +90,7 @@ export default function ProjectsPageClient({ projectsWithBlurData }: ProjectsPag
                             <div key={project.slug} data-aos="zoom-in">
                                 {/* Inner container for hover effects */}
                                 <div
-                                    className="group relative bg-white bg-opacity-20 border border-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transform hover:scale-105 transition duration-200 p-4 h-full flex flex-col hover:bg-white hover:bg-opacity-30 cursor-pointer"
+                                    className="group relative bg-white/20 border border-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transform hover:scale-105 transition duration-200 p-4 h-full flex flex-col hover:bg-white/30 cursor-pointer"
                                     onClick={() => openProjectModal(project)}
                                 >
                                     {/* Content Wrapper */}
@@ -145,7 +133,7 @@ export default function ProjectsPageClient({ projectsWithBlurData }: ProjectsPag
                                                 href={project.liveUrl}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-indigo-700 bg-white bg-opacity-80 hover:bg-opacity-100 transform hover:scale-105 transition duration-200"
+                                                className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-indigo-700 bg-white/80 hover:bg-white transform hover:scale-105 transition duration-200"
                                             >
                                                 <FontAwesomeIcon
                                                     icon={faExternalLinkAlt}
@@ -159,7 +147,7 @@ export default function ProjectsPageClient({ projectsWithBlurData }: ProjectsPag
                                                 href={project.sourceUrl}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-indigo-700 bg-white bg-opacity-80 hover:bg-opacity-100 transform hover:scale-105 transition duration-200"
+                                                className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-indigo-700 bg-white/80 hover:bg-white transform hover:scale-105 transition duration-200"
                                             >
                                                 <FontAwesomeIcon icon={faCode} className="mr-2" />
                                                 Source Code

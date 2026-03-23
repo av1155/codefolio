@@ -38,7 +38,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
         <div className="mt-16" data-aos="fade-up">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-7">A Glimpse of Me</h2>
 
-            <div className="relative w-full max-w-lg mx-auto overflow-hidden bg-white bg-opacity-20 rounded-lg shadow-md p-4">
+            <div className="relative w-full max-w-lg mx-auto overflow-hidden bg-white/20 rounded-lg shadow-md p-4">
                 <div {...handlers} className="relative h-0" style={{ paddingBottom: "133.333%" }}>
                     {images.map((image, index) => (
                         <Transition
@@ -81,7 +81,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
                 {/* Navigation Arrows */}
                 <button
                     onClick={prevSlide}
-                    className="absolute z-20 top-1/2 left-2 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-80 transition-all duration-300 rounded-full p-2 shadow-md"
+                    className="absolute z-20 top-1/2 left-2 transform -translate-y-1/2 bg-white/50 hover:bg-white/80 transition-all duration-300 rounded-full p-2 shadow-md"
                     aria-label="Previous Slide"
                 >
                     <ChevronLeftIcon className="h-6 w-6 text-gray-800" />
@@ -89,7 +89,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
 
                 <button
                     onClick={nextSlide}
-                    className="absolute z-20 top-1/2 right-2 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-80 transition-all duration-300 rounded-full p-2 shadow-md"
+                    className="absolute z-20 top-1/2 right-2 transform -translate-y-1/2 bg-white/50 hover:bg-white/80 transition-all duration-300 rounded-full p-2 shadow-md"
                     aria-label="Next Slide"
                 >
                     <ChevronRightIcon className="h-6 w-6 text-gray-800" />

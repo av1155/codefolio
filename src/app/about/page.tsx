@@ -115,7 +115,7 @@ export default async function AboutPage() {
                     <div className="mt-16 grid grid-cols-1 gap-10 md:grid-cols-3">
                         {/* Academic Excellence */}
                         <div
-                            className="flex flex-col items-center text-center p-6 bg-white bg-opacity-20 rounded-lg shadow-md"
+                            className="flex flex-col items-center text-center p-6 bg-white/20 rounded-lg shadow-md"
                             data-aos="zoom-in"
                         >
                             <AcademicCapIcon className="h-12 w-12 text-white transform hover:scale-125 transition duration-300" />
@@ -135,7 +135,7 @@ export default async function AboutPage() {
 
                         {/* Tech Stack */}
                         <div
-                            className="flex flex-col items-center text-center p-6 bg-white bg-opacity-20 rounded-lg shadow-md"
+                            className="flex flex-col items-center text-center p-6 bg-white/20 rounded-lg shadow-md"
                             data-aos="zoom-in"
                         >
                             <CodeBracketIcon className="h-12 w-12 text-white transform hover:scale-125 transition duration-300" />
@@ -167,7 +167,7 @@ export default async function AboutPage() {
 
                         {/* Philosophy */}
                         <div
-                            className="flex flex-col items-center text-center p-6 bg-white bg-opacity-20 rounded-lg shadow-md"
+                            className="flex flex-col items-center text-center p-6 bg-white/20 rounded-lg shadow-md"
                             data-aos="zoom-in"
                         >
                             <LightBulbIcon className="h-12 w-12 text-white transform hover:scale-125 transition duration-300" />
@@ -213,7 +213,7 @@ export default async function AboutPage() {
                         </p>
                         <Link
                             href="/contact"
-                            className="mt-6 inline-block rounded-md bg-white bg-opacity-80 px-6 py-3 text-sm font-semibold text-indigo-700 hover:bg-opacity-100 transform hover:scale-105 transition duration-300"
+                            className="mt-6 inline-block rounded-md bg-white/80 px-6 py-3 text-sm font-semibold text-indigo-700 hover:bg-white transform hover:scale-105 transition duration-300"
                         >
                             Get in Touch
                         </Link>

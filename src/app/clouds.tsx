@@ -23,7 +23,7 @@ export default function Clouds() {
                             aria-label="Scrolling list of technologies"
                         >
                             {scrollingTechnologies.map((tech, index) => (
-                                <div key={`${tech.name}-${index}`} className="flex-shrink-0">
+                                <div key={`${tech.name}-${index}`} className="shrink-0">
                                     <Image
                                         alt={tech.name}
                                         src={tech.src}

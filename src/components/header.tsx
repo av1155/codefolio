@@ -21,7 +21,13 @@ const navigation: NavItem[] = [
 export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const [hasMounted, setHasMounted] = useState(false);
     const pathname = usePathname();
+
+    useEffect(() => {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
+        setHasMounted(true);
+    }, []);
 
     // Change header style on scroll
     useEffect(() => {
@@ -120,12 +126,11 @@ export default function Header() {
 
             {/* Mobile Menu */}
             <div
-                className={`fixed top-0 right-0 z-50 w-80 h-70 bg-white rounded-sm shadow-lg px-5 pr-6 py-4 transition-transform duration-300 transform ${
+                className={`fixed top-0 right-0 z-50 w-80 h-70 bg-white rounded-sm shadow-lg px-5 pr-6 py-4 transform ${
+                    hasMounted ? "transition-[translate,opacity] duration-300 ease-in-out" : ""
+                } ${
                     mobileMenuOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
                 }`}
-                style={{
-                    transition: "transform 300ms ease-in-out, opacity 300ms ease-in-out",
-                }}
             >
                 <div className="flex items-center justify-between pl-2">
                     <Link
@@ -178,7 +183,9 @@ export default function Header() {
 
             {/* Background Blur Overlay */}
             <div
-                className={`fixed inset-0 z-40 backdrop-blur-sm bg-black/25 transition-opacity duration-300 ${
+                className={`fixed inset-0 z-40 backdrop-blur-sm bg-black/25 ${
+                    hasMounted ? "transition-opacity duration-300" : ""
+                } ${
                     mobileMenuOpen
                         ? "opacity-100 pointer-events-auto"
                         : "opacity-0 pointer-events-none"

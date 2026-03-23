@@ -6,36 +6,37 @@
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
-        "lint": "next lint"
+        "lint": "eslint ."
     },
     "dependencies": {
-        "@formspree/react": "^2.5.5",
-        "@fortawesome/fontawesome-svg-core": "^6.7.2",
-        "@fortawesome/free-brands-svg-icons": "^6.7.2",
-        "@fortawesome/free-solid-svg-icons": "^6.7.2",
+        "@formspree/react": "^3.0.0",
+        "@fortawesome/fontawesome-svg-core": "^7.2.0",
+        "@fortawesome/free-brands-svg-icons": "^7.2.0",
+        "@fortawesome/free-solid-svg-icons": "^7.2.0",
         "@fortawesome/react-fontawesome": "^3.3.0",
         "@headlessui/react": "^2.2.9",
         "@heroicons/react": "^2.2.0",
         "aos": "^2.3.4",
-        "next": "15.5.14",
+        "next": "16.2.1",
         "plaiceholder": "^3.0.0",
         "react": "^19.2.4",
         "react-dom": "^19.2.4",
         "react-swipeable": "^7.0.2",
-        "sharp": "^0.33.5"
+        "sharp": "^0.34.5"
     },
     "devDependencies": {
         "@tailwindcss/forms": "^0.5.11",
+        "@tailwindcss/postcss": "^4.2.2",
         "@tailwindcss/typography": "^0.5.19",
         "@types/aos": "^3.0.7",
-        "@types/node": "^22.19.15",
+        "@types/node": "^25.5.0",
         "@types/react": "^19.2.14",
         "@types/react-dom": "^19.2.3",
-        "eslint": "^8.57.1",
-        "eslint-config-next": "15.5.14",
+        "eslint": "^9.39.4",
+        "eslint-config-next": "16.2.1",
         "postcss": "^8.5.8",
-        "tailwindcss": "^3.4.19",
+        "tailwindcss": "^4.2.2",
         "typescript": "^5.9.3"
     },
-    "packageManager": "pnpm@9.12.0+sha512.4abf725084d7bcbafbd728bfc7bee61f2f791f977fd87542b3579dcb23504d170d46337945e4c66485cd12d588a0c0e570ed9c477e7ccdd8507cf05f3f92eaca"
+    "packageManager": "pnpm@10.32.1+sha512.a706938f0e89ac1456b6563eab4edf1d1faf3368d1191fc5c59790e96dc918e4456ab2e67d613de1043d2e8c81f87303e6b40d4ffeca9df15ef1ad567348f2be"
 }

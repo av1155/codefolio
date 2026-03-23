@@ -34,7 +34,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ selectedProject, closeProje
                     leaveFrom="opacity-100"
                     leaveTo="opacity-0"
                 >
-                    <div className="fixed inset-0 backdrop-blur-sm bg-black bg-opacity-50 transition-opacity duration-200" />
+                    <div className="fixed inset-0 backdrop-blur-sm bg-black/50 transition-opacity duration-200" />
                 </TransitionChild>
 
                 {/* Modal Content */}
@@ -57,7 +57,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ selectedProject, closeProje
                                     </DialogTitle>
                                     <button
                                         onClick={closeProjectModal}
-                                        className="ml-auto text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 rounded-full p-1 hover:bg-gray-100 transition-colors duration-200"
+                                        className="ml-auto text-gray-500 hover:text-gray-700 focus:outline-hidden focus:ring-2 focus:ring-gray-500 rounded-full p-1 hover:bg-gray-100 transition-colors duration-200"
                                         aria-label="Close modal"
                                     >
                                         <XMarkIcon className="h-6 w-6" />

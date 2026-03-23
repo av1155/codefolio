@@ -39,7 +39,7 @@ export default function HomePageClient() {
                     >
                         <Link
                             href="https://github.com/av1155"
-                            className="rounded-md bg-white px-5 py-3 text-base font-semibold text-indigo-600 hover:bg-gray-200 ease-in-out shadow-lg hover:bg-opacity-100 transform hover:scale-105 transition duration-300 inline-flex items-center"
+                            className="rounded-md bg-white px-5 py-3 text-base font-semibold text-indigo-600 hover:bg-gray-200 ease-in-out shadow-lg transform hover:scale-105 transition duration-300 inline-flex items-center"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
@@ -49,7 +49,7 @@ export default function HomePageClient() {
                         </Link>
                         <Link
                             href="/projects"
-                            className="inline-flex items-center text-base font-semibold text-white hover:underline hover:text-gray-200 ease-in-out hover:bg-opacity-100 transform hover:scale-105 transition duration-300"
+                            className="inline-flex items-center text-base font-semibold text-white hover:underline hover:text-gray-200 ease-in-out transform hover:scale-105 transition duration-300"
                         >
                             View Projects <ArrowRightIcon className="w-5 h-5 ml-1" />
                         </Link>
