@@ -126,7 +126,7 @@ export default function Header() {
 
             {/* Mobile Menu */}
             <div
-                className={`fixed top-0 right-0 z-50 w-80 h-70 bg-white rounded-sm shadow-lg px-5 pr-6 py-4 transform ${
+                className={`fixed top-0 right-0 z-50 w-80 h-auto bg-white rounded-sm shadow-lg px-5 pr-6 py-4 transform ${
                     hasMounted ? "transition-[translate,opacity] duration-300 ease-in-out" : ""
                 } ${
                     mobileMenuOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
