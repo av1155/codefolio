@@ -45,9 +45,9 @@ export const projects: Project[] = [
         title: "Houndarr",
         slug: "houndarr",
         description:
-            "Open-source, self-hosted companion for *arr apps (Radarr, Sonarr, Lidarr, Readarr) that searches for missing library items in polite, rate-limited batches. Features a live dashboard, bcrypt auth, and CSRF protection.",
+            "Open-source, self-hosted companion for *arr apps that searches for missing library items in polite, rate-limited batches. Features a live dashboard, bcrypt auth, and CSRF protection.",
         detailedDescription:
-            "Radarr, Sonarr, and the rest do a great job with new releases, but they don't go back and search for items already in your library that are missing or below your quality cutoff. Their built-in search fires everything at once, overwhelming indexer API limits. Houndarr fills that gap: configurable batch sizes, per-item cooldowns, hourly API caps, and download-queue backpressure gating keep searches slow and polite. It ships with a dark-themed web dashboard (FastAPI + HTMX + Tailwind CSS), a filterable log viewer with multi-format export, API keys encrypted at rest, bcrypt auth, and CSRF protection. Distributed as a Docker image and a Helm chart for Kubernetes.",
+            "Radarr, Sonarr, and the rest do a great job with new releases, but they don't go back and search for items already in your library that are missing or below your quality cutoff. Their built-in search fires everything at once, overwhelming indexer API limits. Houndarr fills that gap: configurable batch sizes, per-item cooldowns, hourly API caps, and download-queue backpressure gating keep searches slow and polite. It ships with a dark-themed web dashboard (FastAPI + HTMX + Tailwind CSS), a filterable log viewer with multi-format export, API keys encrypted at rest, bcrypt auth, and CSRF protection. Distributed as a Docker image and a Helm chart for Kubernetes. It reached 103+ GitHub stars and 2.6K+ GHCR pulls in its first 48 hours.",
         image: "/projects/Houndarr.jpg",
         liveUrl: "https://av1155.github.io/houndarr/",
         sourceUrl: "https://github.com/av1155/houndarr",
